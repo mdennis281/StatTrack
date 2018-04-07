@@ -5,7 +5,18 @@ surveydb = connect.DBConnect('survey')
 
 
 def postSurvey(questions,user):
-    print(user)
+    organized ={}
+    for q in questions['questions']:
+        id = q.split('-')
+        if id[0] in organized:
+            organized[id[0]][id[1]] = questions['questions'][q]
+        else:
+            organized[id[0]] = { id[1]: questions['questions'][q] }
+
+    return organized
+
+
+
 
 def getSurveys(surveyList):
     total = { 'active': [], 'closed': [], 'overview': {}}

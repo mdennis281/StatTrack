@@ -128,9 +128,11 @@ def addSurvey():
 def postSurvey():
 	info = usercalls.getUser(request.cookies.get('user'))
 	if info:
-		questions = request.form['questions']
+
+		questions = request.get_json()
 		addPost = surveycalls.postSurvey(questions,info)
-		return redirect(url_for(home({'isError': False, 'msg': 'The post was successfully added','title': 'IT WORKED!'})))
+		return jsonify({ 'message': str(addPost) })
+		#return redirect(url_for(home({'isError': False, 'msg': 'The post was successfully added','title': 'IT WORKED!'})))
 
 @app.route('/join')
 def join():
