@@ -72,10 +72,15 @@
 					 <div class="container col-md-6 col-xs-11">
 						 <div class="card bg-light style-texture3" style="margin:.5em;">
 		  					<div class="card-header">
-		  						<h2 class="card-title">Test 123</h2>
+		  						<h2 class="card-title"><span>Survey Creators</span></h2>
 		  					</div>
-		  					<div class="card-body">
-		  						<p>Lorem ipsum dolor sit amet, pede dolor vestibulum, quam consectetuer condimentum aenean vehicula pulvinar cursus, tincidunt sed, turpis nulla, senectus accumsan vestibulum volutpat. Praesent enim, non vitae. Luctus habitasse necessitatibus vel. Iaculis non velit phasellus, nibh platea, laoreet dolor class volutpat nulla blandit, lectus sit pretium tempus et posuere, hendrerit wisi etiam vivamus eget. Duis metus, non auctor at libero pede luctus semper, tortor nunc, consequa volutpa amet, vel congue posuere.</p>
+		  					<div class="card-body text-left">
+								<ol>
+		  						<li>Create an account with us for <b>free</b> and login, if you have not already.</li>
+									<li>On your user dashboard, click <b>&#39;Create Survey&#39;</b>.</li>
+									<li>When you are finished creating your survey, click <b>&#39;Host Server&#39;</b> and provide the special <b>survey code</b> to your participants!</li>
+									<li>Sit back, and watch those beautiful statistics and analytics pour in.</li>
+								</ol>
 		  					</div>
 								<div class="card-footer text-center">
 									<a class="btn btn-primary" href="../../components/#navbar" role="button">Host a survey &raquo;</a>
@@ -86,11 +91,16 @@
 					 <div class="container col-md-6 col-xs-11">
 						 <div class="card bg-light style-texture3" style="margin:.5em;">
 		  					<div class="card-header">
-		  						<h2 class="card-title">Test 123</h2>
+		  						<h2 class="card-title"><span>Survey Participants</span></h2>
 		  					</div>
-		  					<div class="card-body">
-		  						<p>Lorem ipsum dolor sit amet, pede dolor vestibulum, quam consectetuer condimentum aenean vehicula pulvinar cursus, tincidunt sed, turpis nulla, senectus accumsan vestibulum volutpat. Praesent enim, non vitae. Luctus habitasse necessitatibus vel. Iaculis non velit phasellus, nibh platea, laoreet dolor class volutpat nulla blandit, lectus sit pretium tempus et posuere, hendrerit wisi etiam vivamus eget. Duis metus, non auctor at libero pede luctus semper, tortor nunc, consequa volutpa amet, vel congue posuere.</p>
+		  					<div class="card-body text-left">
+									<ol>
+										<li>Click <b>&#39;Join a Survey&#39;</b>.</li>
+										<li>You will be prompted for the <b>survey code</b>, which the host of the survey will provide.</li>
+										<li>Once you have filled out the survey, you will be redirected to the live statistics and analytics page, which you can use to observe results from all other participants!</li>
+									</ol>
 		  					</div>
+								<br />
 								<div class="card-footer text-center">
 									<a class="btn btn-success" href="../../components/#navbar" role="button">Join a Survey &raquo;</a>
 								</div>
@@ -188,7 +198,6 @@
 	<script src="{{ url_for('static', filename='js/notifications.js')}}" class="omit"></script>
 	<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/1328_RC04/embed_loader.js"></script>
 	<script type="text/javascript">
-
 			{% if error %}
 				n_error('Operation Failed', '{{error}}');
 			{% endif %}
