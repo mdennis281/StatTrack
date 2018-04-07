@@ -15,22 +15,6 @@ app.config.update(
 
 @app.route('/')
 def home():
-<<<<<<< HEAD
-	newLogin=0
-	info = usercalls.getUser(request.cookies.get('user'))
-	if info:
-		shadow = usercalls.getAdmin(request.cookies.get('shadow')) #checks to see if admin is attempting to shadow
-		if request.cookies.get('newLogin') == "1":
-			newLogin = 1 #for the "welcome to cryptotrack" notification
-
-		return render_template('main.html', user=info, shadow=shadow, newLogin=newLogin)
-
-	return render_template('main-unauthenticated.html')
-
-@app.route('/welcome')
-def welcome():
-	print "hello"
-=======
 	info = usercalls.getUser(request.cookies.get('user'))
 	if info:
 		return render_template('main.html', user=info)
@@ -41,7 +25,6 @@ def welcome():
 @app.route('/welcome')
 def welcome():
 	return "hello"
->>>>>>> michael
 
 @app.route('/login/do', methods=['POST'])
 def login_handle():
