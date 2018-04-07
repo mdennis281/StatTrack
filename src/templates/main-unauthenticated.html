@@ -21,7 +21,7 @@
 	<link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<link href="https://fonts.googleapis.com/css?family=Barlow+Condensed|Catamaran|Ubuntu|Work+Sans" rel="stylesheet">
-</head> 
+</head>
 
 
 <body class="style-texture1">
@@ -29,8 +29,7 @@
 			<a class="navbar-brand" href="#">SurveyMaster<span>.tech</span></a>
 			<div class="float-right ml-2">
 				<div class="d-flex justify-content-end">
-					<a class="nav-link" data-toggle="modal" style='cursor: pointer;' data-target="#login"><i class="fas fa-sign-in-alt"></i> Login</a>
-					<a class="nav-link" data-toggle="modal" style='cursor: pointer;' data-target="#signup"><i class="fas fa-plus"></i> Signup</a>
+					<a class="nav-link" onclick="load_page('/login')" style='cursor: pointer;'><i class="fas fa-sign-in-alt"></i> Login/Signup</a>
 				</div>
 			</div>
 		</nav>
