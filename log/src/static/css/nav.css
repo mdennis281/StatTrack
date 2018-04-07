@@ -1,0 +1,42 @@
+/*!
+ * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/template-overviews/simple-sidebar)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
+ */
+
+
+
+
+
+#page-content {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity .2s linear;
+  width: 100%;
+  position: absolute;
+  padding: 15px;
+  margin-bottom: 75px !important;
+  -webkit-animation-duration: .4s;
+  -moz-animation-duration: .4s;
+  -o-animation-duration: .4s;
+}
+#page-content.fadeout {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s .2s, opacity .2s linear;
+}
+
+#load-icon {
+  font-size: 75%;
+  margin-left: 1em;
+  margin-bottom: .1em;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity .2s linear;
+}
+
+#load-icon.hide {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s .2s, opacity .2s linear;
+}

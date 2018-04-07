@@ -1,0 +1,122 @@
+<div class="d-flex justify-content-around flex-wrap">
+   <div class="card card-light style-texture3" id="user-detail" style="width: 100%">
+     <div class="card-header">
+       <i class="fas fa-user-circle title-icon"></i>
+       <h4 class="card-title" id="username">{{ user['_username'] }}</h4>
+     </div>
+     <div class="card-body" id="detail-body">
+     <div class="d-flex justify-content-around flex-wrap">
+       <div class="container-fluid col-md-4 col-sm-12">
+         <table class="table t-style1 market" cellspacing="0" width="100%" id="user-table">
+           <thead>
+             <tr>
+               <th scope="col" >Attribute</th>
+               <th scope="col" >Value</th>
+             </tr>
+            </thead>
+            <tbody >
+              <tr>
+                <td data-label="Attribute">User ID</td>
+                <td data-label="Value" >{{user['_id']}}</td>
+              </tr>
+              <tr>
+                <td data-label="Attribute">Created</td>
+                <td data-label="Value" >{{user['created']}}</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+      <div class="container-fluid col-md-6 col-sm-12">
+        <table class="table t-style1 market " cellspacing="0" width="100%" id="user-table">
+          <thead>
+            <tr>
+              <th scope="col" >Attribute</th>
+              <th scope="col" >Value</th>
+              <th scope="col" >Update</th>
+            </tr>
+          </thead>
+          <tbody >
+              <tr>
+                <td data-label="Attribute">Username</td>
+                <td data-label="Value">
+                  <input class="form-control form-control-sm text-center form-style1 style-texture3 col-12" type="text"
+                    value="{{ user['_username'] }}" id="_username" />
+                </td>
+                <td data-label="Update" ><a class="btn btn-style1 btn-sm" onclick="pushData('_username','/settings/update/_username')">Save</a></td>
+              </tr>
+              <tr>
+                <td data-label="Attribute">Email</td>
+                <td data-label="Value">
+                  <input class="form-control form-control-sm text-center text-light form-style1 style-texture3 col-12" type="text"
+                    value="{{ user['email'] }}" id="email"/>
+                </td>
+                <td data-label="Update" ><a class="btn btn-style1 btn-sm" onclick="pushData('email','/settings/update/email')">Save</a></td>
+              </tr>
+          </tbody>
+         </table>
+         <div class="d-flex justify-content-around">
+
+           <button type="button" class="btn btn-style1 btn-sm text-warning" class="btn btn-primary" data-toggle="modal" data-target="#changePassword">Change Password</button>
+         </div>
+       </div>
+     </div>
+   </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal" id="changePassword" tabindex="-1" role="dialog" aria-labelledby="changePassword" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title text-light">Change Password</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body d-flex justify-content-center flex-wrap">
+        <input class="form-control text-center text-light form-style1 style-texture3 col-8 mb-4" type="password"
+          placeholder="Old Password" id="oldPass" />
+        <input class="form-control  text-center text-light form-style1 style-texture3 col-8 mb-3" type="password"
+           placeholder="New Password" id="newPass" />
+        <input class="form-control text-center text-light form-style1 style-texture3 col-8" type="password"
+           placeholder="Confirm New" id="confirmNew" />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-dismiss="modal" onclick="changePass()">Change Password</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function pushData(dataID,url) {
+  $.post(url,{ var: $('#'+dataID).val() },
+    function(data,status){
+      n_success('Value Updated Successfully',data);
+    });
+}
+
+function changePass() {
+  $.post('/settings/password/update',{
+    oldPass:    $('#oldPass'   ).val(),
+    newPass:    $('#newPass'   ).val(),
+    confirmNew: $('#confirmNew').val()
+  },
+  function(data,status){
+    if (data.status == 0){ n_error('Oh Snap!',data.msg) }
+    if (data.status == 1){ n_success('Password Change Successful',data.msg) }
+  });
+  $('#confirmNew').val('');
+  $('#newPass'   ).val('');
+  $('#oldPass'   ).val('');
+}
+
+$('#changePassword').on('show.bs.modal', function (e) {
+  $('.modal .modal-dialog').animateCss('flipInX');
+})
+$('#changePassword').on('hide.bs.modal', function (e) {
+  $('.modal .modal-dialog').animateCss('fadeOut');
+})
+
+</script>

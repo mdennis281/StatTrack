@@ -1,0 +1,93 @@
+<div class="container mt-4">
+
+  <!-- Main component for a primary marketing message or call to action -->
+  <div class="jumbotron style-texture3 text-center">
+    <h1>How it works:</h1>
+    <hr />
+
+    <div class="d-flex justify-content-around flex-wrap">
+      <div class="container col-md-6 col-xs-11">
+        <div class="card bg-light style-texture3 mb-3 mt-2" style="margin:.5em;">
+           <div class="card-header">
+             <h2 class="card-title text-primary">Survey Creators</h2>
+           </div>
+           <div class="card-body text-left">
+           <ol>
+             <li>Create an account with us for <b>free</b> and login, if you have not already.</li>
+             <li>On your user dashboard, click <b>&#39;Create Survey&#39;</b>.</li>
+             <li>When you are finished creating your survey, click <b>&#39;Host Server&#39;</b> and provide the special <b>survey code</b> to your participants!</li>
+             <li>Sit back, and watch those beautiful statistics and analytics pour in.</li>
+           </ol>
+           </div>
+           <div class="card-footer text-center">
+             <a class="btn btn-primary text-white" onclick="load_page('/login')" role="button">Host a survey &raquo;</a>
+           </div>
+
+        </div>
+      </div>
+      <div class="container col-md-6 col-xs-11">
+        <div class="card bg-light style-texture3" style="margin:.5em;">
+           <div class="card-header">
+             <h2 class="card-title text-success">Survey Participants</h2>
+           </div>
+           <div class="card-body text-left">
+             <ol>
+               <li>Click <b>&#39;Join a Survey&#39;</b>.</li>
+               <li>You will be prompted for the <b>survey code</b>, which the host of the survey will provide.</li>
+               <li>Once you have filled out the survey, you will be redirected to the live statistics and analytics page, which you can use to observe results from all other participants!</li>
+             </ol>
+           </div>
+           <br />
+           <div class="card-footer text-center">
+             <a class="btn btn-success" href="/join" role="button">Join a Survey &raquo;</a>
+           </div>
+         </div>
+      </div>
+
+    </div>
+  </div>
+
+</div> <!-- /container -->
+
+
+<!-- Login Modal -->
+ <form id="loginForm" style="display: inline-block;" method="post" action="/login/do">
+   <div class="modal fade text-center" id="login" role="dialog">
+       <div class="modal-dialog modal-sm">
+         <div class="modal-content bg-light">
+           <div class="modal-header">
+             <h4 class="modal-title">Login</h4>
+           </div>
+           <div class="modal-body">
+             <input type="text" class="form-control mb-2" name="username" placeholder="Username">
+             <input type="password" class="form-control"  name="password" placeholder="Password">
+           </div>
+           <div class="modal-footer">
+             <input type="submit" class="btn btn-primary" value="Login">
+           </div>
+         </div>
+       </div>
+     </div>
+   </form>
+
+   <!-- Signup Modal -->
+     <form id="signupForm" style="display: inline-block;" method="post" action="/signup/do">
+       <div class="modal fade text-center" id="signup" role="dialog">
+           <div class="modal-dialog modal-sm">
+             <div class="modal-content bg-light">
+               <div class="modal-header">
+                 <h4 class="modal-title">Signup</h4>
+               </div>
+               <div class="modal-body">
+                 <input type="text" class="form-control mb-2" name="username" placeholder="Username">
+                 <input type="email" class="form-control mb-2" name="email" placeholder="Email">
+                 <input type="password" class="form-control mb-2" name="password" placeholder="Password">
+                 <input type="password" class="form-control" name="pw-confirm" placeholder="Confirm">
+               </div>
+               <div class="modal-footer">
+                 <input type="submit" class="btn btn-primary" value="Signup">
+               </div>
+             </div>
+           </div>
+         </div>
+       </form>
