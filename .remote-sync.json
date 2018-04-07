@@ -7,7 +7,7 @@
   "deleteLocal": false,
   "hostname": "192.210.140.250",
   "port": "22",
-  "target": "/var/www/cryptotracker",
+  "target": "/var/www/UNT-Hack/michael", 
   "ignore": [
     "bin",
     ".git*"

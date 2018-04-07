@@ -24,8 +24,7 @@ def home():
 
 @app.route('/welcome')
 def welcome():
-	print "hello"
-
+	return "hello"
 
 @app.route('/login/do', methods=['POST'])
 def login_handle():
