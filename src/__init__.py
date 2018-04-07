@@ -14,12 +14,12 @@ app.config.update(
 )
 
 @app.route('/')
-def home():
+def home(error=None):
 	info = usercalls.getUser(request.cookies.get('user'))
 	if info:
 		return render_template('main.html', user=info)
 
-	return render_template('main-unauthenticated.html')
+	return render_template('main-unauthenticated.html',error=error)
 
 
 @app.route('/welcome')
@@ -74,20 +74,13 @@ def signup_handle():
 			{
 				'_id': count,
 				'_username': request.form['username'],
+				'email': request.form['email'],
 				'password': hashpass[1],
 				'_login-key': str(hashpass[0]),
 				'key': hashpass[0],
-				'isAdmin': False,
-				'isInvestor': False,
-				'created': str(datetime.datetime.now()),
-				'email': request.form['email'],
-				'lastLogin': 'Never',
-				'status': {'icon': 'fas fa-child','title':'Normal','class':'text-light'},
-				'defaults': {'exchange': 'BINC'}
 			}
 		)
 		return redirect(url_for("home"))
-
 
 
 @app.route("/logout")
