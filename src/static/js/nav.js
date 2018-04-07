@@ -27,15 +27,15 @@ $(window).on('popstate', function (e) {
 
 function load_page(url) {
   $("#load-icon").removeClass("hide");
-  $("#page-content-wrapper").animateCss('fadeOut',function() {
-  $("#page-content-wrapper").empty();
+  $("#page-content").animateCss('fadeOut',function() {
+  $("#page-content").empty();
   $(".page-navs").removeClass("text-info bg-selected");
-    $("#page-content-wrapper").load(url, function() {
+    $("#page-content").load(url, function() {
         pgHistory.push({url: url,title: 'CryptoTrack'});
         //history.pushState( { url: url,title: 'CryptoTrack' }, 'CryptoTrack', url );
         $(document).ready(function() {
           activePage = url;
-          $("#page-content-wrapper").animateCss('fadeIn');
+          $("#page-content").animateCss('fadeIn');
           $("#load-icon").addClass("hide");
         });
       });
@@ -85,16 +85,16 @@ function save_success_notify() {
 
 function menu_load(url,linkID) {
   $("#load-icon").removeClass("hide");
-  $("#page-content-wrapper").animateCss('fadeOut',function() {
-    $("#page-content-wrapper").empty();
+  $("#page-content").animateCss('fadeOut',function() {
+    $("#page-content").empty();
     $(".page-navs").removeClass("text-info bg-selected");
     setTimeout(function(){
-      $("#page-content-wrapper").load(url, function() {
+      $("#page-content").load(url, function() {
         pgHistory.push({ url: url, title: $(linkID).attr("name") });
         history.pushState( { url: '/',title: $(linkID).attr("name") }, $(linkID).attr("name"), '/' );
         $(document).ready(function() {
           activePage = url;
-          $("#page-content-wrapper").animateCss('fadeIn');
+          $("#page-content").animateCss('fadeIn');
           $(linkID).toggleClass("text-info bg-selected");
           $("#load-icon").addClass("hide");
           if ($(window).width() < 768 ) {
@@ -154,8 +154,8 @@ var progressBar = {
 
 async function startup(user,newLogin) {
   $(".load-card").removeClass("div-hide");
-  $("#page-content-wrapper").load('/markets');
-  $("#page-content-wrapper").addClass("div-hide");
+  $("#page-content").load('/markets');
+  $("#page-content").addClass("div-hide");
   $(".load-card").animateCss('bounceInUp', async function() {
     $('#fadeMarkets').toggleClass("text-info bg-selected");
     await progressBar.set(5, 'Loading Assets');
@@ -179,9 +179,9 @@ async function startup(user,newLogin) {
             $("#wrapper").addClass("toggled");
           }
           setTimeout(function(){
-              $("#page-content-wrapper").removeClass("div-hide");
+              $("#page-content").removeClass("div-hide");
               $("#load-icon").addClass("hide");
-              $("#page-content-wrapper").animateCss('fadeIn', function(){
+              $("#page-content").animateCss('fadeIn', function(){
                 if (newLogin == 1) { Welcome(); }
               });
             }, 800);

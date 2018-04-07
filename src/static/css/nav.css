@@ -20,7 +20,7 @@
   -moz-animation-duration: .4s;
   -o-animation-duration: .4s;
 }
-#page-content-wrapper.fadeout {
+#page-content.fadeout {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s .2s, opacity .2s linear;

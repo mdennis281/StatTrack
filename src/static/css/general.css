@@ -76,13 +76,13 @@ span {
     border: #aaa solid 1px !important;
 }
 .t-style1 thead,tfoot{
-    background-color: #555;
-    background-image: url('/static/img/textures/t2.png');
+    background-color: #dcdcdc;
+    background-image: url('/static/img/textures/t3.png');
     background-repeat:repeat;
 }
 .t-style1 tr:nth-child(even) {
-  background-color: #444;
-  background-image: url('/static/img/textures/t2.png');
+  background-color: #cccccc;
+  background-image: url('/static/img/textures/t3.png');
 
 }
 
@@ -190,11 +190,11 @@ span {
   background-repeat:repeat;
 }
 
-.coinrow {
+.table-select-row {
   transition: all .2s ease-in-out;
 }
-.coinrow:hover {
-  color: #fff;
+.table-select-row:hover {
+  color: #666;
   cursor: pointer;
   transform: scale(1.005);
 }
@@ -371,12 +371,12 @@ hr.style-one {
   background-color: #464;
 }
 .form-style1 {
-  background-color: #444;
-  border-color: #333;
-  color: #ced4da !important;
+  background-color: #aaa;
+  border-color: #fff;
+  color: #000 !important;
 }
 .form-style1:focus {
-  background-color: #555;
+  background-color: #888;
 }
 
 .form-style2 {
@@ -691,10 +691,10 @@ table th {
     padding-right: 0 !important;
   }
   .t-style1 tr,td {
-    background-color: #3b3b3b;
+    background-color: #dcdcdc;
   }
   .t-style1 td:nth-child(even) {
-    background-color: #444;
+    background-color: #cccccc;
     background-image: url('/static/img/textures/t2.png');
     background-repeat:repeat;
   }
@@ -810,10 +810,6 @@ table th {
 
 .hard-right {
   position: absolute;
-  font-size: 1em;
-  top: 5px;
-  right: 5px;
-  opacity: .75;
-  background-image: url('/static/img/textures/t2.png');
-  background-repeat:repeat;
+  top: 4px;
+  right: 4px;
 }

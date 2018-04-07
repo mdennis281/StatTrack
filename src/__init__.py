@@ -1,5 +1,5 @@
 from flask import Flask, flash, redirect, jsonify, render_template, request, abort, url_for
-from . import connect, usercalls
+from . import connect, usercalls,surveycalls
 import ast
 import threading
 import datetime
@@ -24,7 +24,7 @@ def home(error=None):
 
 @app.route('/welcome')
 def welcome():
-	return "hello"
+	return render_template('welcome.html')
 
 @app.route('/login/do', methods=['POST'])
 def login_handle():
@@ -53,6 +53,14 @@ def login_handle():
 		return redirect(url_for('home'))
 
 
+@app.route('/settings')
+def settings():
+	info = usercalls.getUser(request.cookies.get('user'))
+	if info:
+		return render_template('edit-user.html',user=info)
+	return redirect(url_for(home))
+
+
 @app.route('/signup/do', methods=['POST'])
 def signup_handle():
 
@@ -78,16 +86,36 @@ def signup_handle():
 				'password': hashpass[1],
 				'_login-key': str(hashpass[0]),
 				'key': hashpass[0],
+				'surveys': []
 			}
 		)
 		return redirect(url_for("home"))
-
 
 @app.route("/logout")
 def logout():
 	response = redirect(url_for("home"))
 	response.set_cookie('user', '', expires=0)
 	return response
+
+@app.route('/dashboard')
+def dashboard():
+	info = usercalls.getUser(request.cookies.get('user'))
+	if info:
+		surveys = surveycalls.getSurveys(info['surveys'])
+
+		return render_template('dashboard.html',user=info,surveys=surveys)
+	return redirect(url_for('home'))
+
+
+@app.route("/join")
+def join():
+	return render_template('join-survey.html')
+
+@app.route('/test')
+def test():
+	info = usercalls.getUser(request.cookies.get('user'))
+	return render_template('test.html',user=info)
+
 
 
 if __name__ == '__main__':

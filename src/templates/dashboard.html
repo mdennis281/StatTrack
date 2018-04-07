@@ -1,0 +1,114 @@
+<div class="container mt-2">
+    <div class="jumbotron style-texture3 text-center">
+      <h1>Survey Overview</h1>
+      <hr />
+
+      <div class="d-flex justify-content-around flex-wrap">
+
+        <div class="container col-md-4 col-xs-11">
+          <div class="card bg-light style-texture3" style="margin:.5em;">
+            <div class="card-header">
+              <h3 class="card-title"><span>Total Surveys</span></h3>
+            </div>
+            <div class="card-body text-center">
+              <h3>{{surveys['overview']['totalS']}}</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="container col-md-4 col-xs-11">
+          <div class="card bg-light style-texture3" style="margin:.5em;">
+            <div class="card-header">
+              <h3 class="card-title"><span>Total Participants</span></h3>
+            </div>
+            <div class="card-body text-center">
+              <h3>{{surveys['overview']['totalP']}}</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="container col-md-4 col-xs-11">
+          <div class="card bg-light style-texture3" style="margin:.5em;">
+            <div class="card-header">
+              <h3 class="card-title"><span>Average Participants</span></h3>
+            </div>
+            <div class="card-body text-center">
+              <h3>{{surveys['overview']['avgP']}}</h3>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div><!--end container for overview of stats-->
+
+  <!--Table-->
+  <div class="d-flex justify-content-around">
+      <div class="card bg-light style-texture3" style="margin:.5em; min-width: 45%;">
+        <div class="card-header">
+          <h3 class="card-title"><span>Active Surveys</span></h3>
+        </div>
+        <div class="card-body">
+            <table id="open-table" class="table t-style1 market">
+              <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Open</th>
+                <th scope="col">Close</th>
+                <th scope="col">Responses</th>
+              </tr>
+              </thead>
+              <tbody>
+                {% for survey in surveys['active'] %}
+                  <tr class="table-select-row">
+                    <td>{{ survey['title'] }}</td>
+                    <td>{{ survey['opened'] }}</td>
+                    <td>{{ survey['closed']}}</td>
+                    <td>{{  survey['rlen'] }}</td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+        </div>
+      </div>
+
+      <div class="card bg-light style-texture3" style="margin:.5em; min-width: 45%;">
+        <div class="card-header">
+          <h3 class="card-title"><span>Closed Surveys</span></h3>
+        </div>
+        <div class="card-body">
+          <table id="close-table" class="table t-style1 market">
+            <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Open</th>
+              <th scope="col">Close</th>
+              <th scope="col">Responses</th>
+            </tr>
+            </thead>
+            <tbody>
+              {% for survey in surveys['closed'] %}
+                <tr class="table-select-row">
+                  <td>{{ survey['title'] }}</td>
+                  <td>{{ survey['opened'] }}</td>
+                  <td>{{ survey['closed']}}</td>
+                  <td>{{  survey['rlen'] }}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+  </div>
+
+  <script>
+  $(document).ready(function() {
+      var open_table = $('#open-table').DataTable({
+        'order': [[2,'desc']]
+      });
+      var close_table = $('#close-table').DataTable({
+        'order': [[2,'desc']]
+      });
+    });
+
+  </script>
