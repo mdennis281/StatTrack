@@ -16,7 +16,7 @@
   </div>
   <div class="card bg-light style-texture3 div-hide" id="questions" style="min-width: 40%">
     <div class="card-header">
-      <h2 class="card-title">Survey Information</h2>
+      <h2 class="card-title">Survey Questions</h2>
     </div>
     <div class="card-body">
       <div class="container" id="q-hold">
@@ -68,8 +68,37 @@ $( "#q-add" ).change(function() {
           '</div>'+
         '</div>'+
       '</div>'
-
-
+    );
+  }
+  if (type == "TF") {
+    $('#q-hold').append(
+      '<div class="card card-style1" id="q-card'+questionCount+'">'+
+        '<div class="card-header s-2">'+
+          '<h3 class="card-title">Question #'+(questionCount+1)+' (True/False)</h3>'+
+        '</div>'+
+        '<div class="card-body">'+
+          '<input type="text" id="q-num'+questionCount+'" class="form-control form-style1 no-trans" placeholder="Question">'+
+          '<input type="hidden" id="t-num'+questionCount+'" value="TF">'+
+        '</div>'+
+      '</div>'
+    );
+  }
+  if (type == "R") {
+    $('#q-hold').append(
+      '<div class="card card-style1" id="q-card'+questionCount+'">'+
+        '<div class="card-header s-2">'+
+          '<h3 class="card-title">Question #'+(questionCount+1)+' (Range)</h3>'+
+        '</div>'+
+        '<div class="card-body">'+
+          '<input type="text" id="q-num'+questionCount+'" class="form-control form-style1 no-trans" placeholder="Question">'+
+          '<input type="hidden" id="t-num'+questionCount+'" value="R">'+
+          '<hr />'+
+          '<div class="row d-flex justify-content-around mt-2">'+
+            '<input type="text" id="q-'+questionCount+'_min" class="form-control col-5 form-style1" placeholder="Minimum Range">'+
+            '<input type="text" id="q-'+questionCount+'_max" class="form-control col-5 form-style1" placeholder="Maximum Range">'+
+          '</div>'+
+        '</div>'+
+      '</div>'
     );
   }
   questionCount++;
