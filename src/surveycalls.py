@@ -43,7 +43,10 @@ def getSurveys(surveyList):
                 'results': survey['results'],
                 'qlen': len(survey['questions'])
             })
-    avgP = total['overview']['totalP']/total['overview']['totalS']
+    if len(surveyList) > 0:
+        avgP = total['overview']['totalP']/total['overview']['totalS']
+    else:
+        avgP = 0
     total['overview']['avgP'] = '{0:.1f}'.format(avgP)
     return total
 
