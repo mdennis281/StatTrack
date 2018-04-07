@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>CryptoTrack</title>
+	<title>SurveyTrack</title>
 
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap4-charming.min.css') }}">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/general.css') }}">
@@ -35,7 +35,7 @@
 	</head>
 	<body class="style-texture1">
 			<nav class="navbar navbar-expand-lg navbar-light bg-light style-texture3">
-			  <a class="navbar-brand" href="#">StatTrack<span>.tech</span></a>
+			  <a class="navbar-brand" href="#">SurveyTrack<span>.tech</span></a>
 			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 			    <span class="navbar-toggler-icon"></span>
 			  </button>
@@ -74,17 +74,40 @@
 
        <!-- Main component for a primary marketing message or call to action -->
        <div class="jumbotron style-texture3">
-         <h1>Navbar example</h1>
+         <h1>How it works:</h1>
+				 <hr />
          <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
          <p>To see the difference between static and fixed top navbars, just scroll.</p>
          <p>
-           <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
+           <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Create a survey &raquo;</a>
          </p>
        </div>
 
      </div> <!-- /container -->
+		 <div class="d-flex justify-content-around flex-wrap">
+			 <div class="card bg-light col-md-4 col-sm-11" style="margin:.5em;">
+				 <div class="card-header">
+					 <h2 class="card-title">Test 123</h2>
+				 </div>
+				 <div class="card-body">
+					 <p>Lorem ipsum dolor sit amet, pede dolor vestibulum, quam consectetuer condimentum aenean vehicula pulvinar cursus, tincidunt sed, turpis nulla, senectus accumsan vestibulum volutpat. Praesent enim, non vitae. Luctus habitasse necessitatibus vel. Iaculis non velit phasellus, nibh platea, laoreet dolor class volutpat nulla blandit, lectus sit pretium tempus et posuere, hendrerit wisi etiam vivamus eget. Duis metus, non auctor at libero pede luctus semper, tortor nunc, consequa volutpa amet, vel congue posuere.</p>
 
+					<p>Augue et sollicitudin in commodo ridiculus, nunc nostra in a vel gravida dapibus. Ligula tincidunt, nisl sodales cum nec odio, non sagittis wisi, vestibulum sodales vel eleifend ac. Vivamus fusce nunc ante, blandit vestibulum dui urna elit, ultrices vestibulum sapien neque arcu in, mauris nihil vehicula. At arcu sed commodo, pellentesque duis, nibh mauris convallis eu, ligula condimentum amet nec per, condimentum et quis eu lectus nec vel. At vitae non ornare bibendum massa, sit nunc fringilla,fugit mattis, ea phasellus quis mauris. Elit facilisis, lectus vestibulum vestibulum feugiat et. Suscipit sollicitudin integer, donec mattis ultricies, sit donec maecenas. Nullam vitae vivamus facilisis nec sit vestibulum. Et a sem, duis eget, sit vestibulum neque lectus ante, non metus felis vel est nulla congue. Est tellus, commodo ipsum tempor vel ultricies etiam. Sollicitudin risus amet eros donec, pharetra mollis tempus viverra aptent ante sit, amet consectetuer lorem purus erat in ac, debitis donec leo ac molestiae velit, dolor luctus nulla hic maecenas libero ipsum.</p>
+				 </div>
 
+			</div>
+			<div class="card bg-light col-md-4 col-xs-11" style="margin:.5em;">
+				<div class="card-header">
+					<h2 class="card-title">Test 123</h2>
+				</div>
+				<div class="card-body">
+					<p>Lorem ipsum dolor sit amet, pede dolor vestibulum, quam consectetuer condimentum aenean vehicula pulvinar cursus, tincidunt sed, turpis nulla, senectus accumsan vestibulum volutpat. Praesent enim, non vitae. Luctus habitasse necessitatibus vel. Iaculis non velit phasellus, nibh platea, laoreet dolor class volutpat nulla blandit, lectus sit pretium tempus et posuere, hendrerit wisi etiam vivamus eget. Duis metus, non auctor at libero pede luctus semper, tortor nunc, consequa volutpa amet, vel congue posuere.</p>
+
+				 <p>Augue et sollicitudin in commodo ridiculus, nunc nostra in a vel gravida dapibus. Ligula tincidunt, nisl sodales cum nec odio, non sagittis wisi, vestibulum sodales vel eleifend ac. Vivamus fusce nunc ante, blandit vestibulum dui urna elit, ultrices vestibulum sapien neque arcu in, mauris nihil vehicula. At arcu sed commodo, pellentesque duis, nibh mauris convallis eu, ligula condimentum amet nec per, condimentum et quis eu lectus nec vel. At vitae non ornare bibendum massa, sit nunc fringilla,fugit mattis, ea phasellus quis mauris. Elit facilisis, lectus vestibulum vestibulum feugiat et. Suscipit sollicitudin integer, donec mattis ultricies, sit donec maecenas. Nullam vitae vivamus facilisis nec sit vestibulum. Et a sem, duis eget, sit vestibulum neque lectus ante, non metus felis vel est nulla congue. Est tellus, commodo ipsum tempor vel ultricies etiam. Sollicitudin risus amet eros donec, pharetra mollis tempus viverra aptent ante sit, amet consectetuer lorem purus erat in ac, debitis donec leo ac molestiae velit, dolor luctus nulla hic maecenas libero ipsum.</p>
+				</div>
+
+		 </div>
+		</div>
 
 		 <!-- Login Modal -->
 		 	<form id="loginForm" style="display: inline-block;" method="post" action="/login/do">
