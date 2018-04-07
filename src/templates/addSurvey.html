@@ -1,0 +1,127 @@
+<div class="d-flex justify-content-around">
+  <div class="card bg-light style-texture3" id="info" style="min-width: 40%">
+    <div class="card-header">
+      <h2 class="card-title">Survey Information</h2>
+    </div>
+    <div class="card-body text-left">
+      <h4>Survey Title:</h4>
+      <input type="text" id="title" class="form-control form-style1 no-trans">
+      <hr />
+      <h4>Survey Description:</h4>
+      <textarea type="text" id="description" class="form-control form-style1 no-trans"></textarea>
+    </div>
+    <div class="card-footer text-right">
+      <a class="btn btn-primary text-white" onclick="swap_div('info','questions')">Next</a>
+    </div>
+  </div>
+  <div class="card bg-light style-texture3 div-hide" id="questions" style="min-width: 40%">
+    <div class="card-header">
+      <h2 class="card-title">Survey Questions</h2>
+    </div>
+    <div class="card-body">
+      <form id="questions">
+        <div class="container" id="q-hold">
+
+        </div>
+      </form>
+      <select class="ht-tm-element custom-select mt-3" id="q-add">
+          <option selected="">Add Question</option>
+          <option value="MC">Multiple Choice</option>
+          <option value="TF">True/False</option>
+          <option value="R">Range</option>
+          <option value="N">Number</option>
+        </select>
+
+    </div>
+    <div class="card-footer text-right">
+      <a class="btn btn-success text-white" onclick="swap_div('questions','info')">Save</a>
+    </div>
+  </div>
+</div>
+
+<script>
+function swap_div(oldD,newD) {
+  $('#'+oldD).animateCss('flipOutX',function() {
+    $('#'+oldD).addClass('div-hide');
+    $('#'+newD).removeClass('div-hide');
+    $('#'+newD).animateCss('flipInX');
+  });
+}
+var questionCount = 0;
+$( "#q-add" ).change(function() {
+  var type = $( "#q-add" ).val();
+  $( "#q-add" ).val('Add Question');
+  if (type == "MC") {
+    $('#q-hold').append(
+      '<div class="card card-style1" id="q-card'+questionCount+'">'+
+        '<div class="card-header s-2">'+
+          '<h3 class="card-title">Question #'+(questionCount+1)+' (Multiple Choice)</h3>'+
+        '</div>'+
+        '<div class="card-body">'+
+          '<input type="text" id="q-num'+questionCount+'" class="form-control form-style1 no-trans" placeholder="Question">'+
+          '<input type="hidden" id="t-num'+questionCount+'" value="MC">'+
+          '<hr />'+
+          '<div class="row d-flex justify-content-around mt-2">'+
+            '<input type="text" id="q-'+questionCount+'_opt-1" class="form-control col-5 form-style1" placeholder="Option 1">'+
+            '<input type="text" id="q-'+questionCount+'_opt-2" class="form-control col-5 form-style1" placeholder="Option 2">'+
+          '</div>'+
+          '<div class="row d-flex justify-content-around mt-2">'+
+            '<input type="text" id="q-'+questionCount+'_opt-3" class="form-control col-5 form-style1" placeholder="Option 3">'+
+            '<input type="text" id="q-'+questionCount+'_opt-4" class="form-control col-5 form-style1" placeholder="Option 4">'+
+          '</div>'+
+        '</div>'+
+      '</div>'
+    );
+  }
+  if (type == "TF") {
+    $('#q-hold').append(
+      '<div class="card card-style1" id="q-card'+questionCount+'">'+
+        '<div class="card-header s-2">'+
+          '<h3 class="card-title">Question #'+(questionCount+1)+' (True/False)</h3>'+
+        '</div>'+
+        '<div class="card-body">'+
+          '<input type="text" id="q-num'+questionCount+'" class="form-control form-style1 no-trans" placeholder="Question">'+
+          '<input type="hidden" id="t-num'+questionCount+'" value="TF">'+
+        '</div>'+
+      '</div>'
+    );
+  }
+  if (type == "R") {
+    $('#q-hold').append(
+      '<div class="card card-style1" id="q-card'+questionCount+'">'+
+        '<div class="card-header s-2">'+
+          '<h3 class="card-title">Question #'+(questionCount+1)+' (Range)</h3>'+
+        '</div>'+
+        '<div class="card-body">'+
+          '<input type="text" id="q-num'+questionCount+'" class="form-control form-style1 no-trans" placeholder="Question">'+
+          '<input type="hidden" id="t-num'+questionCount+'" value="R">'+
+          '<hr />'+
+          '<div class="row d-flex justify-content-around mt-2">'+
+            '<input type="text" id="q-'+questionCount+'_min" class="form-control col-5 form-style1" placeholder="Minimum Range">'+
+            '<input type="text" id="q-'+questionCount+'_max" class="form-control col-5 form-style1" placeholder="Maximum Range">'+
+          '</div>'+
+        '</div>'+
+      '</div>'
+    );
+  }
+  if (type == "N") {
+    $('#q-hold').append(
+      '<div class="card card-style1" id="q-card'+questionCount+'">'+
+        '<div class="card-header s-2">'+
+          '<h3 class="card-title">Question #'+(questionCount+1)+' (Number)</h3>'+
+        '</div>'+
+        '<div class="card-body">'+
+          '<input type="text" id="q-num'+questionCount+'" class="form-control form-style1 no-trans" placeholder="Question">'+
+          '<input type="hidden" id="t-num'+questionCount+'" value="N">'+
+        '</div>'+
+      '</div>'
+    );
+  }
+  questionCount++;
+});
+
+function saveSurvey() {
+  var questions = getFormData($("#q-hold"))
+}
+
+</script>

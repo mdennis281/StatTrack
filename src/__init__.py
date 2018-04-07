@@ -122,7 +122,7 @@ def test():
 def addSurvey():
 	info = usercalls.getUser(request.cookies.get('user'))
 	if info:
-		return render_template('add-survey.html')
+		return render_template('addSurvey.html')
 
 @app.route('/survey/add/do', methods=['POST'])
 def postSurvey():

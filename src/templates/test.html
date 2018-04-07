@@ -1,104 +1,146 @@
 <!--Table-->
 <div class="d-flex justify-content-around">
-  <!--
     <div class="card bg-light style-texture3" style="margin:.5em; min-width: 45%;">
       <div class="card-header">
         <h3 class="card-title"><span>Account shit</span></h3>
       </div>
       <div class="card-body">
-          <table id="open-table" class="table t-style1 market">
-            <thead>
-            <tr>
-              <th scope="col">key</th>
-              <th scope="col">value</th>
-            </tr>
-            </thead>
-            <tbody>
-              {% for key in user %}
-                <tr>
-                  <td>{{ key }}</td>
-                  <td>{{ user[key] }}</td>
-                </tr>
-              {% endfor %}
-            </tbody>
-          </table>
+        <canvas id="barGraph"</canvas>
       </div>
-    </div>-->
-
-    <div id="piechart" class="piechart"></div>
-​
+    </div>
+</div>
+<div class="d-flex justify-content-around flex-wrap">
+  <div class="card bg-light style-texture3 mb-3 mt-2" style="margin: .75">
+    <div class="card-header">
+      <h2 class="card-title text-center">don't light ur nutz on fire kids</h2>
+    </div>
+    <div style="display: inline-block" class="card-body">
+      <div class="slidecontainer md-5">
+        <input style="position: relative" type="range" min="1" max="100" value="50" class="slider" id="myRange">
+        <div id="demo" style="padding-top: 10px">
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <script>
-  var FRONTFCT = {};
+  var slider = document.getElementById("myRange");
+  var output = document.getElementById("demo");
+  output.innerHTML = slider.value; // Display the default slider value
+  // Update the current slider value (each time you drag the slider handle)
+  slider.oninput = function() {
+      output.innerHTML = this.value;
+    }
 
-  FRONTFCT.init = function(){
-  	FRONTFCT.pieCharts();
-  }
+  var questionData = [12, 32, 3, 5]
 
-  FRONTFCT.pieCharts = function(){
-  	google.charts.load('current', {'packages':['corechart']});
-  	google.charts.setOnLoadCallback(drawChart);
+   function barchart(data){
+      var ctx = document.getElementById("barGraph");
 
-  	function drawChart() {
+      var myChart = new Chart(ctx, {
+          type: 'doughnut',
+          data: {
+              labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+              datasets: [{
+                  label: '# of Votes',
+                  data: questionData,
+                  backgroundColor: ,
+                  borderColor: getBorder(data.length),
+                  borderWidth: 1
+              }]
+          },
+          function getBackground(num){
+            var colors = [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ]
+            var r = [];
+            var i;
+            for (i=0;i<num;i++) {
+              r.append(colors[i]);
+            }
+          }
 
-  		var data = google.visualization.arrayToDataTable([
-  			['Title', 'Text'],
-  			['Chart Stats 1', 7.5],
-  			['Chart Stats 2', 34],
-  			['Chart Stats 3', 20],
-  			['Chart Stats 4', 10],
-  			['Chart Stats 5', 5],
-  			['Chart Stats 6', 23.5]
-  			]);
+          function getBorder(num){
+            var colors = function getBackground(num){
+              var colors = [
+                  'rgba(255,99,132,1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
+                  'rgba(153, 102, 255, 1)',
+                  'rgba(255, 159, 64, 1)'
+              ]
+              var r = [];
+              var i;
+              for (i=0;i<num;i++) {
+                r.append(colors[i]);
+              }
+            }
 
-  		var options = {
-  			colors:['#e4bb83','#6f93c5', '#2b5186', '#4e5d79','#e8d3b7', '#f1f1e6'],
-  			slices: {
-  				4: {
-  					textStyle: {color: '#333'}
-  				},
-  				5: {
-  					textStyle: {color: '#333'}
-  				}
-  			},
-  			chartArea: {
-  				left: 0,
-  				top: 40,
-  				width: '100%',
-  				height: '230',
-  			},
-  			backgroundColor: 'transparent',
-        fontSize: 10,
-  			tooltip: { trigger: 'none' },
-  			pieSliceBorderColor: "transparent",
-  			legend: { textStyle: {color: '#fff', fontSize: 16}}
-  		};
+          options: {
+              scales: {
+                  yAxes: [{
+                      ticks: {
+                          beginAtZero:true
+                      }
+                  }]
+              }
+          }
+      });
+    }
+    var ctx = document.getElementById("barGraph");
 
-  		var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-  		chart.draw(data, options);
-
-
-  		// the actual animation
-
-  		// get the main animation piece of pie (preferably the highest value) - in this case: Chart Stats 2
-  		var definingAnim = Number(data.og[1].c[1].v);
-
-  		// set a init value
-  		var percent = 0;
-
-  		// draw the chart every 20ms untill we reach the targeted value
-  		var handler = setInterval(function(){
-  			percent += 1;
-  			data.setValue(1, 1, percent);
-  			chart.draw(data, options);
-  			if (percent >= definingAnim){
-  				clearInterval(handler);
-  			}
-  		}, 20);
-
-  	}
-  }
-
-  FRONTFCT.init();
+    var myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 32, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
+    setTimeout(function(){
+      myChart.data.datasets[0].data = [10, 25, 32, 11, 12, 6];
+      myChart.update();
+      setTimeout(function(){
+        myChart.data.datasets[0].data = [15, 5, 13, 45, 14, 24];
+        myChart.update();
+        setTimeout(function(){
+          myChart.data.datasets[0].data = [10, 35, 19, 39, 4, 44];
+          myChart.update();
+        }, 2000);
+      }, 2000);
+    }, 2000);
 </script>
