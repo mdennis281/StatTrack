@@ -15,6 +15,7 @@ app.config.update(
 
 @app.route('/')
 def home():
+<<<<<<< HEAD
 	newLogin=0
 	info = usercalls.getUser(request.cookies.get('user'))
 	if info:
@@ -29,6 +30,18 @@ def home():
 @app.route('/welcome')
 def welcome():
 	print "hello"
+=======
+	info = usercalls.getUser(request.cookies.get('user'))
+	if info:
+		return render_template('main.html', user=info)
+
+	return render_template('main-unauthenticated.html')
+
+
+@app.route('/welcome')
+def welcome():
+	return "hello"
+>>>>>>> michael
 
 @app.route('/login/do', methods=['POST'])
 def login_handle():
