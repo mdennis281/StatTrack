@@ -1,5 +1,5 @@
 body {
-  background-color: #7391d6;
+  background-color: #059033;
   font-family: 'Ubuntu', sans-serif;
   height: 100%;
   overflow-y: scroll;
@@ -13,7 +13,7 @@ th,td {
   font-family: 'Barlow Condensed', sans-serif;
 }
 span {
-	color: #5a7ec5;
+	color: #059033;
 }
 
 /* width */

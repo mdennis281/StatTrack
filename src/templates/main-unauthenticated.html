@@ -63,7 +63,10 @@
 			    </ul>
 			  </div>
 				<div class="float-right ml-2">
-
+					<div class="d-flex justify-content-end">
+						<a class="nav-link" data-toggle="modal" style='cursor: pointer;' data-target="#login"><i class="fas fa-sign-in-alt"></i> Login</a>
+						<a class="nav-link" data-toggle="modal" style='cursor: pointer;' data-target="#signup"><i class="fas fa-plus"></i> Signup</a>
+	    		</div>
 				</div>
 			</nav>
 
@@ -81,6 +84,49 @@
 
      </div> <!-- /container -->
 
+
+
+		 <!-- Login Modal -->
+		 	<form id="loginForm" style="display: inline-block;" method="post" action="/login/do">
+		 		<div class="modal fade text-center" id="login" role="dialog">
+		 		    <div class="modal-dialog modal-sm">
+		 		      <div class="modal-content bg-light">
+		 		        <div class="modal-header">
+		 		          <h4 class="modal-title">Login</h4>
+		 		        </div>
+		 		        <div class="modal-body">
+		 							<input type="text" class="form-control mb-2" name="username" placeholder="Username">
+		 							<input type="password" class="form-control"  name="password" placeholder="Password">
+		 		        </div>
+		 						<div class="modal-footer">
+		 		          <input type="submit" class="btn btn-primary" value="Login">
+		 		        </div>
+		 		      </div>
+		 		    </div>
+		 		  </div>
+		 		</form>
+
+		 		<!-- Signup Modal -->
+		 			<form id="signupForm" style="display: inline-block;" method="post" action="/signup/do">
+		 				<div class="modal fade text-center" id="signup" role="dialog">
+		 				    <div class="modal-dialog modal-sm">
+		 				      <div class="modal-content bg-light">
+		 				        <div class="modal-header">
+		 				          <h4 class="modal-title">Signup</h4>
+		 				        </div>
+		 				        <div class="modal-body">
+		 									<input type="text" class="form-control mb-2" name="username" placeholder="Username">
+		 									<input type="email" class="form-control mb-2" name="email" placeholder="Email">
+		 									<input type="password" class="form-control mb-2" name="password" placeholder="Password">
+		 									<input type="password" class="form-control" name="pw-confirm" placeholder="Confirm">
+		 				        </div>
+		 								<div class="modal-footer">
+		 				          <input type="submit" class="btn btn-primary" value="Signup">
+		 				        </div>
+		 				      </div>
+		 				    </div>
+		 				  </div>
+		 				</form>
 
 
 
