@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-around flex-wrap">
-  <div class="container col-md-2 col-xs-6">
+  <div class="container col-md-4 col-xs-6" style="min-width: 50%;">
     <div class="card bg-light style-texture3" style="margin:.5em;">
       <div class="card-header text-center">
         <a class="btn btn-primary" onclick="switchForms('login_forms', 'signup_forms')" role="button">Login</a>
@@ -8,13 +8,13 @@
       <div class="card-body text-center">
         <div id="login_forms">
           <form id="loginForm" style="display: inline-block;" method="post" action="/login/do">
-                    <input type="text" class="form-control mb-2" name="username" placeholder="Username">
+                    <input type="text" class="form-control mb-2" name="username" placeholder="FUCK ME">
                     <input type="password" class="form-control"  name="password" placeholder="Password">
                     <br>
                     <input type="submit" class="btn btn-success" value="Login">
           </form>
         </div>
-        <div style="display:none" id="signup_forms">
+        <div class="div-hide" id="signup_forms">
           <form id="signupForm" style="display: inline-block;" method="post" action="/signup/do">
             <input type="text" class="form-control mb-2" name="username" placeholder="Username">
             <input type="email" class="form-control mb-2" name="email" placeholder="Email">
@@ -29,17 +29,11 @@
   </div>
 </div>
 <script>
-function switchForms(id, id2)
-{
-var c1 = document.getElementById(id);
-var c2 = document.getElementById(id2);
-if(c1.style.display == "none")
-{
-  c1.style.display = "block";
-  c2.style.display = "none";
-}
-else {
-  c2.style.display = "none";
-}
+function switchForms(id1, id2) {
+  $('#'+id2).animateCss('fadeOutRight',function() {
+    $('#'+id2).addClass('div-hide');
+    $('#'+id1).removeClass('div-hide');
+    $('#'+id1).animateCss('fadeInLeft');
+  });
 }
 </script>
