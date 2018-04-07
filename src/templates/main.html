@@ -38,10 +38,10 @@
   	</head>
   	<body class="style-texture1">
   			<nav class="navbar navbar-expand-lg navbar-light bg-light style-texture3">
-  			  <a class="navbar-brand" href="#">SurveyTrack<span>.tech</span></a>
-  			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
   			    <span class="navbar-toggler-icon"></span>
   			  </button>
+  			  <a class="navbar-brand" href="#">SurveyTrack<span>.tech</span></a>
   			  <div class="collapse navbar-collapse" id="navbarNavDropdown">
   			    <ul class="navbar-nav">
   			      <li class="nav-item active">
@@ -53,78 +53,29 @@
   			      <li class="nav-item">
   			        <a class="nav-link" href="#">Pricing</a>
   			      </li>
-  			      <li class="nav-item dropdown">
-  			        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  			          Dropdown link
-  			        </a>
-  			        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-  			          <a class="dropdown-item" href="#">Action</a>
-  			          <a class="dropdown-item" href="#">Another action</a>
-  			          <a class="dropdown-item" href="#">Something else here</a>
-  			        </div>
-  			      </li>
+
   			    </ul>
   			  </div>
-  				<div class="float-right ml-2">
+  				<div class="float-right ml-2" style="position: absolute;">
   					<div class="d-flex justify-content-end">
-              <ul>
+              <ul class="navbar-nav">
                 <li class="nav-item dropdown">
-    			        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    			          Dropdown link
+    			        <a class="nav-link" href="#" id="navbarDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    			         {{user['_username']}}<i class="fas fa-sort-down ml-2 mt-1"></i>
     			        </a>
-    			        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-    			          <a class="dropdown-item" href="#">Action</a>
-    			          <a class="dropdown-item" href="#">Another action</a>
-    			          <a class="dropdown-item" href="#">Something else here</a>
+    			        <div class="dropdown-menu dd-nav-menu" aria-labelledby="navbarDropdownMenu" style="transform: translate3d(-275px, 5px, 0px); width: 350px;">
+    			          <a class="dropdown-item" >Settings</a>
+    			          <a class="dropdown-item" >Upgrade</a>
+    			          <a class="dropdown-item" href="/logout">Logout</a>
     			        </div>
     			      </li>
               </ul>
   	    		</div>
   				</div>
   			</nav>
+    <div id="page-content">
 
-       <div class="container mt-2">
-
-         <!-- Main component for a primary marketing message or call to action -->
-         <div class="jumbotron style-texture3">
-           <h1>How it works:</h1>
-  				 <hr />
-           <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-           <p>To see the difference between static and fixed top navbars, just scroll.</p>
-           <p>
-             <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Create a survey &raquo;</a>
-           </p>
-         </div>
-
-       </div> <!-- /container -->
-  		 <div class="d-flex justify-content-around flex-wrap">
-  			 <div class="container col-md-4 col-xs-11">
-   				<div class="card bg-light" style="margin:.5em;">
-   					<div class="card-header">
-   						<h2 class="card-title">Test 123</h2>
-   					</div>
-   					<div class="card-body">
-   						<p>Lorem ipsum dolor sit amet, pede dolor vestibulum, quam consectetuer condimentum aenean vehicula pulvinar cursus, tincidunt sed, turpis nulla, senectus accumsan vestibulum volutpat. Praesent enim, non vitae. Luctus habitasse necessitatibus vel. Iaculis non velit phasellus, nibh platea, laoreet dolor class volutpat nulla blandit, lectus sit pretium tempus et posuere, hendrerit wisi etiam vivamus eget. Duis metus, non auctor at libero pede luctus semper, tortor nunc, consequa volutpa amet, vel congue posuere.</p>
-
-   					 <p>Augue et sollicitudin in commodo ridiculus, nunc nostra in a vel gravida dapibus. Ligula tincidunt, nisl sodales cum nec odio, non sagittis wisi, vestibulum sodales vel eleifend ac. Vivamus fusce nunc ante, blandit vestibulum dui urna elit, ultrices vestibulum sapien neque arcu in, mauris nihil vehicula. At arcu sed commodo, pellentesque duis, nibh mauris convallis eu, ligula condimentum amet nec per, condimentum et quis eu lectus nec vel. At vitae non ornare bibendum massa, sit nunc fringilla,fugit mattis, ea phasellus quis mauris. Elit facilisis, lectus vestibulum vestibulum feugiat et. Suscipit sollicitudin integer, donec mattis ultricies, sit donec maecenas. Nullam vitae vivamus facilisis nec sit vestibulum. Et a sem, duis eget, sit vestibulum neque lectus ante, non metus felis vel est nulla congue. Est tellus, commodo ipsum tempor vel ultricies etiam. Sollicitudin risus amet eros donec, pharetra mollis tempus viverra aptent ante sit, amet consectetuer lorem purus erat in ac, debitis donec leo ac molestiae velit, dolor luctus nulla hic maecenas libero ipsum.</p>
-   					</div>
-
-   			 </div>
-   			</div>
-  			<div class="container col-md-4 col-xs-11">
-  				<div class="card bg-light" style="margin:.5em;">
-  					<div class="card-header">
-  						<h2 class="card-title">Test 123</h2>
-  					</div>
-  					<div class="card-body">
-  						<p>Lorem ipsum dolor sit amet, pede dolor vestibulum, quam consectetuer condimentum aenean vehicula pulvinar cursus, tincidunt sed, turpis nulla, senectus accumsan vestibulum volutpat. Praesent enim, non vitae. Luctus habitasse necessitatibus vel. Iaculis non velit phasellus, nibh platea, laoreet dolor class volutpat nulla blandit, lectus sit pretium tempus et posuere, hendrerit wisi etiam vivamus eget. Duis metus, non auctor at libero pede luctus semper, tortor nunc, consequa volutpa amet, vel congue posuere.</p>
-
-  					 <p>Augue et sollicitudin in commodo ridiculus, nunc nostra in a vel gravida dapibus. Ligula tincidunt, nisl sodales cum nec odio, non sagittis wisi, vestibulum sodales vel eleifend ac. Vivamus fusce nunc ante, blandit vestibulum dui urna elit, ultrices vestibulum sapien neque arcu in, mauris nihil vehicula. At arcu sed commodo, pellentesque duis, nibh mauris convallis eu, ligula condimentum amet nec per, condimentum et quis eu lectus nec vel. At vitae non ornare bibendum massa, sit nunc fringilla,fugit mattis, ea phasellus quis mauris. Elit facilisis, lectus vestibulum vestibulum feugiat et. Suscipit sollicitudin integer, donec mattis ultricies, sit donec maecenas. Nullam vitae vivamus facilisis nec sit vestibulum. Et a sem, duis eget, sit vestibulum neque lectus ante, non metus felis vel est nulla congue. Est tellus, commodo ipsum tempor vel ultricies etiam. Sollicitudin risus amet eros donec, pharetra mollis tempus viverra aptent ante sit, amet consectetuer lorem purus erat in ac, debitis donec leo ac molestiae velit, dolor luctus nulla hic maecenas libero ipsum.</p>
-  					</div>
-
-  			 </div>
-  			</div>
-  		</div>
+    </div>
 
 
 
@@ -151,12 +102,3 @@
   </body>
 
   </html>
-
-
-  <br />
-
-  <br />
-  <h2>Welcome, {{user['_username']}}</h2>
-
-
-  <a href="/logout"><h3>logout</h3></a>
