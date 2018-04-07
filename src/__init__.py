@@ -97,6 +97,10 @@ def logout():
 	response.set_cookie('user', '', expires=0)
 	return response
 
+@app.route('/login')
+def login():
+	return render_template('login.html')
+
 @app.route('/dashboard')
 def dashboard():
 	info = usercalls.getUser(request.cookies.get('user'))
@@ -107,14 +111,32 @@ def dashboard():
 	return redirect(url_for('home'))
 
 
-@app.route("/join")
-def join():
-	return render_template('join-survey.html')
-
 @app.route('/test')
 def test():
 	info = usercalls.getUser(request.cookies.get('user'))
 	return render_template('test.html',user=info)
+
+
+#ADD SURVEYS
+@app.route('/survey/add')
+def addSurvey():
+	info = usercalls.getUser(request.cookies.get('user'))
+	if info:
+		return render_template('add-survey.html')
+
+@app.route('/survey/add/do', methods=['POST'])
+def postSurvey():
+	info = usercalls.getUser(request.cookies.get('user'))
+	if info:
+		questions = request.form['questions']
+		addPost = surveycalls.postSurvey(questions,info)
+		return redirect(url_for(home({'isError': False, 'msg': 'The post was successfully added','title': 'IT WORKED!'})))
+
+@app.route('/join')
+def join():
+	return render_template('joinSurvey.html')
+
+
 
 
 

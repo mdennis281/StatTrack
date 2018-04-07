@@ -3,6 +3,10 @@ import time
 
 surveydb = connect.DBConnect('survey')
 
+
+def postSurvey(questions,user):
+    print(user)
+
 def getSurveys(surveyList):
     total = { 'active': [], 'closed': [], 'overview': {}}
     total['overview']['totalP'] = 0
