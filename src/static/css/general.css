@@ -210,7 +210,7 @@ span {
 .bigbutton:hover {
   cursor: pointer;
   transform: scale(1.01);
-  background-color: #000;
+  background-color: #aaa;
 }
 
 .text-grey {
@@ -251,7 +251,8 @@ span {
 
 
 .can-select {
-  background-color: #888;
+  background: none;
+  border-color: #fff;
   color: #fff;
   transition: all .2s ease-in-out;
 }
@@ -259,7 +260,13 @@ span {
   background-color: #888;
   color: #fff;
   cursor: pointer;
-  transform: scale(1.05) !important;
+  transform: scale(1.02) !important;
+}
+
+.is-selected {
+  background-color: #888;
+  background-image: url('/static/img/textures/t3.png') !important;
+  background-repeat:repeat;
 }
 
 
@@ -278,7 +285,7 @@ span {
 }
 
 .card-style-tvchart .card-header {
-  background-color: #222;
+  background-color: #2224;
   color: #9db2bd;
   padding: 0;
   background-image: url('/static/img/textures/t2.png') !important;

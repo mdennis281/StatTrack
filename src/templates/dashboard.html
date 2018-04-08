@@ -1,6 +1,6 @@
 <div class="container mt-2">
-    <div class="jumbotron style-texture3 text-center">
-      <h1>Survey Overview</h1>
+    <div class="jumbotron style-texture3 text-center pt-3">
+      <h1 class="text-unt">Survey Overview</h1>
       <hr />
 
       <div class="d-flex justify-content-around flex-wrap">
@@ -8,10 +8,10 @@
         <div class="container col-md-4 col-xs-11">
           <div class="card bg-light style-texture3" style="margin:.5em;">
             <div class="card-header">
-              <h3 class="card-title"><span>Total Surveys</span></h3>
+              <h3 class="card-title">Total Surveys</h3>
             </div>
             <div class="card-body text-center">
-              <h3>{{surveys['overview']['totalS']}}</h3>
+              <h3 class="text-unt">{{surveys['overview']['totalS']}}</h3>
             </div>
           </div>
         </div>
@@ -19,10 +19,10 @@
         <div class="container col-md-4 col-xs-11">
           <div class="card bg-light style-texture3" style="margin:.5em;">
             <div class="card-header">
-              <h3 class="card-title"><span>Total Participants</span></h3>
+              <h3 class="card-title">Total Participants</h3>
             </div>
             <div class="card-body text-center">
-              <h3>{{surveys['overview']['totalP']}}</h3>
+              <h3 class="text-unt">{{surveys['overview']['totalP']}}</h3>
             </div>
           </div>
         </div>
@@ -30,10 +30,10 @@
         <div class="container col-md-4 col-xs-11">
           <div class="card bg-light style-texture3" style="margin:.5em;">
             <div class="card-header">
-              <h3 class="card-title"><span>Average Participants</span></h3>
+              <h3 >Average Participants</h3>
             </div>
             <div class="card-body text-center">
-              <h3>{{surveys['overview']['avgP']}}</h3>
+              <h3 class="text-unt">{{surveys['overview']['avgP']}}</h3>
             </div>
           </div>
         </div>
@@ -52,6 +52,8 @@
             <table id="open-table" class="table t-style1 market">
               <thead>
               <tr>
+                <th scope="col">Share</th>
+                <th scope="col">Analyze</th>
                 <th scope="col">Name</th>
                 <th scope="col">Open</th>
                 <th scope="col">Close</th>
@@ -60,7 +62,9 @@
               </thead>
               <tbody>
                 {% for survey in surveys['active'] %}
-                 <tr class="table-select-row" onclick="load_page('/result/{{survey['shareURL']}}')">
+                 <tr>
+                    <td class="bigbutton" onclick="window.location.href = 'https://surveymaster.tech/s/{{survey['shareURL']}}'"><i class="fas fa-share-square hover-grow-sm"></i></td>
+                    <td class="bigbutton" onclick="load_page('/result/{{survey['shareURL']}}')"><i class="fas fa-search-plus"></i></td>
                     <td>{{ survey['title'] }}</td>
                     <td>{{ survey['opened'] }}</td>
                     <td>{{ survey['closed']}}</td>

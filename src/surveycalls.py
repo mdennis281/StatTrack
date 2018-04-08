@@ -74,28 +74,24 @@ def submitSurvey(submission,sID):
     if survey['results'] == []:
         tempList = []
         for x in range(survey['quesCount']):
-            temp = {}
+            temp = []
             if survey['questions'][x]['type'] == 'MC':
                 for y in range(len(survey['questions'][x]['opt'])):
-                    temp[str(y)] = 0
+                    temp.append(0)
             elif survey['questions'][x]['type'] == 'TF':
-                temp[0]=0
-                temp[1]=0
-            elif survey['questions'][x]['type'] == 'R':
-                temp['total'] = []
-            elif survey['questions'][x]['type'] == 'N':
-                temp['total'] = []
+                temp.append(0)
+                temp.append(0)
             tempList.append(temp)
         survey['results'] = tempList
     for x in range(len(submission)):
         if survey['questions'][x]['type'] == 'MC':
-            survey['results'][x][str(submission[x])] += 1
+            survey['results'][x][int(submission[x])] += 1
         elif survey['questions'][x]['type'] == 'TF':
-            survey['results'][x][str(submission[x])] += 1
+            survey['results'][x][int(submission[x])] += 1
         elif survey['questions'][x]['type'] == 'R':
-            survey['results'][x]['total'].append(int(submission[x]))
+            survey['results'][x].append(int(submission[x]))
         elif survey['questions'][x]['type'] == 'N':
-            survey['results'][x]['total'].append(int(submission[x]))
+            survey['results'][x].append(int(submission[x]))
 
     survey['responseCount'] += 1
 

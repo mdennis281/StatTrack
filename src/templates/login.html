@@ -3,8 +3,8 @@
     <div class="card bg-light style-texture3" style="margin:.5em;padding:0;">
       <div class="card-header" style="margin: 0; padding: 0;">
         <div class="row" style="margin: 0; padding: 0;">
-          <a class="btn-primary login_forms col-6" style="border-radius: 0 !important;" onclick="switchForms('login_forms', 'signup_forms')" role="button" >Login</a>
-          <a class="btn-outline-primary signup_forms col-6" onclick="switchForms('signup_forms', 'login_forms')" role="button">Signup</a>
+          <a class="btn-primary login_forms text-center pt-1 pb-1 col-6" style="border-radius: 0 !important; " onclick="switchForms('login_forms', 'signup_forms')" role="button" ><h3>Login</h3></a>
+          <a class="btn-secondary signup_forms text-center pt-1 pb-1 col-6" onclick="switchForms('signup_forms', 'login_forms')" role="button"><h3>Signup</h3></a>
         </div>
       </div>
       <div class="card-body text-center">
@@ -43,9 +43,9 @@ if(c1.style.display == "none")
 else {
   c2.style.display = "none";
 }
-$('.'+id).removeClass('btn-outline-primary');
+$('.'+id).removeClass('btn-secondary');
 $('.'+id).addClass('btn-primary');
-$('.'+id2).addClass('btn-outline-primary');
+$('.'+id2).addClass('btn-secondary');
 $('.'+id2).removeClass('btn-primary');
 }
 </script>

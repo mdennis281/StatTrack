@@ -1,120 +1,3 @@
-<!--Table-->
-<div class="d-flex justify-content-around ">
-  <div class="card bg-light style-texture3 col-11" style="min-width: 45%;">
-    <div class="card-header">
-      <div class="card-title"><span>{{ questions['title'] }}</span>
-        <hr />
-        <div class="card-body">
-          <div class="d-flex justify-content-around flex-wrap">
-          {% set i = 0 %}
-          {% for x in questions['questions'] %}
-            {% set i = (i + 1) %}
-          <!-- begin karousel stuff -->
-          <div class="container col-md-5 col-sm-11 style-texture1 mt-2 mb-2"  style="color: #fff;">
-            <h3>Question #{{i}}:  </h3>
-            <hr />
-            <div class="single-item row"  style="margin: 45px; min-width: 45%; color: #000">
-            <div>   <!-- begin card 1: QueSTIOn -->
-              <div class="card card-mf bg-light">
-                <div class="card-header">
-                  {{ x['question'] }}
-                </div>
-                <div class="card-body">
-                  {% if x['type'] == "MC": %}
-                    <ul class="list-group">
-                      {% if x['opt1'] != "" %}
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                          (a): {{ x['opt1']}}
-                          <span class="badge badge-primary badge-pill">numbers here</span>
-                        </li>
-                      {% endif %}
-                      {% if x['opt2'] != "" %}
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                          (b): {{ x['opt2']}}
-                          <span class="badge badge-primary badge-pill">numbers here</span>
-                        </li>
-                      {% endif %}
-                      {% if x['opt3'] != "" %}
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                          (c): {{ x['opt3']}}
-                          <span class="badge badge-primary badge-pill">numbers here</span>
-                        </li>
-                      {% endif %}
-                      {% if x['opt4'] != "" %}
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                          (d): {{ x['opt4']}}
-                          <span class="badge badge-primary badge-pill">numbers here</span>
-                        </li>
-                      {% endif %}
-                  </ul>
-                  {% endif %}
-                  {% if x['type'] == "TF": %}
-                    <ul class="list-group">
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                          True
-                          <span class="badge badge-primary badge-pill">numbers here</span>
-                        </li>
-                    {% if x['opt2'] != "" %}
-                      <li class="list-group-item d-flex justify-content-between align-items-center">
-                          False
-                          <span class="badge badge-primary badge-pill">numbers here</span>
-                      </li>
-                    {% endif %}
-                  {% endif %}
-                </div>
-              </div>
-            </div>  <!-- end card 1 -->
-            <div>   <!-- begin card 2: PARTICIPANTS/open close times -->
-              <!-- mason inserts PARTICIPANTS/open close times card -->
-            </div>  <!-- end card 2 -->
-            <div>   <!-- begin card 3: CHART -->
-              <div class="card card-mf bg-light ">
-                <div class="card-header">
-                  <h3 class="card-title">CHARTS and GRAPHS</h3> <!-- Not yet done: change span to database title -->
-                  <div class="float-rights hard-right">
-                    <div class="navbar-nav">
-                      <div class="btn-group-vertical btn-group-sm" role="group" aria-label="Basic example" style="padding: 0px;">
-                        <button type="button" class="btn btn-dark" onclick="barchart(questionData)"><i class="fas fa-chart-bar"></i></button>
-                        <button type="button" class="btn btn-dark" onclick="linechart(questionData)"><i class="fas fa-chart-area"></i></button>
-                        <button type="button" class="btn btn-dark" onclick="piechart(questionData)"><i class="fas fa-chart-pie"></i></button>
-                      </div>
-                </div>
-              </div>
-            <hr />
-            <div class="card-body">
-              <canvas id="Graph"></canvas>
-            </div>
-          </div>
-        </div>
-      </div>  <!-- end card 3 -->
-      <div>   <!-- begin card 4: STATS -->
-        <!-- alex inserts STATS card -->
-      </div>  <!-- end card 4 -->
-      </div>
-    </div>
-      {% endfor %}
-    </div>
-  </div>
-</div>
-</div>
-</div>
-</div>
-<!-- this is the slider
-<div class="d-flex justify-content-around flex-wrap">
-  <div class="card bg-light style-texture3 mb-3 mt-2" style="margin: .75">
-    <div class="card-header">
-      <h2 class="card-title text-center">don't light ur nutz on fire kids</h2>
-    </div>
-    <div style="display: inline-block" class="card-body">
-      <div class="slidecontainer md-5">
-        <input style="position: relative" type="range" min="1" max="100" value="50" class="slider" id="myRange">
-        <div id="demo" style="padding-top: 10px">
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
--->
 <script>
   /*var slider = document.getElementById("myRange");
   var output = document.getElementById("demo");
@@ -123,12 +6,20 @@
   slider.oninput = function() {
       output.innerHTML = this.value;
   }*/
+    /*function return_gids(qs){
+      var graph_ids = [];
+      var i;
+        for(i=0;i<qs+1;i++) {
+          graph_ids.push();   this will be the special survey code + qs (question #), pass as loop.index
+                              leave commented until ready to fix
+        }
+      return r;
+      }
+    }*/
   var questionData = [12, 32, 3, 5];
-  var myChart = "";
-   function barchart(data){
-     if(myChart != "")
-      myChart.destroy();
-      var ctx = document.getElementById("Graph");
+
+   function barchart(data,gID,chart){
+      var ctx = document.getElementById(gID);
       myChart = new Chart(ctx, {
           type: 'bar',
           data: {
@@ -152,10 +43,8 @@
           }
         })
     };
-    function linechart(data){
-      if(myChart != "")
-       myChart.destroy();
-       var ctx = document.getElementById("Graph");
+    function linechart(data,gID,chart){
+       var ctx = document.getElementById(gID);
        myChart = new Chart(ctx, {
            type: 'line',
            data: {
@@ -179,10 +68,8 @@
            }
          })
      };
-     function piechart(data){
-       if(myChart != "")
-        myChart.destroy();
-        var ctx = document.getElementById("Graph");
+     function piechart(data,gID,chart){
+        var ctx = document.getElementById(gID);
         myChart = new Chart(ctx, {
             type: 'doughnut',
             data: {
@@ -242,8 +129,201 @@
         }, 2000);
       }, 2000);
     }, 2000);*/
-    barchart(questionData);
     $(".single-item").slick({
          dots: true
     });
 </script>
+
+
+<!--Table-->
+<div class="d-flex justify-content-around ">
+  <div class="card bg-light style-texture3 col-11" style="min-width: 45%;">
+    <div class="card-header">
+      <div class="card-title" style="padding-top: 50px;"><span>{{ questions['title'] }}</span>
+        <hr />
+        <script>
+          var glist = [];
+        </script>
+
+        <div class="card-body">
+          <div class="d-flex justify-content-around flex-wrap">
+          {% for x in questions['questions'] %}
+            {% set qno = loop.index-1 %}
+          <!-- begin karousel stuff -->
+          <div class="container col-md-5 col-sm-11 style-texture1 mt-5 mb-5"  style="color: #fff;">
+            <h3>Question #{{ loop.index }}:  </h3>  <!-- find how to do this mf question # LOL -->
+            <hr />
+            <h4>Type:
+            {% if x['type'] == "MC" %}
+              Multiple Choice
+            {% endif %}
+            {% if x['type'] == "TF" %}
+              True/False
+            {% endif %}
+            {% if x['type'] == "R" %}
+              Input in Range of Values
+            {% endif %}
+            {% if x['type'] == "N" %}
+              Numerical Input
+            {% endif %}
+          </h4>
+            <div class="single-item row"  style="margin: 25px 25px; min-width: 45%; color: #000">
+            <div>   <!-- begin card 1: QueSTIOn -->
+              <div class="card card-mf bg-light">
+                <div class="card-header">
+                  {{ x['question'] }}
+                </div>
+                <div class="card-body">
+                  {% if x['type'] == "MC": %}
+                    <ul class="list-group">
+                      {% if x['opt'][0] != "" %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          (A): {{ x['opt'][0] }}
+                          <span>{{ questions['results'][qno][0] }}</span>
+                        </li>
+                      {% endif %}
+                      {% if x['opt'][1] != "" %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          (B): {{ x['opt'][1]}}
+                          <span>{{ questions['results'][qno][1] }}</span>
+                        </li>
+                      {% endif %}
+                      {% if x['opt'][2] != "" %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          (C): {{ x['opt'][2]}}
+                          <span>{{ questions['results'][qno][2] }}</span>
+                        </li>
+                      {% endif %}
+                      {% if x['opt'][3] != "" %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          (D): {{ x['opt'][3]}}
+                          <span>{{ questions['results'][qno][3] }}</span>
+                        </li>
+                      {% endif %}
+                  </ul>
+                  {% endif %}
+                  {% if x['type'] == "TF": %}
+                    <ul class="list-group">
+<!--                    if x['results(?)'][?] == 1  -->
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          True
+                          <span>{{ questions['results'][qno][0] }}</span>
+                        </li>
+<!--                    if x['results(?)'][?] == 0  -->
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                          False
+                          <span>{{ questions['results'][qno][1] }}</span>
+                      </li>
+<!--                  endif -->
+                  {% endif %}
+                  {% if x['type'] == "R" %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Range:
+                      <span> {{ x['min'] }} - {{ x['max'] }} </span>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      All values:
+                      <span>
+                      {% for i in range(questions['results'][qno]|length) %}
+                       [{{ questions['results'][qno][i] }} ]
+                      {% endfor %}
+                      </span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Mean:
+                      <span>
+                        0
+                      </span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Median:
+                      <span>
+                        0
+                      </span>
+                    </li>
+                  {% endif %}
+                  {% if x['type'] == "N" %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      All values:
+                      <span>
+                      {% for i in range(questions['results'][qno]|length) %}
+                       [{{ questions['results'][qno][i] }} ]
+                      {% endfor %}
+                      </span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Mean:
+                      <span>
+                        0
+                      </span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Median:
+                      <span>
+                        0
+                      </span>
+                    </li>
+                  {% endif %}
+                </div>
+              </div>
+            </div>  <!-- end card 1 -->
+            <div>   <!-- begin card 2: PARTICIPANTS/open close times -->
+              <!-- mason inserts PARTICIPANTS/open close times card -->
+            </div>  <!-- end card 2 -->
+            <div>
+              <script>
+              $(document).ready(function() {
+                var Graph_{{qno}} = '';
+                barchart(questionData,"Graph-{{qno}}",Graph_{{qno}});
+              });
+
+              </script>   <!-- begin card 3: CHART -->
+              <div class="card card-mf bg-light ">
+                <div class="card-header">
+                  <h3 class="card-title">CHARTS and GRAPHS</h3> <!-- Not yet done: change span to database title -->
+                  <div class="float-rights hard-right">
+                    <div class="navbar-nav">
+                      <div class="btn-group-vertical btn-group-sm" role="group" aria-label="Basic example" style="padding: 0px;">
+                        <button type="button" class="btn btn-dark" onclick="Graph_{{qno}}.destroy(); barchart(questionData,'Graph-{{questions['shareURL']}}',Graph_{{qno}})"><i class="fas fa-chart-bar"></i></button>
+                        <button type="button" class="btn btn-dark" onclick="Graph_{{qno}}.destroy(); linechart(questionData,'Graph-{{questions['shareURL']}}',Graph_{{qno}})"><i class="fas fa-chart-area"></i></button>
+                        <button type="button" class="btn btn-dark" onclick="Graph_{{qno}}.destroy(); piechart(questionData,'Graph-{{questions['shareURL']}}',Graph_{{qno}})"><i class="fas fa-chart-pie"></i></button>
+                      </div>
+                </div>
+              </div>
+            <hr />
+            <div class="card-body">
+              <canvas id="Graph-{{qno}}"></canvas> <!-- Graph will be replaced by return_gids(loop.index -->
+
+            </div>
+          </div>
+        </div>
+      </div>  <!-- end card 3 -->
+      <div>   <!-- begin card 4: STATS -->
+        <!-- alex inserts STATS card -->
+      </div>  <!-- end card 4 -->
+      </div>
+    </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<!-- this is the slider
+<div class="d-flex justify-content-around flex-wrap">
+  <div class="card bg-light style-texture3 mb-3 mt-2" style="margin: .75">
+    <div class="card-header">
+      <h2 class="card-title text-center">don't light ur nutz on fire kids</h2>
+    </div>
+    <div style="display: inline-block" class="card-body">
+      <div class="slidecontainer md-5">
+        <input style="position: relative" type="range" min="1" max="100" value="50" class="slider" id="myRange">
+        <div id="demo" style="padding-top: 10px">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+-->
