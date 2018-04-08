@@ -1,0 +1,201 @@
+<!--Table-->
+<div class="d-flex justify-content-around ">
+  <div class="card bg-light style-texture3 col-11" style="min-width: 45%;">
+        <div class="card-body">
+          <div class="d-flex justify-content-around flex-wrap">
+            {{% for x in questions[questions] %}}
+            <div class="card">
+              {{ x['title'] }}
+            </div>
+  <!--
+            <div class="card bg-light col-md-6 col-xs-11" style="min-width: 45%;">
+              <div class="card-header">
+                <h3 class="card-title"><span>Question 1</span></h3>
+                <div class="float-rights hard-right">
+                  <div class="navbar-nav">
+                    <div class="btn-group-vertical btn-group-sm" role="group" aria-label="Basic example" style="padding: 0px;">
+                      <button type="button" class="btn btn-dark" onclick="barchart(questionData)"><i class="fas fa-chart-bar"></i></button>
+                      <button type="button" class="btn btn-dark" onclick="linechart(questionData)"><i class="fas fa-chart-area"></i></button>
+                      <button type="button" class="btn btn-dark" onclick="piechart(questionData)"><i class="fas fa-chart-pie"></i></button>
+                    </div>
+<!--
+                <li class="nav-item dropdown">
+                  <a class="nav-link  hover-grow-sm mt-1" href="#" id="navbarDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   <button type="button" class="btn btn-success">Chart Type</button><i class="fas fa-sort-down ml-1" style="margin-bottom: 10px;"></i>
+                  </a>
+                  <div class="dropdown-menu dd-nav-menu" aria-labelledby="navbarDropdownMenu">
+                    <a class="dropdown-item" onclick="barchart(questionData)"><i style="font-size: 50%" class="fas fa-chart-bar"></i></a>
+                    <a class="dropdown-item" onclick="linechart(questionData)"><i style="font-size: 50%" class="fas fa-chart-area"></i></a>
+                    <a class="dropdown-item" onclick="piechart(questionData)"><i style="font-size: 50%" class="fas fa-chart-pie"></i></a>
+                  </div>
+                </li>
+                  </div>
+              </div>
+!!
+                </div>
+              <br />
+            </div>
+            <div class="card-body">
+              <canvas id="Graph"></canvas>
+            </div>
+          </div>
+        </div>
+  -->
+        {{% endfor %}}
+      </div>
+    </div>
+  </div>
+</div>
+<!--
+!!!
+<a class="dropdown-item" onclick="piechart(questionData)"><i style="font-size: 200%" class="fas fa-chart-pie"></i></a>
+!!!
+<div class="d-flex justify-content-around flex-wrap">
+  <div class="card bg-light style-texture3 mb-3 mt-2" style="margin: .75">
+    <div class="card-header">
+      <h2 class="card-title text-center">don't light ur nutz on fire kids</h2>
+    </div>
+    <div style="display: inline-block" class="card-body">
+      <div class="slidecontainer md-5">
+        <input style="position: relative" type="range" min="1" max="100" value="50" class="slider" id="myRange">
+        <div id="demo" style="padding-top: 10px">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+-->
+<script>
+  /*var slider = document.getElementById("myRange");
+  var output = document.getElementById("demo");
+  output.innerHTML = slider.value; // Display the default slider value
+  // Update the current slider value (each time you drag the slider handle)
+  slider.oninput = function() {
+      output.innerHTML = this.value;
+  }*/
+  var questionData = [12, 32, 3, 5];
+  var myChart = "";
+   function barchart(data){
+     if(myChart != "")
+      myChart.destroy();
+      var ctx = document.getElementById("Graph");
+      myChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+              labels: ["Red", "Blue", "Yellow", "Green"],
+              datasets: [{
+                  label: '# of Votes',
+                  data: questionData,
+                  backgroundColor: getBackground(data.length),
+                  borderColor: getBorder(data.length),
+                  borderWidth: 1
+              }]
+          },
+          options: {
+              scales: {
+                  yAxes: [{
+                      ticks: {
+                          beginAtZero:true
+                      }
+                  }]
+              }
+          }
+        })
+    };
+    function linechart(data){
+      if(myChart != "")
+       myChart.destroy();
+       var ctx = document.getElementById("Graph");
+       myChart = new Chart(ctx, {
+           type: 'line',
+           data: {
+               labels: ["Red", "Blue", "Yellow", "Green"],
+               datasets: [{
+                   label: '# of Votes',
+                   data: questionData,
+                   backgroundColor: getBackground(data.length),
+                   borderColor: getBorder(data.length),
+                   borderWidth: 1
+               }]
+           },
+           options: {
+               scales: {
+                   yAxes: [{
+                       ticks: {
+                           beginAtZero:true
+                       }
+                   }]
+               }
+           }
+         })
+     };
+     function piechart(data){
+       if(myChart != "")
+        myChart.destroy();
+        var ctx = document.getElementById("Graph");
+        myChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ["Red", "Blue", "Yellow", "Green"],
+                datasets: [{
+                    label: '# of Votes',
+                    data: questionData,
+                    backgroundColor: getBackground(data.length),
+                    borderColor: getBorder(data.length),
+                    borderWidth: 1
+                }]
+            }
+          })
+      };
+    function getBackground(num){
+      var colors = [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)'
+      ]
+      var r = [];
+      var i;
+      for (i=0;i<num;i++) {
+        r.push(colors[i]);
+      }
+      return r;
+    }
+    function getBorder(num){
+        var colors = [
+            'rgba(255,99,132,1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+        ]
+        var r = [];
+        var i;
+        for (i=0;i<num;i++) {
+          r.push(colors[i]);
+        }
+        return r;
+      }
+/*
+    setTimeout(function(){
+      myChart.data.datasets[0].data = [10, 25, 32, 11, 12, 6];
+      myChart.update();
+      setTimeout(function(){
+        myChart.data.datasets[0].data = [15, 5, 13, 45, 14, 24];
+        myChart.update();
+        setTimeout(function(){
+          myChart.data.datasets[0].data = [10, 35, 19, 39, 4, 44];
+          myChart.update();
+        }, 2000);
+      }, 2000);
+    }, 2000);*/
+    barchart(questionData);
+    $('.multiple-items').slick({
+      infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 3
+    });
+</script>results

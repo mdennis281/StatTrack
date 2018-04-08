@@ -1,9 +1,11 @@
 <div class="d-flex justify-content-around flex-wrap">
-  <div class="container col-md-2 col-xs-6">
-    <div class="card bg-light style-texture3" style="margin:.5em;">
-      <div class="card-header text-center">
-        <a class="btn btn-primary" onclick="switchForms('login_forms', 'signup_forms')" role="button">Login</a>
-        <a class="btn btn-primary" onclick="switchForms('signup_forms', 'login_forms')" role="button">Signup</a>
+  <div style="min-width: 45%" class="container col-md-4 col-xs-6">
+    <div class="card bg-light style-texture3" style="margin:.5em;padding:0;">
+      <div class="card-header" style="margin: 0; padding: 0;">
+        <div class="row" style="margin: 0; padding: 0;">
+          <a class="btn-primary login_forms col-6" style="border-radius: 0 !important;" onclick="switchForms('login_forms', 'signup_forms')" role="button" >Login</a>
+          <a class="btn-outline-primary signup_forms col-6" onclick="switchForms('signup_forms', 'login_forms')" role="button">Signup</a>
+        </div>
       </div>
       <div class="card-body text-center">
         <div id="login_forms">
@@ -21,7 +23,7 @@
             <input type="password" class="form-control mb-2" name="password" placeholder="Password">
             <input type="password" class="form-control" name="pw-confirm" placeholder="Confirm">
             <br>
-            <input type="submit" class="btn btn-success" value="Sign-up">
+            <input type="submit" class="btn btn-success" value="Create Account">
           </form>
         </div>
       </div>
@@ -41,5 +43,9 @@ if(c1.style.display == "none")
 else {
   c2.style.display = "none";
 }
+$('.'+id).removeClass('btn-outline-primary');
+$('.'+id).addClass('btn-primary');
+$('.'+id2).addClass('btn-outline-primary');
+$('.'+id2).removeClass('btn-primary');
 }
 </script>

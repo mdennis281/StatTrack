@@ -52,7 +52,7 @@ def postSurvey(questions,user):
     return organized
 
 
-def getSurveys(surveyList):
+def getSurveys(surveyList,standardize=None):
     total = { 'active': [], 'closed': [], 'overview': {}}
     total['overview']['totalP'] = 0
     total['overview']['totalS'] = len(surveyList)
@@ -60,8 +60,7 @@ def getSurveys(surveyList):
     for sID in surveyList:
         survey = surveydb.getDict('_id',sID)
         closeTime = survey['start']+survey['duration']
-        total['overview']['totalP'] += survey['totalResponses']
-
+        total['overview']['totalP'] += survey['responseCount']
         if closeTime >= now:
             total['active'].append({
                 'opened': time.strftime('%m/%d/%Y %H:%M', time.localtime(survey['start'])),
@@ -71,10 +70,12 @@ def getSurveys(surveyList):
                 'duration': survey['duration'],
                 'closed': time.strftime('%m/%d/%Y %H:%M', time.localtime(closeTime)),
                 'shareURL': survey['_id'],
-                'rlen': survey['totalResponses'],
+                'rlen': survey['responseCount'],
                 'results': survey['results'],
                 'qlen': len(survey['questions'])
             })
+            if len(surveyList) == 1 and not(standardize):
+                return total['active'][0]
         else:
             total['closed'].append({
                 'opened': time.strftime('%m/%d/%Y %H:%M', time.localtime(survey['start'])),
@@ -88,10 +89,13 @@ def getSurveys(surveyList):
                 'results': survey['results'],
                 'qlen': len(survey['questions'])
             })
-    if len(surveyList) > 0:
-        avgP = total['overview']['totalP']/total['overview']['totalS']
-    else:
-        avgP = 0
+            if len(surveyList) == 1 and not(standardize):
+                return total['closed'][0]
+    if len(surveyList) == 0:
+        total['overview']['avgP'] = '{0:.1f}'.format(0)
+        return total
+
+    avgP = total['overview']['totalP']/total['overview']['totalS']
     total['overview']['avgP'] = '{0:.1f}'.format(avgP)
     return total
 
