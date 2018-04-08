@@ -87,6 +87,8 @@ span {
 }
 
 
+
+
 .card-header .left-section{
   position: absolute;
   font-size: 1em;
@@ -225,6 +227,20 @@ span {
   }
   #footer {
     display: none;
+  }
+  .card-mf {
+    width: 100% !important;
+    border-radius: 0px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .card-mf .car-body {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 

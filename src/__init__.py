@@ -105,7 +105,7 @@ def login():
 def dashboard():
 	info = usercalls.getUser(request.cookies.get('user'))
 	if info:
-		surveys = surveycalls.getSurveys(info['surveys'])
+		surveys = surveycalls.getSurveys(info['surveys'],True)
 
 		return render_template('dashboard.html',user=info,surveys=surveys)
 	return redirect(url_for('home'))
@@ -115,6 +115,12 @@ def dashboard():
 def test():
 	info = usercalls.getUser(request.cookies.get('user'))
 	return render_template('test.html',user=info)
+
+@app.route('/result/<int:sid>')
+def result(sid):
+	info = usercalls.getUser(request.cookies.get('user'))
+	questions = surveycalls.getSurveys([sid])
+	return render_template('results.html',user=info,questions=questions)
 
 
 #ADD SURVEYS
