@@ -29,7 +29,7 @@ def postSurvey(questions,user):
         else:
             organized[id[0]] = { id[1]: questions['questions'][q] }
 
-    resultsVal = {}
+    resultsVal = []
     responsesVal = 0;
     startTime = time.time()
     duration = 7 * 24 * 60 * 60
@@ -47,9 +47,59 @@ def postSurvey(questions,user):
         'end':  endTime
     }
 
+    temp = []
+    for i in range(node['quesCount']):
+        if node['questions']['q'+str(i)]['type'] == 'MC':
+            node['questions']['q'+str(i)]['opt'] = []
+            for x in range(4):
+                if node['questions']['q'+str(i)]['opt'+str(x+1)] != "":
+                    node['questions']['q'+str(i)]['opt'].append(node['questions']['q'+str(i)]['opt'+str(x+1)])
+                node['questions']['q'+str(i)].pop('opt'+str(x+1))
+        temp.append(node['questions']['q'+str(i)])
+
+    node['questions'] = temp
+
+
+
 
     surveydb.update(idVal, node)
     return organized
+
+
+def submitSurvey(submission,sID):
+    global surveydb
+
+    survey = surveydb.getDict('_id',sID)
+
+    if survey['results'] == []:
+        tempList = []
+        for x in range(survey['quesCount']):
+            temp = {}
+            if survey['questions'][x]['type'] == 'MC':
+                for y in range(len(survey['questions'][x]['opt'])):
+                    temp[str(y)] = 0
+            elif survey['questions'][x]['type'] == 'TF':
+                temp[0]=0
+                temp[1]=0
+            elif survey['questions'][x]['type'] == 'R':
+                temp['total'] = []
+            elif survey['questions'][x]['type'] == 'N':
+                temp['total'] = []
+            tempList.append(temp)
+        survey['results'] = tempList
+    for x in range(len(submission)):
+        if survey['questions'][x]['type'] == 'MC':
+            survey['results'][x][str(submission[x])] += 1
+        elif survey['questions'][x]['type'] == 'TF':
+            survey['results'][x][str(submission[x])] += 1
+        elif survey['questions'][x]['type'] == 'R':
+            survey['results'][x]['total'].append(int(submission[x]))
+        elif survey['questions'][x]['type'] == 'N':
+            survey['results'][x]['total'].append(int(submission[x]))
+
+    survey['responseCount'] += 1
+
+    surveydb.update(sID,survey)
 
 
 def getSurveys(surveyList,standardize=None):

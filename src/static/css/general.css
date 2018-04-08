@@ -16,6 +16,10 @@ span {
 	color: #059033;
 }
 
+.text-unt {
+  color: #059033 !important;
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
@@ -236,7 +240,7 @@ span {
     padding-left: 0;
     padding-right: 0;
   }
-  .card-mf .car-body {
+  .card-mf .card-body {
     margin-left: 0;
     margin-right: 0;
     padding-left: 0;
@@ -246,7 +250,17 @@ span {
 
 
 
-
+.can-select {
+  background-color: #888;
+  color: #fff;
+  transition: all .2s ease-in-out;
+}
+.can-select:hover {
+  background-color: #888;
+  color: #fff;
+  cursor: pointer;
+  transform: scale(1.05) !important;
+}
 
 
 

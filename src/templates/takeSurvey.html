@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Survey Master</title>
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap4-charming.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/general.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/datatables.bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/loading.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/notifications.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='js/slick/slick.css') }}"/>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='js/slick/slick-theme.css') }}"/>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap-slider.css') }}"/>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link href="https://fonts.googleapis.com/css?family=Barlow+Condensed|Catamaran|Ubuntu|Work+Sans" rel="stylesheet">
+  <script>
+    var Svalues = [];
+    {% for i in range(questions['qlen']) %}
+      Svalues.push(-1);
+    {% endfor %}
+  </script>
+</head>
+{% set x=0 %}
+<body class="style-texture1" style="overflow-x: hidden;">
+<div class="d-flex justify-content-around mt-5">
+  <div class="card card-style1"  id="welcome" style="min-width: 60%;">
+    <div class="card-header s-2">
+      <h2 class="card-title" >{{questions['title']}}</h2>
+      <h3 class="title-icon-2">0/{{questions['qlen']}}</h3>
+    </div>
+    <div class="card-body" >
+        <div class="d-flex justify-content-around">
+          <div class="card bg-dark text-left" style="max-width: 60%;">
+            <div class="card-header" style="padding:0;">
+              <h3 class="card-title ml-2">Description:</h3>
+            </div>
+            <div class="card-body bg-dark">
+              {{ questions['desc'] }}
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="d-flex justify-content-around">
+          <a class="btn btn-outline-warning btn-lg text-white" role="button" href="/">Check Results</a>
+          <a class="btn btn-outline-success btn-lg text-white" role="button" onclick="swap_div('welcome','q0-card')">Start Survey</a>
+        </div>
+    </div>
+  </div>
+
+    {% for q in questions['questions'] %}
+      <div class="card card-style1 div-hide"  id="q{{loop.index-1}}-card" style="min-width: 60%;">
+        <div class="card-header s-2">
+          <h2 class="card-title" >{{questions['title']}}</h2>
+          <h3 class="title-icon-2">{{loop.index}}/{{questions['qlen']}}</h3>
+        </div>
+        <div class="card-body text-center" >
+          <h3 class="text-black">{{ q['question'] }}</h3>
+          <div class="d-flex justify-content-around flex-wrap">
+
+            {% if q['type'] == 'MC' %}
+                  {% if q['opt'][0]: %}
+                    <div class="card can-select" style="min-width: 75%; margin: .5em; padding:1em;" id="{{loop.index-1}}-0" onclick="Svalues[{{loop.index-1}}] = 0" >{{ q['opt'][0] }}</div>
+                  {% endif %}
+                  {% if q['opt'][1]: %}
+                    <div class="card can-select" style="min-width: 75%; margin: .5em; padding:1em;" id="{{loop.index-1}}-1" onclick="Svalues[{{loop.index-1}}] = 1" >{{ q['opt'][1] }}</div>
+                  {% endif %}
+                  {% if q['opt'][2]: %}
+                    <div class="card can-select" style="min-width: 75%; margin: .5em; padding:1em;" id="{{loop.index-1}}-2" onclick="Svalues[{{loop.index-1}}] = 2" >{{ q['opt'][2] }}</div>
+                  {% endif %}
+                  {% if q['opt'][3]: %}
+                    <div class="card can-select" style="min-width: 75%; margin: .5em; padding:1em;" id="{{loop.index-1}}-3" onclick="Svalues[{{loop.index-1}}] = 3" >{{ q['opt'][3] }}</div>
+                  {% endif %}
+            {% elif q['type'] == 'TF' %}
+              <div class="card can-select" style="min-width: 45%; margin: .5em; padding:1.5em;" id="{{loop.index-1}}-0" onclick="Svalues[{{loop.index-1}}] = 0">
+                False
+              </div>
+              <div class="card can-select" style="min-width: 45%; margin: .5em; padding:1.5em;" id="{{loop.index-1}}-1" onclick="Svalues[{{loop.index-1}}] = 1">
+                True
+              </div>
+
+          {% elif q['type'] == 'R' %}
+          <div class="slidecontainer bg-dark" style="padding: 1em; border-radius: 3px;">
+            <input style="position: relative" type="range" min="{{q['min']}}" max="{{q['max']}}" value="0" class="slider" onchange="Svalues[{{loop.index-1}}] = $(this).val()" id="myRange-{{loop.index-1}}">
+            <div class="d-flex justify-content-between">
+              <h5>{{q['min']}}</h5>
+              <h5 id="show-{{loop.index-1}}">0</h5>
+              <h5>{{q['max']}}</h5>
+            </div>
+          </div>
+          <script>
+            var slider = document.getElementById("myRange-{{loop.index-1}}");
+            var output = document.getElementById("show-{{loop.index-1}}");
+            output.innerHTML = slider.value; // Display the default slider value
+            // Update the current slider value (each time you drag the slider handle)
+            slider.oninput = function() {
+                output.innerHTML = this.value;
+            }
+          </script>
+
+
+
+
+          {% elif q['type'] == 'N' %}
+            <input class="form form-control form-style1" type="text" id="{{loop.index-1}}" onchange="Svalues[{{loop.index-1}}] = $(this).val()" style="max-width: 250px;"/>
+          {% endif %}
+          </div>
+          </div>
+            <div class="card-footer">
+              <div class="float-left">
+                {% if loop.index-1 == 0 %}
+                  <a class="btn btn-style1 text-unt" onclick="swap_div_back('q{{loop.index-1}}-card','welcome');" role="button">Back</a>
+                {% else %}
+                  <a class="btn btn-style1 text-unt" role="button" onclick="swap_div_back('q{{loop.index-1}}-card','q{{loop.index-2}}-card')">Back</a>
+                {% endif %}
+              </div>
+              <div class="float-right">
+                {% if loop.index == (questions['qlen']) %}
+                  <a class="btn btn-success text-white" onclick="if (Svalues[{{loop.index-1}}] == -1){n_error('No value chosen','You must answer every question on this survey!');} else {swap_div('q{{loop.index}}-card','finished'); saveSubmission()}" role="button">Finish</a>
+                {% else %}
+                  <a class="btn btn-style1 text-unt" role="button" onclick="if (Svalues[{{loop.index-1}}] == -1){n_error('No value chosen','You must answer every question on this survey!');} else {swap_div('q{{loop.index-1}}-card','q{{loop.index}}-card')}">Next</a>
+                {% endif %}
+              </div>
+              {% set x = (x+1) %}
+            </div>
+        </div>
+     {% endfor %}
+    </div>
+
+  <!--<div class="card card-style1">
+    <div class="card-header s-2" style="min-width: 60%">
+      <h2 class="card-title">test</h2>
+    </div>
+
+    <div class="card-body">
+      <p>{{questions}}</p>
+    </div>
+  </div> -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  	<script src="{{ url_for('static', filename='js/nav.js') }}"></script>
+  	<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  	<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+  	<script src="{{ url_for('static', filename='js/datatables.min.js') }}"></script>
+  	<script src="{{ url_for('static', filename='js/datatables.bootstrap.min.js') }}"></script>
+  	<script src="{{ url_for('static', filename='js/BSNotify/bootstrap-notify.js') }}"></script>
+  	<script src="{{ url_for('static', filename='js/slick/slick.min.js') }}"></script>
+  	<script src="{{ url_for('static', filename='js/notifications.js')}}" class="omit"></script>
+  	<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/1328_RC04/embed_loader.js"></script>
+  	<script type="text/javascript">
+    function swap_div(oldD,newD) {
+      $('#'+oldD).animateCss('bounceOutDown',function() {
+        $('#'+oldD).addClass('div-hide');
+        $('#'+newD).removeClass('div-hide');
+        $('#'+newD).animateCss('bounceInDown');
+      });
+    }
+    function swap_div_back(oldD,newD) {
+      $('#'+oldD).animateCss('bounceOutUp',function() {
+        $('#'+oldD).addClass('div-hide');
+        $('#'+newD).removeClass('div-hide');
+        $('#'+newD).animateCss('bounceInUp');
+      });
+    }
+
+    function saveSubmission() {
+      $.ajax({
+        type: "POST",
+        contentType: 'application/json; charset=utf-8',
+        url: "/s/{{questions['shareURL']}}/do",
+        data: JSON.stringify({'submission': Svalues}),
+        success: function (msg) {
+          msg = msg.message;
+          n_success('Submission Reveived',msg);
+        }
+      });
+    }
+
+
+
+
+  	</script>
+</body>

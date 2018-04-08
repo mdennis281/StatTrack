@@ -116,11 +116,21 @@ def test():
 	info = usercalls.getUser(request.cookies.get('user'))
 	return render_template('test.html',user=info)
 
-@app.route('/result/<int:sid>')
+@app.route('/result/<sid>')
 def result(sid):
 	info = usercalls.getUser(request.cookies.get('user'))
 	questions = surveycalls.getSurveys([sid])
 	return render_template('results.html',user=info,questions=questions)
+
+@app.route('/s/<sid>')
+def takeSurvey(sid):
+	questions  = surveycalls.getSurveys([sid])
+	return render_template('takeSurvey.html',questions=questions)
+
+@app.route('/s/<sid>/do', methods=['POST'])
+def submitSurvey(sid):
+	surveycalls.submitSurvey(request.get_json()['submission'],sid)
+	return jsonify({ 'message': 'Your survey submission has been received. Thanks for participating!' })
 
 
 #ADD SURVEYS
@@ -137,7 +147,7 @@ def postSurvey():
 
 		questions = request.get_json()
 		addPost = surveycalls.postSurvey(questions,info)
-		return jsonify({ 'message': str(addPost) })
+		return jsonify({ 'message': "Your survey was posted successfully!" })
 		#return redirect(url_for(home({'isError': False, 'msg': 'The post was successfully added','title': 'IT WORKED!'})))
 
 @app.route('/join')
