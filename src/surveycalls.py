@@ -47,6 +47,20 @@ def postSurvey(questions,user):
         'end':  endTime
     }
 
+    temp = []
+    for i in range(node['quesCount']):
+        if node['questions']['q'+str(i)]['type'] == 'MC':
+            node['questions']['q'+str(i)]['opt'] = []
+            for x in range(4):
+                if node['questions']['q'+str(i)]['opt'+str(x+1)] != "":
+                    node['questions']['q'+str(i)]['opt'].append(node['questions']['q'+str(i)]['opt'+str(x+1)])
+                node['questions']['q'+str(i)].pop('opt'+str(x+1))
+        temp.append(node['questions']['q'+str(i)])
+
+    node['questions'] = temp
+
+
+
 
     surveydb.update(idVal, node)
     return organized

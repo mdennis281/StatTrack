@@ -2,63 +2,63 @@
 <div class="d-flex justify-content-around ">
   <div class="card bg-light style-texture3 col-11" style="min-width: 45%;">
     <div class="card-header">
-      <div class="card-title"><span>{{ questions['title'] }}</span>
+      <div class="card-title" style="padding-top: 50px;"><span>{{ questions['title'] }}</span>
         <hr />
         <div class="card-body">
-          <div class="d-flex justify-content-around flex-wrap" style="padding: 40px, 40px;">
+          <div class="d-flex justify-content-around flex-wrap">
           {% for x in questions['questions'] %}
-
           <!-- begin karousel stuff -->
-          <div class="container col-5" style="font-color: #fff; background: #059033;">
-            <h3>Question #: </h3>
+          <div class="container col-md-5 col-sm-11 style-texture1 mt-5 mb-5"  style="color: #fff;">
+            <h3>Question #{{ loop.index }}:  </h3>  <!-- find how to do this mf question # LOL -->
             <hr />
-            <div class="single-item row"  style="min-width: 45%;">
+            <div class="single-item row"  style="margin: 25px 25px; min-width: 45%; color: #000">
             <div>   <!-- begin card 1: QueSTIOn -->
               <div class="card card-mf bg-light">
                 <div class="card-header">
-                  {{ questions['questions'][x]['question'] }}
+                  {{ x['question'] }}
                 </div>
                 <div class="card-body">
-                  {% if questions['questions'][x]['type'] == 'MC': %}
+                  {% if x['type'] == "MC": %}
                     <ul class="list-group">
-                      {% if questions['questions'][x]['opt1'] != "" %}
+                      {% if x['opt'][0] != "" %}
                         <li class="list-group-item d-flex justify-content-between align-items-center">
-                          (a): {{ questions['questions'][x]['opt1']}}
+                          (a): {{ x['opt'][0] }}
                           <span class="badge badge-primary badge-pill">numbers here</span>
                         </li>
                       {% endif %}
-                      {% if questions['questions'][x]['opt2'] != "" %}
+                      {% if x['opt'][1] != "" %}
                         <li class="list-group-item d-flex justify-content-between align-items-center">
-                          (b): {{ questions['questions'][x]['opt2']}}
+                          (b): {{ x['opt'][1]}}
                           <span class="badge badge-primary badge-pill">numbers here</span>
                         </li>
                       {% endif %}
-                      {% if questions['questions'][x]['opt3'] != "" %}
+                      {% if x['opt'][2] != "" %}
                         <li class="list-group-item d-flex justify-content-between align-items-center">
-                          (c): {{ questions['questions'][x]['opt3']}}
+                          (c): {{ x['opt'][2]}}
                           <span class="badge badge-primary badge-pill">numbers here</span>
                         </li>
                       {% endif %}
-                      {% if questions['questions'][x]['opt4'] != "" %}
+                      {% if x['opt'][3] != "" %}
                         <li class="list-group-item d-flex justify-content-between align-items-center">
-                          (d): {{ questions['questions'][x]['opt4']}}
+                          (d): {{ x['opt'][3]}}
                           <span class="badge badge-primary badge-pill">numbers here</span>
                         </li>
                       {% endif %}
                   </ul>
                   {% endif %}
-                  {% if questions['questions'][x]['type'] == "TF": %}
+                  {% if x['type'] == "TF": %}
                     <ul class="list-group">
+<!--                    if x['results(?)'][?] == 1  -->
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                           True
                           <span class="badge badge-primary badge-pill">numbers here</span>
                         </li>
-                    {% if questions['questions'][x]['opt2'] != "" %}
+<!--                    if x['results(?)'][?] == 0  -->
                       <li class="list-group-item d-flex justify-content-between align-items-center">
                           False
                           <span class="badge badge-primary badge-pill">numbers here</span>
                       </li>
-                    {% endif %}
+<!--                  endif -->
                   {% endif %}
                 </div>
               </div>
@@ -81,7 +81,7 @@
               </div>
             <hr />
             <div class="card-body">
-              <canvas id="Graph"></canvas>
+              <canvas id="Graph"></canvas> <!-- Graph will be replaced by return_gids(loop.index -->
             </div>
           </div>
         </div>
@@ -98,8 +98,6 @@
 </div>
 </div>
 </div>
-
-
 <!-- this is the slider
 <div class="d-flex justify-content-around flex-wrap">
   <div class="card bg-light style-texture3 mb-3 mt-2" style="margin: .75">
@@ -125,15 +123,24 @@
       output.innerHTML = this.value;
   }*/
 
+    /*function return_gids(qs){
+      var graph_ids = [];
+      var i;
+        for(i=0;i<qs+1;i++) {
+          graph_ids.push();   this will be the special survey code + qs (question #), pass as loop.index
+                              leave commented until ready to fix
+        }
+      return r;
+      }
+    }*/
+
+
   var questionData = [12, 32, 3, 5];
   var myChart = "";
-
-
    function barchart(data){
      if(myChart != "")
       myChart.destroy();
       var ctx = document.getElementById("Graph");
-
       myChart = new Chart(ctx, {
           type: 'bar',
           data: {
@@ -157,12 +164,10 @@
           }
         })
     };
-
     function linechart(data){
       if(myChart != "")
        myChart.destroy();
        var ctx = document.getElementById("Graph");
-
        myChart = new Chart(ctx, {
            type: 'line',
            data: {
@@ -186,12 +191,10 @@
            }
          })
      };
-
      function piechart(data){
        if(myChart != "")
         myChart.destroy();
         var ctx = document.getElementById("Graph");
-
         myChart = new Chart(ctx, {
             type: 'doughnut',
             data: {
@@ -206,7 +209,6 @@
             }
           })
       };
-
     function getBackground(num){
       var colors = [
           'rgba(255, 99, 132, 0.2)',
@@ -223,8 +225,6 @@
       }
       return r;
     }
-
-
     function getBorder(num){
         var colors = [
             'rgba(255,99,132,1)',
@@ -241,7 +241,6 @@
         }
         return r;
       }
-
 /*
     setTimeout(function(){
       myChart.data.datasets[0].data = [10, 25, 32, 11, 12, 6];
@@ -256,8 +255,7 @@
       }, 2000);
     }, 2000);*/
     barchart(questionData);
-
     $(".single-item").slick({
-	     dots: true
+         dots: true
     });
 </script>
