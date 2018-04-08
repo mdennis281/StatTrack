@@ -3,12 +3,12 @@
   <div class="card bg-light style-texture3 col-11" style="min-width: 45%;">
         <div class="card-body">
           <div class="d-flex justify-content-around flex-wrap">
-<!--            {% for x in questions[questions] %}
-            <div class="card">
-              {% x['title'] %}
-            </div>
--->
-            <div class="card bg-light col-md-6 col-xs-11" style="min-width: 45%;">
+            <!--            python for x in quesions[questions]
+                        <div class="card">
+                          python to access x
+                        </div>
+            -->
+            <div class="card bg-light col-md-6 col-xs-11 .single-item" style="min-width: 45%;">
               <div class="card-header">
                 <h3 class="card-title"><span>Question 1</span></h3>
                 <div class="float-rights hard-right">
@@ -41,7 +41,7 @@
             </div>
           </div>
         </div>
-<!--        {% endfor %} -->
+<!--        endfor -->
       </div>
     </div>
   </div>
@@ -210,5 +210,7 @@
     }, 2000);*/
     barchart(questionData);
 
-    $('.single-item').slick();
+    $(".single-item").slick({
+	     dots: true
+    });
 </script>

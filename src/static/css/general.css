@@ -352,6 +352,24 @@ hr.style-one {
   }
 }
 
+@media screen and (max-width: 600px) {
+
+  .card-mf {
+    width: 100% !important;
+    border-radius: 0px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .card-mf .card-body {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 .btn-style1 {
   background-color: #444;
   color: #78baf8;

@@ -1,59 +1,106 @@
 <!--Table-->
 <div class="d-flex justify-content-around ">
   <div class="card bg-light style-texture3 col-11" style="min-width: 45%;">
+    <div class="card-header">
+      <div class="card-title"><span>{{ questions['title'] }}</span>
+        <hr />
         <div class="card-body">
-          <div class="d-flex justify-content-around flex-wrap">
-<!--            {% for x in questions[questions] %}
-            <div class="card">
-              {% x['title'] %}
-            </div>
--->
-            <div class="card bg-light col-md-6 col-xs-11" style="min-width: 45%;">
-              <div class="card-header">
-                <h3 class="card-title"><span>Question 1</span></h3>
-                <div class="float-rights hard-right">
-                  <div class="navbar-nav">
-                    <div class="btn-group-vertical btn-group-sm" role="group" aria-label="Basic example" style="padding: 0px;">
-                      <button type="button" class="btn btn-dark" onclick="barchart(questionData)"><i class="fas fa-chart-bar"></i></button>
-                      <button type="button" class="btn btn-dark" onclick="linechart(questionData)"><i class="fas fa-chart-area"></i></button>
-                      <button type="button" class="btn btn-dark" onclick="piechart(questionData)"><i class="fas fa-chart-pie"></i></button>
-                    </div>
-<!--
-                <li class="nav-item dropdown">
-                  <a class="nav-link  hover-grow-sm mt-1" href="#" id="navbarDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                   <button type="button" class="btn btn-success">Chart Type</button><i class="fas fa-sort-down ml-1" style="margin-bottom: 10px;"></i>
-                  </a>
-                  <div class="dropdown-menu dd-nav-menu" aria-labelledby="navbarDropdownMenu">
-                    <a class="dropdown-item" onclick="barchart(questionData)"><i style="font-size: 50%" class="fas fa-chart-bar"></i></a>
-                    <a class="dropdown-item" onclick="linechart(questionData)"><i style="font-size: 50%" class="fas fa-chart-area"></i></a>
-                    <a class="dropdown-item" onclick="piechart(questionData)"><i style="font-size: 50%" class="fas fa-chart-pie"></i></a>
-                  </div>
-                </li>
+          <div class="d-flex justify-content-around flex-wrap" style="padding: 40px, 40px;">
+          {% for x in questions['questions'] %}
 
-                  </div>
-              </div>
--->
+          <!-- begin karousel stuff -->
+          <div class="container col-5" style="font-color: #fff; background: #059033;">
+            <h3>Question #: </h3>
+            <hr />
+            <div class="single-item row"  style="min-width: 45%;">
+            <div>   <!-- begin card 1: QueSTIOn -->
+              <div class="card card-mf bg-light">
+                <div class="card-header">
+                  {{ questions['questions'][x]['question'] }}
                 </div>
-              <br />
-            </div>
+                <div class="card-body">
+                  {% if questions['questions'][x]['type'] == 'MC': %}
+                    <ul class="list-group">
+                      {% if questions['questions'][x]['opt1'] != "" %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          (a): {{ questions['questions'][x]['opt1']}}
+                          <span class="badge badge-primary badge-pill">numbers here</span>
+                        </li>
+                      {% endif %}
+                      {% if questions['questions'][x]['opt2'] != "" %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          (b): {{ questions['questions'][x]['opt2']}}
+                          <span class="badge badge-primary badge-pill">numbers here</span>
+                        </li>
+                      {% endif %}
+                      {% if questions['questions'][x]['opt3'] != "" %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          (c): {{ questions['questions'][x]['opt3']}}
+                          <span class="badge badge-primary badge-pill">numbers here</span>
+                        </li>
+                      {% endif %}
+                      {% if questions['questions'][x]['opt4'] != "" %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          (d): {{ questions['questions'][x]['opt4']}}
+                          <span class="badge badge-primary badge-pill">numbers here</span>
+                        </li>
+                      {% endif %}
+                  </ul>
+                  {% endif %}
+                  {% if questions['questions'][x]['type'] == "TF": %}
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          True
+                          <span class="badge badge-primary badge-pill">numbers here</span>
+                        </li>
+                    {% if questions['questions'][x]['opt2'] != "" %}
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                          False
+                          <span class="badge badge-primary badge-pill">numbers here</span>
+                      </li>
+                    {% endif %}
+                  {% endif %}
+                </div>
+              </div>
+            </div>  <!-- end card 1 -->
+            <div>   <!-- begin card 2: PARTICIPANTS/open close times -->
+              <!-- mason inserts PARTICIPANTS/open close times card -->
+            </div>  <!-- end card 2 -->
+            <div>   <!-- begin card 3: CHART -->
+              <div class="card card-mf bg-light ">
+                <div class="card-header">
+                  <h3 class="card-title">CHARTS and GRAPHS</h3> <!-- Not yet done: change span to database title -->
+                  <div class="float-rights hard-right">
+                    <div class="navbar-nav">
+                      <div class="btn-group-vertical btn-group-sm" role="group" aria-label="Basic example" style="padding: 0px;">
+                        <button type="button" class="btn btn-dark" onclick="barchart(questionData)"><i class="fas fa-chart-bar"></i></button>
+                        <button type="button" class="btn btn-dark" onclick="linechart(questionData)"><i class="fas fa-chart-area"></i></button>
+                        <button type="button" class="btn btn-dark" onclick="piechart(questionData)"><i class="fas fa-chart-pie"></i></button>
+                      </div>
+                </div>
+              </div>
+            <hr />
             <div class="card-body">
               <canvas id="Graph"></canvas>
             </div>
           </div>
         </div>
-<!--        {% endfor %} -->
+      </div>  <!-- end card 3 -->
+      <div>   <!-- begin card 4: STATS -->
+        <!-- alex inserts STATS card -->
+      </div>  <!-- end card 4 -->
       </div>
+    </div>
+      {% endfor %}
     </div>
   </div>
 </div>
+</div>
+</div>
+</div>
 
 
-<!--
-
-!!!
-<a class="dropdown-item" onclick="piechart(questionData)"><i style="font-size: 200%" class="fas fa-chart-pie"></i></a>
-!!!
-
+<!-- this is the slider
 <div class="d-flex justify-content-around flex-wrap">
   <div class="card bg-light style-texture3 mb-3 mt-2" style="margin: .75">
     <div class="card-header">
@@ -210,5 +257,7 @@
     }, 2000);*/
     barchart(questionData);
 
-    $('.single-item').slick();
+    $(".single-item").slick({
+	     dots: true
+    });
 </script>

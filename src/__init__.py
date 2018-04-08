@@ -116,7 +116,7 @@ def test():
 	info = usercalls.getUser(request.cookies.get('user'))
 	return render_template('test.html',user=info)
 
-@app.route('/result/<int:sid>')
+@app.route('/result/<sid>')
 def result(sid):
 	info = usercalls.getUser(request.cookies.get('user'))
 	questions = surveycalls.getSurveys([sid])
