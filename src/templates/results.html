@@ -73,15 +73,15 @@
                   <div class="float-rights hard-right">
                     <div class="navbar-nav">
                       <div class="btn-group-vertical btn-group-sm" role="group" aria-label="Basic example" style="padding: 0px;">
-                        <button type="button" class="btn btn-dark" onclick="barchart(questionData)"><i class="fas fa-chart-bar"></i></button>
-                        <button type="button" class="btn btn-dark" onclick="linechart(questionData)"><i class="fas fa-chart-area"></i></button>
-                        <button type="button" class="btn btn-dark" onclick="piechart(questionData)"><i class="fas fa-chart-pie"></i></button>
+                        <button type="button" class="btn btn-dark" onclick="barchart(questionData, 'Graph-{{ loop.index-1 }}')"><i class="fas fa-chart-bar"></i></button>
+                        <button type="button" class="btn btn-dark" onclick="linechart(questionData, 'Graph-{{ loop.index-1 }}')"><i class="fas fa-chart-area"></i></button>
+                        <button type="button" class="btn btn-dark" onclick="piechart(questionData, 'Graph-{{ loop.index-1 }}')"><i class="fas fa-chart-pie"></i></button>
                       </div>
                 </div>
               </div>
             <hr />
             <div class="card-body">
-              <canvas id="Graph"></canvas> <!-- Graph will be replaced by return_gids(loop.index -->
+              <canvas id="Graph-{{ loop.index-1 }}"></canvas> <!-- Graph will be replaced by return_gids(loop.index -->
             </div>
           </div>
         </div>
@@ -137,10 +137,10 @@
 
   var questionData = [12, 32, 3, 5];
   var myChart = "";
-   function barchart(data){
+   function barchart(data, gid){
      if(myChart != "")
       myChart.destroy();
-      var ctx = document.getElementById("Graph");
+      var ctx = document.getElementById(gid);
       myChart = new Chart(ctx, {
           type: 'bar',
           data: {
@@ -164,10 +164,10 @@
           }
         })
     };
-    function linechart(data){
+    function linechart(data, gid){
       if(myChart != "")
        myChart.destroy();
-       var ctx = document.getElementById("Graph");
+       var ctx = document.getElementById(gid);
        myChart = new Chart(ctx, {
            type: 'line',
            data: {
@@ -191,10 +191,10 @@
            }
          })
      };
-     function piechart(data){
+     function piechart(data, gid){
        if(myChart != "")
         myChart.destroy();
-        var ctx = document.getElementById("Graph");
+        var ctx = document.getElementById(gid);
         myChart = new Chart(ctx, {
             type: 'doughnut',
             data: {
@@ -254,7 +254,8 @@
         }, 2000);
       }, 2000);
     }, 2000);*/
-    barchart(questionData);
+    barchart(questionData, 0); /* change later */
+
     $(".single-item").slick({
          dots: true
     });

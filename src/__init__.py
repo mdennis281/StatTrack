@@ -144,7 +144,10 @@ def postSurvey():
 def join():
 	return render_template('joinSurvey.html')
 
-
+@app.route('/worker/<sid>')
+def worker(sid):
+	survey = surveycalls.getSurveys([sid])
+	return jsonify(survey)
 
 
 
