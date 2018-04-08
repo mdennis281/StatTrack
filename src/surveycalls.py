@@ -1,21 +1,55 @@
 from . import connect
 import time
+from random import choice
+from string import ascii_uppercase
 
 surveydb = connect.DBConnect('survey')
-
+userdb = connect.DBConnect('users')
 
 def postSurvey(questions,user):
-    organized ={}
+
+    organized = {}
+    idVal = (''.join(choice(ascii_uppercase) for i in range(5)))
+
+    while surveydb.checkExists('_id', idVal):
+        idVal = (''.join(choice(ascii_uppercase) for i in range(5)))
+
+    user['surveys'].append(idVal);
+    userdb.update(user['_id'],user);
+
+    titleVal = questions['title']
+    descVal = questions['description']
+    q_count = questions['qCount']
+
     for q in questions['questions']:
         id = q.split('-')
+
         if id[0] in organized:
             organized[id[0]][id[1]] = questions['questions'][q]
         else:
             organized[id[0]] = { id[1]: questions['questions'][q] }
 
+    resultsVal = {}
+    responsesVal = 0;
+    startTime = time.time()
+    duration = 7 * 24 * 60 * 60
+    endTime = startTime + duration
+
+    node = {
+        'title':  titleVal,
+        'desc':   descVal,
+        'quesCount': q_count,
+        'questions': organized,
+        'results':  resultsVal,
+        'responseCount': responsesVal,
+        'start':    startTime,
+        'duration': duration,
+        'end':  endTime
+    }
+
+
+    surveydb.update(idVal, node)
     return organized
-
-
 
 
 def getSurveys(surveyList):

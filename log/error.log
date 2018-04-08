@@ -1,0 +1,530 @@
+[Sat Apr 07 18:40:57.065453 2018] [wsgi:error] [pid 13975] [client 75.130.1.27:36112] mod_wsgi (pid=13975): Target WSGI script '/var/www/UNT-Hack/mason/StatTrack/app.wsgi' cannot be loaded as Python module.
+[Sat Apr 07 18:40:57.065513 2018] [wsgi:error] [pid 13975] [client 75.130.1.27:36112] mod_wsgi (pid=13975): Exception occurred processing WSGI script '/var/www/UNT-Hack/mason/StatTrack/app.wsgi'.
+[Sat Apr 07 18:40:57.065551 2018] [wsgi:error] [pid 13975] [client 75.130.1.27:36112] Traceback (most recent call last):
+[Sat Apr 07 18:40:57.065727 2018] [wsgi:error] [pid 13975] [client 75.130.1.27:36112]   File "/var/www/UNT-Hack/mason/StatTrack/app.wsgi", line 7, in <module>
+[Sat Apr 07 18:40:57.065745 2018] [wsgi:error] [pid 13975] [client 75.130.1.27:36112]     from src import app as application
+[Sat Apr 07 18:40:57.065879 2018] [wsgi:error] [pid 13975] [client 75.130.1.27:36112]   File "/var/www/UNT-Hack/mason/StatTrack/src/__init__.py", line 2, in <module>
+[Sat Apr 07 18:40:57.065887 2018] [wsgi:error] [pid 13975] [client 75.130.1.27:36112]     from . import connect, usercalls,surveycalls
+[Sat Apr 07 18:40:57.065913 2018] [wsgi:error] [pid 13975] [client 75.130.1.27:36112]   File "/var/www/UNT-Hack/mason/StatTrack/src/surveycalls.py", line 13
+[Sat Apr 07 18:40:57.065927 2018] [wsgi:error] [pid 13975] [client 75.130.1.27:36112]     id = q.split('-')
+[Sat Apr 07 18:40:57.065950 2018] [wsgi:error] [pid 13975] [client 75.130.1.27:36112]     ^
+[Sat Apr 07 18:40:57.065962 2018] [wsgi:error] [pid 13975] [client 75.130.1.27:36112] IndentationError: unexpected indent
+[Sat Apr 07 18:42:37.935812 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36127] mod_wsgi (pid=14333): Exception occurred processing WSGI script '/var/www/UNT-Hack/mason/StatTrack/app.wsgi'., referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:42:37.935874 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36127] Traceback (most recent call last):, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:42:37.936447 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36127]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1997, in __call__, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:42:37.936456 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36127]     return self.wsgi_app(environ, start_response), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:42:37.936487 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36127]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1985, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:42:37.936494 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36127]     response = self.handle_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:42:37.936519 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36127]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1540, in handle_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:42:37.936525 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36127]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:42:37.936645 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36127]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:42:37.936653 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36127]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:42:37.936680 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36127]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1982, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:42:37.936688 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36127]     response = self.full_dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:42:37.936712 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36127]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1614, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:42:37.936728 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36127]     rv = self.handle_user_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:42:37.936759 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36127]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1517, in handle_user_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:42:37.936767 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36127]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:42:37.936792 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36127]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:42:37.936798 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36127]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:42:37.936821 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36127]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1612, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:42:37.936827 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36127]     rv = self.dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:42:37.936850 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36127]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1598, in dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:42:37.936857 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36127]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:42:37.936997 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36127]   File "/var/www/UNT-Hack/mason/StatTrack/src/__init__.py", line 133, in postSurvey, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:42:37.937005 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36127]     addPost = surveycalls.postSurvey(questions,info), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:42:37.937110 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36127]   File "/var/www/UNT-Hack/mason/StatTrack/src/surveycalls.py", line 9, in postSurvey, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:42:37.937118 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36127]     qc = questions['questionCount'];, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:42:37.937140 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36127] KeyError: 'questionCount', referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:43:58.723259 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36448] mod_wsgi (pid=14333): Exception occurred processing WSGI script '/var/www/UNT-Hack/mason/StatTrack/app.wsgi'., referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:43:58.723302 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36448] Traceback (most recent call last):, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:43:58.723355 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36448]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1997, in __call__, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:43:58.723363 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36448]     return self.wsgi_app(environ, start_response), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:43:58.723389 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36448]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1985, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:43:58.723396 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36448]     response = self.handle_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:43:58.723421 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36448]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1540, in handle_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:43:58.723427 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36448]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:43:58.723462 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36448]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:43:58.723469 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36448]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:43:58.723492 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36448]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1982, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:43:58.723498 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36448]     response = self.full_dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:43:58.723522 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36448]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1614, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:43:58.723528 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36448]     rv = self.handle_user_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:43:58.723560 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36448]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1517, in handle_user_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:43:58.723567 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36448]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:43:58.723591 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36448]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:43:58.723597 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36448]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:43:58.723620 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36448]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1612, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:43:58.723626 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36448]     rv = self.dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:43:58.723649 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36448]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1598, in dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:43:58.723656 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36448]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:43:58.723812 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36448]   File "/var/www/UNT-Hack/mason/StatTrack/src/__init__.py", line 133, in postSurvey, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:43:58.723820 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36448]     addPost = surveycalls.postSurvey(questions,info), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:43:58.723931 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36448]   File "/var/www/UNT-Hack/mason/StatTrack/src/surveycalls.py", line 9, in postSurvey, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:43:58.723939 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36448]     qc = questions['qCount'];, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 18:43:58.723960 2018] [wsgi:error] [pid 14333] [client 75.130.1.27:36448] KeyError: 'questionCount', referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:55:05.309879 2018] [wsgi:error] [pid 15616] [client 75.130.1.27:39383] mod_wsgi (pid=15616): Exception occurred processing WSGI script '/var/www/UNT-Hack/mason/StatTrack/app.wsgi'., referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:55:05.309933 2018] [wsgi:error] [pid 15616] [client 75.130.1.27:39383] Traceback (most recent call last):, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:55:05.310562 2018] [wsgi:error] [pid 15616] [client 75.130.1.27:39383]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1997, in __call__, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:55:05.310580 2018] [wsgi:error] [pid 15616] [client 75.130.1.27:39383]     return self.wsgi_app(environ, start_response), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:55:05.310611 2018] [wsgi:error] [pid 15616] [client 75.130.1.27:39383]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1985, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:55:05.310618 2018] [wsgi:error] [pid 15616] [client 75.130.1.27:39383]     response = self.handle_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:55:05.310645 2018] [wsgi:error] [pid 15616] [client 75.130.1.27:39383]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1540, in handle_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:55:05.310651 2018] [wsgi:error] [pid 15616] [client 75.130.1.27:39383]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:55:05.310779 2018] [wsgi:error] [pid 15616] [client 75.130.1.27:39383]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:55:05.310787 2018] [wsgi:error] [pid 15616] [client 75.130.1.27:39383]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:55:05.310814 2018] [wsgi:error] [pid 15616] [client 75.130.1.27:39383]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1982, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:55:05.310820 2018] [wsgi:error] [pid 15616] [client 75.130.1.27:39383]     response = self.full_dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:55:05.310844 2018] [wsgi:error] [pid 15616] [client 75.130.1.27:39383]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1614, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:55:05.310851 2018] [wsgi:error] [pid 15616] [client 75.130.1.27:39383]     rv = self.handle_user_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:55:05.310874 2018] [wsgi:error] [pid 15616] [client 75.130.1.27:39383]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1517, in handle_user_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:55:05.310880 2018] [wsgi:error] [pid 15616] [client 75.130.1.27:39383]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:55:05.310903 2018] [wsgi:error] [pid 15616] [client 75.130.1.27:39383]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:55:05.310909 2018] [wsgi:error] [pid 15616] [client 75.130.1.27:39383]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:55:05.310932 2018] [wsgi:error] [pid 15616] [client 75.130.1.27:39383]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1612, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:55:05.310938 2018] [wsgi:error] [pid 15616] [client 75.130.1.27:39383]     rv = self.dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:55:05.310961 2018] [wsgi:error] [pid 15616] [client 75.130.1.27:39383]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1598, in dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:55:05.310967 2018] [wsgi:error] [pid 15616] [client 75.130.1.27:39383]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:55:05.311109 2018] [wsgi:error] [pid 15616] [client 75.130.1.27:39383]   File "/var/www/UNT-Hack/mason/StatTrack/src/__init__.py", line 133, in postSurvey, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:55:05.311117 2018] [wsgi:error] [pid 15616] [client 75.130.1.27:39383]     addPost = surveycalls.postSurvey(questions,info), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:55:05.311236 2018] [wsgi:error] [pid 15616] [client 75.130.1.27:39383]   File "/var/www/UNT-Hack/mason/StatTrack/src/surveycalls.py", line 14, in postSurvey, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:55:05.311244 2018] [wsgi:error] [pid 15616] [client 75.130.1.27:39383]     descVal = questions['desc'], referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:55:05.311266 2018] [wsgi:error] [pid 15616] [client 75.130.1.27:39383] KeyError: 'desc', referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:58:59.219204 2018] [wsgi:error] [pid 15838] [client 75.130.1.27:40320] mod_wsgi (pid=15838): Exception occurred processing WSGI script '/var/www/UNT-Hack/mason/StatTrack/app.wsgi'., referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:58:59.219255 2018] [wsgi:error] [pid 15838] [client 75.130.1.27:40320] Traceback (most recent call last):, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:58:59.219873 2018] [wsgi:error] [pid 15838] [client 75.130.1.27:40320]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1997, in __call__, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:58:59.219883 2018] [wsgi:error] [pid 15838] [client 75.130.1.27:40320]     return self.wsgi_app(environ, start_response), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:58:59.219913 2018] [wsgi:error] [pid 15838] [client 75.130.1.27:40320]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1985, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:58:59.219921 2018] [wsgi:error] [pid 15838] [client 75.130.1.27:40320]     response = self.handle_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:58:59.219946 2018] [wsgi:error] [pid 15838] [client 75.130.1.27:40320]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1540, in handle_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:58:59.219953 2018] [wsgi:error] [pid 15838] [client 75.130.1.27:40320]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:58:59.220069 2018] [wsgi:error] [pid 15838] [client 75.130.1.27:40320]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:58:59.220077 2018] [wsgi:error] [pid 15838] [client 75.130.1.27:40320]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:58:59.220104 2018] [wsgi:error] [pid 15838] [client 75.130.1.27:40320]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1982, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:58:59.220111 2018] [wsgi:error] [pid 15838] [client 75.130.1.27:40320]     response = self.full_dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:58:59.220136 2018] [wsgi:error] [pid 15838] [client 75.130.1.27:40320]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1614, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:58:59.220142 2018] [wsgi:error] [pid 15838] [client 75.130.1.27:40320]     rv = self.handle_user_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:58:59.220166 2018] [wsgi:error] [pid 15838] [client 75.130.1.27:40320]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1517, in handle_user_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:58:59.220172 2018] [wsgi:error] [pid 15838] [client 75.130.1.27:40320]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:58:59.220196 2018] [wsgi:error] [pid 15838] [client 75.130.1.27:40320]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:58:59.220202 2018] [wsgi:error] [pid 15838] [client 75.130.1.27:40320]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:58:59.220226 2018] [wsgi:error] [pid 15838] [client 75.130.1.27:40320]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1612, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:58:59.220240 2018] [wsgi:error] [pid 15838] [client 75.130.1.27:40320]     rv = self.dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:58:59.220265 2018] [wsgi:error] [pid 15838] [client 75.130.1.27:40320]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1598, in dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:58:59.220272 2018] [wsgi:error] [pid 15838] [client 75.130.1.27:40320]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:58:59.220396 2018] [wsgi:error] [pid 15838] [client 75.130.1.27:40320]   File "/var/www/UNT-Hack/mason/StatTrack/src/__init__.py", line 133, in postSurvey, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:58:59.220404 2018] [wsgi:error] [pid 15838] [client 75.130.1.27:40320]     addPost = surveycalls.postSurvey(questions,info), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:58:59.220513 2018] [wsgi:error] [pid 15838] [client 75.130.1.27:40320]   File "/var/www/UNT-Hack/mason/StatTrack/src/surveycalls.py", line 34, in postSurvey, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:58:59.220521 2018] [wsgi:error] [pid 15838] [client 75.130.1.27:40320]     'qCount': qCount,, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 19:58:59.220541 2018] [wsgi:error] [pid 15838] [client 75.130.1.27:40320] NameError: name 'qCount' is not defined, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:04:40.803014 2018] [wsgi:error] [pid 16024] [client 75.130.1.27:41695] mod_wsgi (pid=16024): Target WSGI script '/var/www/UNT-Hack/mason/StatTrack/app.wsgi' cannot be loaded as Python module.
+[Sat Apr 07 20:04:40.803070 2018] [wsgi:error] [pid 16024] [client 75.130.1.27:41695] mod_wsgi (pid=16024): Exception occurred processing WSGI script '/var/www/UNT-Hack/mason/StatTrack/app.wsgi'.
+[Sat Apr 07 20:04:40.803106 2018] [wsgi:error] [pid 16024] [client 75.130.1.27:41695] Traceback (most recent call last):
+[Sat Apr 07 20:04:40.803268 2018] [wsgi:error] [pid 16024] [client 75.130.1.27:41695]   File "/var/www/UNT-Hack/mason/StatTrack/app.wsgi", line 7, in <module>
+[Sat Apr 07 20:04:40.803276 2018] [wsgi:error] [pid 16024] [client 75.130.1.27:41695]     from src import app as application
+[Sat Apr 07 20:04:40.803401 2018] [wsgi:error] [pid 16024] [client 75.130.1.27:41695]   File "/var/www/UNT-Hack/mason/StatTrack/src/__init__.py", line 2, in <module>
+[Sat Apr 07 20:04:40.803411 2018] [wsgi:error] [pid 16024] [client 75.130.1.27:41695]     from . import connect, usercalls,surveycalls
+[Sat Apr 07 20:04:40.803433 2018] [wsgi:error] [pid 16024] [client 75.130.1.27:41695]   File "/var/www/UNT-Hack/mason/StatTrack/src/surveycalls.py", line 14
+[Sat Apr 07 20:04:40.803447 2018] [wsgi:error] [pid 16024] [client 75.130.1.27:41695]     while !(surveydb.checkExists('_id', idVal):
+[Sat Apr 07 20:04:40.803472 2018] [wsgi:error] [pid 16024] [client 75.130.1.27:41695]           ^
+[Sat Apr 07 20:04:40.803485 2018] [wsgi:error] [pid 16024] [client 75.130.1.27:41695] SyntaxError: invalid syntax
+[Sat Apr 07 20:04:43.815187 2018] [wsgi:error] [pid 16021] [client 75.130.1.27:41696] mod_wsgi (pid=16021): Target WSGI script '/var/www/UNT-Hack/mason/StatTrack/app.wsgi' cannot be loaded as Python module.
+[Sat Apr 07 20:04:43.815243 2018] [wsgi:error] [pid 16021] [client 75.130.1.27:41696] mod_wsgi (pid=16021): Exception occurred processing WSGI script '/var/www/UNT-Hack/mason/StatTrack/app.wsgi'.
+[Sat Apr 07 20:04:43.815280 2018] [wsgi:error] [pid 16021] [client 75.130.1.27:41696] Traceback (most recent call last):
+[Sat Apr 07 20:04:43.815446 2018] [wsgi:error] [pid 16021] [client 75.130.1.27:41696]   File "/var/www/UNT-Hack/mason/StatTrack/app.wsgi", line 7, in <module>
+[Sat Apr 07 20:04:43.815455 2018] [wsgi:error] [pid 16021] [client 75.130.1.27:41696]     from src import app as application
+[Sat Apr 07 20:04:43.815580 2018] [wsgi:error] [pid 16021] [client 75.130.1.27:41696]   File "/var/www/UNT-Hack/mason/StatTrack/src/__init__.py", line 2, in <module>
+[Sat Apr 07 20:04:43.815600 2018] [wsgi:error] [pid 16021] [client 75.130.1.27:41696]     from . import connect, usercalls,surveycalls
+[Sat Apr 07 20:04:43.815630 2018] [wsgi:error] [pid 16021] [client 75.130.1.27:41696]   File "/var/www/UNT-Hack/mason/StatTrack/src/surveycalls.py", line 14
+[Sat Apr 07 20:04:43.815645 2018] [wsgi:error] [pid 16021] [client 75.130.1.27:41696]     while !(surveydb.checkExists('_id', idVal):
+[Sat Apr 07 20:04:43.815669 2018] [wsgi:error] [pid 16021] [client 75.130.1.27:41696]           ^
+[Sat Apr 07 20:04:43.815681 2018] [wsgi:error] [pid 16021] [client 75.130.1.27:41696] SyntaxError: invalid syntax
+[Sat Apr 07 20:04:50.094621 2018] [wsgi:error] [pid 16025] [client 75.130.1.27:41693] mod_wsgi (pid=16025): Target WSGI script '/var/www/UNT-Hack/mason/StatTrack/app.wsgi' cannot be loaded as Python module.
+[Sat Apr 07 20:04:50.094674 2018] [wsgi:error] [pid 16025] [client 75.130.1.27:41693] mod_wsgi (pid=16025): Exception occurred processing WSGI script '/var/www/UNT-Hack/mason/StatTrack/app.wsgi'.
+[Sat Apr 07 20:04:50.094710 2018] [wsgi:error] [pid 16025] [client 75.130.1.27:41693] Traceback (most recent call last):
+[Sat Apr 07 20:04:50.094878 2018] [wsgi:error] [pid 16025] [client 75.130.1.27:41693]   File "/var/www/UNT-Hack/mason/StatTrack/app.wsgi", line 7, in <module>
+[Sat Apr 07 20:04:50.094886 2018] [wsgi:error] [pid 16025] [client 75.130.1.27:41693]     from src import app as application
+[Sat Apr 07 20:04:50.095034 2018] [wsgi:error] [pid 16025] [client 75.130.1.27:41693]   File "/var/www/UNT-Hack/mason/StatTrack/src/__init__.py", line 2, in <module>
+[Sat Apr 07 20:04:50.095042 2018] [wsgi:error] [pid 16025] [client 75.130.1.27:41693]     from . import connect, usercalls,surveycalls
+[Sat Apr 07 20:04:50.095064 2018] [wsgi:error] [pid 16025] [client 75.130.1.27:41693]   File "/var/www/UNT-Hack/mason/StatTrack/src/surveycalls.py", line 14
+[Sat Apr 07 20:04:50.095077 2018] [wsgi:error] [pid 16025] [client 75.130.1.27:41693]     while !(surveydb.checkExists('_id', idVal):
+[Sat Apr 07 20:04:50.095102 2018] [wsgi:error] [pid 16025] [client 75.130.1.27:41693]           ^
+[Sat Apr 07 20:04:50.095115 2018] [wsgi:error] [pid 16025] [client 75.130.1.27:41693] SyntaxError: invalid syntax
+[Sat Apr 07 20:22:47.951020 2018] [wsgi:error] [pid 16682] [client 75.130.1.27:43945] mod_wsgi (pid=16682): Exception occurred processing WSGI script '/var/www/UNT-Hack/mason/StatTrack/app.wsgi'., referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:22:47.951085 2018] [wsgi:error] [pid 16682] [client 75.130.1.27:43945] Traceback (most recent call last):, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:22:47.951665 2018] [wsgi:error] [pid 16682] [client 75.130.1.27:43945]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1997, in __call__, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:22:47.951674 2018] [wsgi:error] [pid 16682] [client 75.130.1.27:43945]     return self.wsgi_app(environ, start_response), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:22:47.951705 2018] [wsgi:error] [pid 16682] [client 75.130.1.27:43945]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1985, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:22:47.951712 2018] [wsgi:error] [pid 16682] [client 75.130.1.27:43945]     response = self.handle_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:22:47.951740 2018] [wsgi:error] [pid 16682] [client 75.130.1.27:43945]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1540, in handle_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:22:47.951749 2018] [wsgi:error] [pid 16682] [client 75.130.1.27:43945]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:22:47.951869 2018] [wsgi:error] [pid 16682] [client 75.130.1.27:43945]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:22:47.951886 2018] [wsgi:error] [pid 16682] [client 75.130.1.27:43945]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:22:47.951914 2018] [wsgi:error] [pid 16682] [client 75.130.1.27:43945]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1982, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:22:47.951922 2018] [wsgi:error] [pid 16682] [client 75.130.1.27:43945]     response = self.full_dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:22:47.951946 2018] [wsgi:error] [pid 16682] [client 75.130.1.27:43945]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1614, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:22:47.951952 2018] [wsgi:error] [pid 16682] [client 75.130.1.27:43945]     rv = self.handle_user_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:22:47.951976 2018] [wsgi:error] [pid 16682] [client 75.130.1.27:43945]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1517, in handle_user_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:22:47.951982 2018] [wsgi:error] [pid 16682] [client 75.130.1.27:43945]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:22:47.952011 2018] [wsgi:error] [pid 16682] [client 75.130.1.27:43945]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:22:47.952017 2018] [wsgi:error] [pid 16682] [client 75.130.1.27:43945]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:22:47.952040 2018] [wsgi:error] [pid 16682] [client 75.130.1.27:43945]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1612, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:22:47.952047 2018] [wsgi:error] [pid 16682] [client 75.130.1.27:43945]     rv = self.dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:22:47.952083 2018] [wsgi:error] [pid 16682] [client 75.130.1.27:43945]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1598, in dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:22:47.952090 2018] [wsgi:error] [pid 16682] [client 75.130.1.27:43945]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:22:47.952223 2018] [wsgi:error] [pid 16682] [client 75.130.1.27:43945]   File "/var/www/UNT-Hack/mason/StatTrack/src/__init__.py", line 133, in postSurvey, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:22:47.952231 2018] [wsgi:error] [pid 16682] [client 75.130.1.27:43945]     addPost = surveycalls.postSurvey(questions,info), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:22:47.952342 2018] [wsgi:error] [pid 16682] [client 75.130.1.27:43945]   File "/var/www/UNT-Hack/mason/StatTrack/src/surveycalls.py", line 41, in postSurvey, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:22:47.952349 2018] [wsgi:error] [pid 16682] [client 75.130.1.27:43945]     'qCount': qCount,, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:22:47.952371 2018] [wsgi:error] [pid 16682] [client 75.130.1.27:43945] NameError: name 'qCount' is not defined, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:11.334937 2018] [wsgi:error] [pid 16685] [client 75.130.1.27:43946] mod_wsgi (pid=16685): Exception occurred processing WSGI script '/var/www/UNT-Hack/mason/StatTrack/app.wsgi'., referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:11.335004 2018] [wsgi:error] [pid 16685] [client 75.130.1.27:43946] Traceback (most recent call last):, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:11.335606 2018] [wsgi:error] [pid 16685] [client 75.130.1.27:43946]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1997, in __call__, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:11.335616 2018] [wsgi:error] [pid 16685] [client 75.130.1.27:43946]     return self.wsgi_app(environ, start_response), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:11.335659 2018] [wsgi:error] [pid 16685] [client 75.130.1.27:43946]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1985, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:11.335666 2018] [wsgi:error] [pid 16685] [client 75.130.1.27:43946]     response = self.handle_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:11.365097 2018] [wsgi:error] [pid 16685] [client 75.130.1.27:43946]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1540, in handle_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:11.365119 2018] [wsgi:error] [pid 16685] [client 75.130.1.27:43946]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:11.365303 2018] [wsgi:error] [pid 16685] [client 75.130.1.27:43946]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:11.365312 2018] [wsgi:error] [pid 16685] [client 75.130.1.27:43946]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:11.365344 2018] [wsgi:error] [pid 16685] [client 75.130.1.27:43946]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1982, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:11.365351 2018] [wsgi:error] [pid 16685] [client 75.130.1.27:43946]     response = self.full_dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:11.365379 2018] [wsgi:error] [pid 16685] [client 75.130.1.27:43946]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1614, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:11.365386 2018] [wsgi:error] [pid 16685] [client 75.130.1.27:43946]     rv = self.handle_user_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:11.365410 2018] [wsgi:error] [pid 16685] [client 75.130.1.27:43946]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1517, in handle_user_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:11.365417 2018] [wsgi:error] [pid 16685] [client 75.130.1.27:43946]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:11.365441 2018] [wsgi:error] [pid 16685] [client 75.130.1.27:43946]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:11.365447 2018] [wsgi:error] [pid 16685] [client 75.130.1.27:43946]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:11.365471 2018] [wsgi:error] [pid 16685] [client 75.130.1.27:43946]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1612, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:11.365477 2018] [wsgi:error] [pid 16685] [client 75.130.1.27:43946]     rv = self.dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:11.365501 2018] [wsgi:error] [pid 16685] [client 75.130.1.27:43946]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1598, in dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:11.365507 2018] [wsgi:error] [pid 16685] [client 75.130.1.27:43946]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:11.365657 2018] [wsgi:error] [pid 16685] [client 75.130.1.27:43946]   File "/var/www/UNT-Hack/mason/StatTrack/src/__init__.py", line 133, in postSurvey, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:11.365665 2018] [wsgi:error] [pid 16685] [client 75.130.1.27:43946]     addPost = surveycalls.postSurvey(questions,info), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:11.371902 2018] [wsgi:error] [pid 16685] [client 75.130.1.27:43946]   File "/var/www/UNT-Hack/mason/StatTrack/src/surveycalls.py", line 41, in postSurvey, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:11.371921 2018] [wsgi:error] [pid 16685] [client 75.130.1.27:43946]     'qCount': qCount,, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:11.371947 2018] [wsgi:error] [pid 16685] [client 75.130.1.27:43946] NameError: name 'qCount' is not defined, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:13.679363 2018] [wsgi:error] [pid 16684] [client 75.130.1.27:43947] mod_wsgi (pid=16684): Exception occurred processing WSGI script '/var/www/UNT-Hack/mason/StatTrack/app.wsgi'., referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:13.679428 2018] [wsgi:error] [pid 16684] [client 75.130.1.27:43947] Traceback (most recent call last):, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:13.680036 2018] [wsgi:error] [pid 16684] [client 75.130.1.27:43947]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1997, in __call__, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:13.680047 2018] [wsgi:error] [pid 16684] [client 75.130.1.27:43947]     return self.wsgi_app(environ, start_response), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:13.680077 2018] [wsgi:error] [pid 16684] [client 75.130.1.27:43947]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1985, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:13.680084 2018] [wsgi:error] [pid 16684] [client 75.130.1.27:43947]     response = self.handle_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:13.680110 2018] [wsgi:error] [pid 16684] [client 75.130.1.27:43947]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1540, in handle_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:13.680116 2018] [wsgi:error] [pid 16684] [client 75.130.1.27:43947]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:13.680234 2018] [wsgi:error] [pid 16684] [client 75.130.1.27:43947]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:13.680241 2018] [wsgi:error] [pid 16684] [client 75.130.1.27:43947]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:13.680268 2018] [wsgi:error] [pid 16684] [client 75.130.1.27:43947]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1982, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:13.680275 2018] [wsgi:error] [pid 16684] [client 75.130.1.27:43947]     response = self.full_dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:13.680299 2018] [wsgi:error] [pid 16684] [client 75.130.1.27:43947]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1614, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:13.680305 2018] [wsgi:error] [pid 16684] [client 75.130.1.27:43947]     rv = self.handle_user_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:13.680329 2018] [wsgi:error] [pid 16684] [client 75.130.1.27:43947]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1517, in handle_user_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:13.680335 2018] [wsgi:error] [pid 16684] [client 75.130.1.27:43947]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:13.680358 2018] [wsgi:error] [pid 16684] [client 75.130.1.27:43947]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:13.680364 2018] [wsgi:error] [pid 16684] [client 75.130.1.27:43947]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:13.680388 2018] [wsgi:error] [pid 16684] [client 75.130.1.27:43947]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1612, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:13.680394 2018] [wsgi:error] [pid 16684] [client 75.130.1.27:43947]     rv = self.dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:13.680427 2018] [wsgi:error] [pid 16684] [client 75.130.1.27:43947]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1598, in dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:13.680433 2018] [wsgi:error] [pid 16684] [client 75.130.1.27:43947]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:13.680564 2018] [wsgi:error] [pid 16684] [client 75.130.1.27:43947]   File "/var/www/UNT-Hack/mason/StatTrack/src/__init__.py", line 133, in postSurvey, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:13.680571 2018] [wsgi:error] [pid 16684] [client 75.130.1.27:43947]     addPost = surveycalls.postSurvey(questions,info), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:13.680681 2018] [wsgi:error] [pid 16684] [client 75.130.1.27:43947]   File "/var/www/UNT-Hack/mason/StatTrack/src/surveycalls.py", line 41, in postSurvey, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:13.680689 2018] [wsgi:error] [pid 16684] [client 75.130.1.27:43947]     'qCount': qCount,, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:13.680711 2018] [wsgi:error] [pid 16684] [client 75.130.1.27:43947] NameError: name 'qCount' is not defined, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:16.212437 2018] [wsgi:error] [pid 16686] [client 75.130.1.27:43948] mod_wsgi (pid=16686): Exception occurred processing WSGI script '/var/www/UNT-Hack/mason/StatTrack/app.wsgi'., referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:16.212501 2018] [wsgi:error] [pid 16686] [client 75.130.1.27:43948] Traceback (most recent call last):, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:16.213113 2018] [wsgi:error] [pid 16686] [client 75.130.1.27:43948]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1997, in __call__, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:16.213122 2018] [wsgi:error] [pid 16686] [client 75.130.1.27:43948]     return self.wsgi_app(environ, start_response), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:16.213153 2018] [wsgi:error] [pid 16686] [client 75.130.1.27:43948]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1985, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:16.213160 2018] [wsgi:error] [pid 16686] [client 75.130.1.27:43948]     response = self.handle_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:16.213185 2018] [wsgi:error] [pid 16686] [client 75.130.1.27:43948]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1540, in handle_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:16.213191 2018] [wsgi:error] [pid 16686] [client 75.130.1.27:43948]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:16.213306 2018] [wsgi:error] [pid 16686] [client 75.130.1.27:43948]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:16.213314 2018] [wsgi:error] [pid 16686] [client 75.130.1.27:43948]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:16.213340 2018] [wsgi:error] [pid 16686] [client 75.130.1.27:43948]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1982, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:16.213347 2018] [wsgi:error] [pid 16686] [client 75.130.1.27:43948]     response = self.full_dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:16.213371 2018] [wsgi:error] [pid 16686] [client 75.130.1.27:43948]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1614, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:16.213378 2018] [wsgi:error] [pid 16686] [client 75.130.1.27:43948]     rv = self.handle_user_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:16.213410 2018] [wsgi:error] [pid 16686] [client 75.130.1.27:43948]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1517, in handle_user_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:16.213416 2018] [wsgi:error] [pid 16686] [client 75.130.1.27:43948]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:16.213440 2018] [wsgi:error] [pid 16686] [client 75.130.1.27:43948]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:16.213446 2018] [wsgi:error] [pid 16686] [client 75.130.1.27:43948]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:16.213469 2018] [wsgi:error] [pid 16686] [client 75.130.1.27:43948]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1612, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:16.213476 2018] [wsgi:error] [pid 16686] [client 75.130.1.27:43948]     rv = self.dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:16.213499 2018] [wsgi:error] [pid 16686] [client 75.130.1.27:43948]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1598, in dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:16.213505 2018] [wsgi:error] [pid 16686] [client 75.130.1.27:43948]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:16.213636 2018] [wsgi:error] [pid 16686] [client 75.130.1.27:43948]   File "/var/www/UNT-Hack/mason/StatTrack/src/__init__.py", line 133, in postSurvey, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:16.213643 2018] [wsgi:error] [pid 16686] [client 75.130.1.27:43948]     addPost = surveycalls.postSurvey(questions,info), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:16.214824 2018] [wsgi:error] [pid 16686] [client 75.130.1.27:43948]   File "/var/www/UNT-Hack/mason/StatTrack/src/surveycalls.py", line 41, in postSurvey, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:16.214834 2018] [wsgi:error] [pid 16686] [client 75.130.1.27:43948]     'qCount': qCount,, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:23:16.214857 2018] [wsgi:error] [pid 16686] [client 75.130.1.27:43948] NameError: name 'qCount' is not defined, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:24:37.750399 2018] [wsgi:error] [pid 16797] [client 75.130.1.27:43955] mod_wsgi (pid=16797): Exception occurred processing WSGI script '/var/www/UNT-Hack/mason/StatTrack/app.wsgi'., referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:24:37.750574 2018] [wsgi:error] [pid 16797] [client 75.130.1.27:43955] Traceback (most recent call last):, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:24:37.751203 2018] [wsgi:error] [pid 16797] [client 75.130.1.27:43955]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1997, in __call__, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:24:37.751214 2018] [wsgi:error] [pid 16797] [client 75.130.1.27:43955]     return self.wsgi_app(environ, start_response), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:24:37.751248 2018] [wsgi:error] [pid 16797] [client 75.130.1.27:43955]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1985, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:24:37.751255 2018] [wsgi:error] [pid 16797] [client 75.130.1.27:43955]     response = self.handle_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:24:37.751281 2018] [wsgi:error] [pid 16797] [client 75.130.1.27:43955]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1540, in handle_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:24:37.751288 2018] [wsgi:error] [pid 16797] [client 75.130.1.27:43955]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:24:37.751415 2018] [wsgi:error] [pid 16797] [client 75.130.1.27:43955]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:24:37.751433 2018] [wsgi:error] [pid 16797] [client 75.130.1.27:43955]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:24:37.751461 2018] [wsgi:error] [pid 16797] [client 75.130.1.27:43955]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1982, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:24:37.751468 2018] [wsgi:error] [pid 16797] [client 75.130.1.27:43955]     response = self.full_dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:24:37.751492 2018] [wsgi:error] [pid 16797] [client 75.130.1.27:43955]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1614, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:24:37.751498 2018] [wsgi:error] [pid 16797] [client 75.130.1.27:43955]     rv = self.handle_user_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:24:37.751522 2018] [wsgi:error] [pid 16797] [client 75.130.1.27:43955]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1517, in handle_user_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:24:37.751528 2018] [wsgi:error] [pid 16797] [client 75.130.1.27:43955]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:24:37.751551 2018] [wsgi:error] [pid 16797] [client 75.130.1.27:43955]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:24:37.751558 2018] [wsgi:error] [pid 16797] [client 75.130.1.27:43955]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:24:37.751581 2018] [wsgi:error] [pid 16797] [client 75.130.1.27:43955]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1612, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:24:37.751587 2018] [wsgi:error] [pid 16797] [client 75.130.1.27:43955]     rv = self.dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:24:37.751610 2018] [wsgi:error] [pid 16797] [client 75.130.1.27:43955]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1598, in dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:24:37.751623 2018] [wsgi:error] [pid 16797] [client 75.130.1.27:43955]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:24:37.751767 2018] [wsgi:error] [pid 16797] [client 75.130.1.27:43955]   File "/var/www/UNT-Hack/mason/StatTrack/src/__init__.py", line 133, in postSurvey, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:24:37.751775 2018] [wsgi:error] [pid 16797] [client 75.130.1.27:43955]     addPost = surveycalls.postSurvey(questions,info), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:24:37.751887 2018] [wsgi:error] [pid 16797] [client 75.130.1.27:43955]   File "/var/www/UNT-Hack/mason/StatTrack/src/surveycalls.py", line 40, in postSurvey, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:24:37.751895 2018] [wsgi:error] [pid 16797] [client 75.130.1.27:43955]     'qCount': qCount,, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:24:37.751916 2018] [wsgi:error] [pid 16797] [client 75.130.1.27:43955] NameError: name 'qCount' is not defined, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:26:05.399990 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43966] mod_wsgi (pid=16865): Exception occurred processing WSGI script '/var/www/UNT-Hack/mason/StatTrack/app.wsgi'., referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:26:05.400054 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43966] Traceback (most recent call last):, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:26:05.400645 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43966]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1997, in __call__, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:26:05.400664 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43966]     return self.wsgi_app(environ, start_response), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:26:05.400704 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43966]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1985, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:26:05.400712 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43966]     response = self.handle_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:26:05.400739 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43966]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1540, in handle_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:26:05.400745 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43966]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:26:05.400863 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43966]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:26:05.400872 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43966]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:26:05.400899 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43966]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1982, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:26:05.400906 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43966]     response = self.full_dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:26:05.400930 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43966]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1614, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:26:05.400936 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43966]     rv = self.handle_user_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:26:05.400959 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43966]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1517, in handle_user_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:26:05.400965 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43966]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:26:05.400988 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43966]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:26:05.400994 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43966]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:26:05.401017 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43966]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1612, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:26:05.401023 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43966]     rv = self.dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:26:05.401046 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43966]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1598, in dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:26:05.401053 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43966]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:26:05.401181 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43966]   File "/var/www/UNT-Hack/mason/StatTrack/src/__init__.py", line 133, in postSurvey, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:26:05.401189 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43966]     addPost = surveycalls.postSurvey(questions,info), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:26:05.401296 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43966]   File "/var/www/UNT-Hack/mason/StatTrack/src/surveycalls.py", line 40, in postSurvey, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:26:05.401308 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43966]     'qCount': qCount,, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:26:05.401330 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43966] NameError: name 'qCount' is not defined, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:37.218401 2018] [wsgi:error] [pid 16864] [client 75.130.1.27:43983] mod_wsgi (pid=16864): Exception occurred processing WSGI script '/var/www/UNT-Hack/mason/StatTrack/app.wsgi'., referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:37.218466 2018] [wsgi:error] [pid 16864] [client 75.130.1.27:43983] Traceback (most recent call last):, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:37.218964 2018] [wsgi:error] [pid 16864] [client 75.130.1.27:43983]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1997, in __call__, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:37.218975 2018] [wsgi:error] [pid 16864] [client 75.130.1.27:43983]     return self.wsgi_app(environ, start_response), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:37.219017 2018] [wsgi:error] [pid 16864] [client 75.130.1.27:43983]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1985, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:37.219025 2018] [wsgi:error] [pid 16864] [client 75.130.1.27:43983]     response = self.handle_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:37.219051 2018] [wsgi:error] [pid 16864] [client 75.130.1.27:43983]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1540, in handle_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:37.219058 2018] [wsgi:error] [pid 16864] [client 75.130.1.27:43983]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:37.219219 2018] [wsgi:error] [pid 16864] [client 75.130.1.27:43983]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:37.219227 2018] [wsgi:error] [pid 16864] [client 75.130.1.27:43983]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:37.219254 2018] [wsgi:error] [pid 16864] [client 75.130.1.27:43983]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1982, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:37.219261 2018] [wsgi:error] [pid 16864] [client 75.130.1.27:43983]     response = self.full_dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:37.219286 2018] [wsgi:error] [pid 16864] [client 75.130.1.27:43983]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1614, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:37.219293 2018] [wsgi:error] [pid 16864] [client 75.130.1.27:43983]     rv = self.handle_user_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:37.219316 2018] [wsgi:error] [pid 16864] [client 75.130.1.27:43983]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1517, in handle_user_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:37.219323 2018] [wsgi:error] [pid 16864] [client 75.130.1.27:43983]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:37.219347 2018] [wsgi:error] [pid 16864] [client 75.130.1.27:43983]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:37.219353 2018] [wsgi:error] [pid 16864] [client 75.130.1.27:43983]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:37.219377 2018] [wsgi:error] [pid 16864] [client 75.130.1.27:43983]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1612, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:37.219394 2018] [wsgi:error] [pid 16864] [client 75.130.1.27:43983]     rv = self.dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:37.219419 2018] [wsgi:error] [pid 16864] [client 75.130.1.27:43983]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1598, in dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:37.219426 2018] [wsgi:error] [pid 16864] [client 75.130.1.27:43983]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:37.219558 2018] [wsgi:error] [pid 16864] [client 75.130.1.27:43983]   File "/var/www/UNT-Hack/mason/StatTrack/src/__init__.py", line 133, in postSurvey, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:37.219566 2018] [wsgi:error] [pid 16864] [client 75.130.1.27:43983]     addPost = surveycalls.postSurvey(questions,info), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:37.219684 2018] [wsgi:error] [pid 16864] [client 75.130.1.27:43983]   File "/var/www/UNT-Hack/mason/StatTrack/src/surveycalls.py", line 40, in postSurvey, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:37.219692 2018] [wsgi:error] [pid 16864] [client 75.130.1.27:43983]     'qCount': q_count,, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:37.219714 2018] [wsgi:error] [pid 16864] [client 75.130.1.27:43983] NameError: name 'qCount' is not defined, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:53.115667 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43984] mod_wsgi (pid=16865): Exception occurred processing WSGI script '/var/www/UNT-Hack/mason/StatTrack/app.wsgi'., referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:53.115717 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43984] Traceback (most recent call last):, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:53.115773 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43984]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1997, in __call__, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:53.115780 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43984]     return self.wsgi_app(environ, start_response), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:53.115808 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43984]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1985, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:53.115815 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43984]     response = self.handle_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:53.115840 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43984]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1540, in handle_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:53.115846 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43984]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:53.115877 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43984]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:53.115883 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43984]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:53.115908 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43984]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1982, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:53.115914 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43984]     response = self.full_dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:53.115938 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43984]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1614, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:53.115944 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43984]     rv = self.handle_user_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:53.115978 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43984]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1517, in handle_user_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:53.115984 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43984]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:53.116007 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43984]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:53.116014 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43984]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:53.116037 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43984]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1612, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:53.116043 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43984]     rv = self.dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:53.116066 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43984]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1598, in dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:53.116073 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43984]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:53.116098 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43984]   File "/var/www/UNT-Hack/mason/StatTrack/src/__init__.py", line 133, in postSurvey, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:53.116104 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43984]     addPost = surveycalls.postSurvey(questions,info), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:53.116255 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43984]   File "/var/www/UNT-Hack/mason/StatTrack/src/surveycalls.py", line 40, in postSurvey, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:53.116263 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43984]     'qCount': q_count,, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:34:53.116283 2018] [wsgi:error] [pid 16865] [client 75.130.1.27:43984] NameError: name 'qCount' is not defined, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:47:13.107062 2018] [wsgi:error] [pid 16398] [client 75.130.1.27:43865] mod_wsgi (pid=16398): Exception occurred processing WSGI script '/var/www/UNT-Hack/mason/StatTrack/app.wsgi'., referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:47:13.107138 2018] [wsgi:error] [pid 16398] [client 75.130.1.27:43865] Traceback (most recent call last):, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:47:13.108861 2018] [wsgi:error] [pid 16398] [client 75.130.1.27:43865]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1997, in __call__, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:47:13.108873 2018] [wsgi:error] [pid 16398] [client 75.130.1.27:43865]     return self.wsgi_app(environ, start_response), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:47:13.108906 2018] [wsgi:error] [pid 16398] [client 75.130.1.27:43865]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1985, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:47:13.108914 2018] [wsgi:error] [pid 16398] [client 75.130.1.27:43865]     response = self.handle_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:47:13.108940 2018] [wsgi:error] [pid 16398] [client 75.130.1.27:43865]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1540, in handle_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:47:13.108947 2018] [wsgi:error] [pid 16398] [client 75.130.1.27:43865]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:47:13.109151 2018] [wsgi:error] [pid 16398] [client 75.130.1.27:43865]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:47:13.109160 2018] [wsgi:error] [pid 16398] [client 75.130.1.27:43865]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:47:13.109189 2018] [wsgi:error] [pid 16398] [client 75.130.1.27:43865]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1982, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:47:13.109196 2018] [wsgi:error] [pid 16398] [client 75.130.1.27:43865]     response = self.full_dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:47:13.109221 2018] [wsgi:error] [pid 16398] [client 75.130.1.27:43865]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1614, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:47:13.109227 2018] [wsgi:error] [pid 16398] [client 75.130.1.27:43865]     rv = self.handle_user_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:47:13.109251 2018] [wsgi:error] [pid 16398] [client 75.130.1.27:43865]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1517, in handle_user_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:47:13.109257 2018] [wsgi:error] [pid 16398] [client 75.130.1.27:43865]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:47:13.109281 2018] [wsgi:error] [pid 16398] [client 75.130.1.27:43865]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:47:13.109287 2018] [wsgi:error] [pid 16398] [client 75.130.1.27:43865]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:47:13.109311 2018] [wsgi:error] [pid 16398] [client 75.130.1.27:43865]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1612, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:47:13.109317 2018] [wsgi:error] [pid 16398] [client 75.130.1.27:43865]     rv = self.dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:47:13.109341 2018] [wsgi:error] [pid 16398] [client 75.130.1.27:43865]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1598, in dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:47:13.109347 2018] [wsgi:error] [pid 16398] [client 75.130.1.27:43865]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:47:13.109478 2018] [wsgi:error] [pid 16398] [client 75.130.1.27:43865]   File "/var/www/UNT-Hack/mason/StatTrack/src/__init__.py", line 133, in postSurvey, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:47:13.109485 2018] [wsgi:error] [pid 16398] [client 75.130.1.27:43865]     addPost = surveycalls.postSurvey(questions,info), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:47:13.109601 2018] [wsgi:error] [pid 16398] [client 75.130.1.27:43865]   File "/var/www/UNT-Hack/mason/StatTrack/src/surveycalls.py", line 38, in postSurvey, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:47:13.109609 2018] [wsgi:error] [pid 16398] [client 75.130.1.27:43865]     'title':  titleVal,, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:47:13.109631 2018] [wsgi:error] [pid 16398] [client 75.130.1.27:43865] NameError: name 'qCount' is not defined, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:54:11.774941 2018] [wsgi:error] [pid 16117] [client 75.130.1.27:42086] mod_wsgi (pid=16117): Exception occurred processing WSGI script '/var/www/UNT-Hack/mason/StatTrack/app.wsgi'., referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:54:11.775016 2018] [wsgi:error] [pid 16117] [client 75.130.1.27:42086] Traceback (most recent call last):, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:54:11.775627 2018] [wsgi:error] [pid 16117] [client 75.130.1.27:42086]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1997, in __call__, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:54:11.775651 2018] [wsgi:error] [pid 16117] [client 75.130.1.27:42086]     return self.wsgi_app(environ, start_response), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:54:11.805654 2018] [wsgi:error] [pid 16117] [client 75.130.1.27:42086]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1985, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:54:11.805671 2018] [wsgi:error] [pid 16117] [client 75.130.1.27:42086]     response = self.handle_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:54:11.805716 2018] [wsgi:error] [pid 16117] [client 75.130.1.27:42086]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1540, in handle_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:54:11.805725 2018] [wsgi:error] [pid 16117] [client 75.130.1.27:42086]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:54:11.805886 2018] [wsgi:error] [pid 16117] [client 75.130.1.27:42086]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:54:11.805895 2018] [wsgi:error] [pid 16117] [client 75.130.1.27:42086]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:54:11.805924 2018] [wsgi:error] [pid 16117] [client 75.130.1.27:42086]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1982, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:54:11.805931 2018] [wsgi:error] [pid 16117] [client 75.130.1.27:42086]     response = self.full_dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:54:11.805957 2018] [wsgi:error] [pid 16117] [client 75.130.1.27:42086]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1614, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:54:11.805963 2018] [wsgi:error] [pid 16117] [client 75.130.1.27:42086]     rv = self.handle_user_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:54:11.805988 2018] [wsgi:error] [pid 16117] [client 75.130.1.27:42086]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1517, in handle_user_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:54:11.805994 2018] [wsgi:error] [pid 16117] [client 75.130.1.27:42086]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:54:11.806019 2018] [wsgi:error] [pid 16117] [client 75.130.1.27:42086]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:54:11.806025 2018] [wsgi:error] [pid 16117] [client 75.130.1.27:42086]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:54:11.806049 2018] [wsgi:error] [pid 16117] [client 75.130.1.27:42086]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1612, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:54:11.806055 2018] [wsgi:error] [pid 16117] [client 75.130.1.27:42086]     rv = self.dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:54:11.806079 2018] [wsgi:error] [pid 16117] [client 75.130.1.27:42086]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1598, in dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:54:11.806086 2018] [wsgi:error] [pid 16117] [client 75.130.1.27:42086]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:54:11.806226 2018] [wsgi:error] [pid 16117] [client 75.130.1.27:42086]   File "/var/www/UNT-Hack/mason/StatTrack/src/__init__.py", line 133, in postSurvey, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:54:11.806234 2018] [wsgi:error] [pid 16117] [client 75.130.1.27:42086]     addPost = surveycalls.postSurvey(questions,info), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:54:11.806359 2018] [wsgi:error] [pid 16117] [client 75.130.1.27:42086]   File "/var/www/UNT-Hack/mason/StatTrack/src/surveycalls.py", line 38, in postSurvey, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:54:11.806367 2018] [wsgi:error] [pid 16117] [client 75.130.1.27:42086]     node = {, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:54:11.806391 2018] [wsgi:error] [pid 16117] [client 75.130.1.27:42086] NameError: name 'qCount' is not defined, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:55:08.203988 2018] [wsgi:error] [pid 17471] [client 75.130.1.27:44055] mod_wsgi (pid=17471): Exception occurred processing WSGI script '/var/www/UNT-Hack/mason/StatTrack/app.wsgi'., referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:55:08.204053 2018] [wsgi:error] [pid 17471] [client 75.130.1.27:44055] Traceback (most recent call last):, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:55:08.204540 2018] [wsgi:error] [pid 17471] [client 75.130.1.27:44055]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1997, in __call__, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:55:08.204549 2018] [wsgi:error] [pid 17471] [client 75.130.1.27:44055]     return self.wsgi_app(environ, start_response), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:55:08.204579 2018] [wsgi:error] [pid 17471] [client 75.130.1.27:44055]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1985, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:55:08.204586 2018] [wsgi:error] [pid 17471] [client 75.130.1.27:44055]     response = self.handle_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:55:08.204612 2018] [wsgi:error] [pid 17471] [client 75.130.1.27:44055]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1540, in handle_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:55:08.204619 2018] [wsgi:error] [pid 17471] [client 75.130.1.27:44055]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:55:08.204780 2018] [wsgi:error] [pid 17471] [client 75.130.1.27:44055]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:55:08.204789 2018] [wsgi:error] [pid 17471] [client 75.130.1.27:44055]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:55:08.204825 2018] [wsgi:error] [pid 17471] [client 75.130.1.27:44055]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1982, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:55:08.204832 2018] [wsgi:error] [pid 17471] [client 75.130.1.27:44055]     response = self.full_dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:55:08.204858 2018] [wsgi:error] [pid 17471] [client 75.130.1.27:44055]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1614, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:55:08.204865 2018] [wsgi:error] [pid 17471] [client 75.130.1.27:44055]     rv = self.handle_user_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:55:08.204889 2018] [wsgi:error] [pid 17471] [client 75.130.1.27:44055]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1517, in handle_user_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:55:08.204895 2018] [wsgi:error] [pid 17471] [client 75.130.1.27:44055]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:55:08.204919 2018] [wsgi:error] [pid 17471] [client 75.130.1.27:44055]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:55:08.204925 2018] [wsgi:error] [pid 17471] [client 75.130.1.27:44055]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:55:08.204949 2018] [wsgi:error] [pid 17471] [client 75.130.1.27:44055]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1612, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:55:08.204966 2018] [wsgi:error] [pid 17471] [client 75.130.1.27:44055]     rv = self.dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:55:08.204997 2018] [wsgi:error] [pid 17471] [client 75.130.1.27:44055]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1598, in dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:55:08.205004 2018] [wsgi:error] [pid 17471] [client 75.130.1.27:44055]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:55:08.205136 2018] [wsgi:error] [pid 17471] [client 75.130.1.27:44055]   File "/var/www/UNT-Hack/mason/StatTrack/src/__init__.py", line 108, in dashboard, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:55:08.205144 2018] [wsgi:error] [pid 17471] [client 75.130.1.27:44055]     surveys = surveycalls.getSurveys(info['surveys']), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:55:08.205260 2018] [wsgi:error] [pid 17471] [client 75.130.1.27:44055]   File "/var/www/UNT-Hack/mason/StatTrack/src/surveycalls.py", line 63, in getSurveys, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:55:08.205268 2018] [wsgi:error] [pid 17471] [client 75.130.1.27:44055]     total['overview']['totalP'] += survey['totalResponses'], referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:55:08.205291 2018] [wsgi:error] [pid 17471] [client 75.130.1.27:44055] KeyError: 'totalResponses', referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:57:20.954940 2018] [wsgi:error] [pid 16404] [client 75.130.1.27:43551] mod_wsgi (pid=16404): Exception occurred processing WSGI script '/var/www/UNT-Hack/mason/StatTrack/app.wsgi'., referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:57:20.955019 2018] [wsgi:error] [pid 16404] [client 75.130.1.27:43551] Traceback (most recent call last):, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:57:20.982606 2018] [wsgi:error] [pid 16404] [client 75.130.1.27:43551]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1997, in __call__, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:57:20.982638 2018] [wsgi:error] [pid 16404] [client 75.130.1.27:43551]     return self.wsgi_app(environ, start_response), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:57:20.982685 2018] [wsgi:error] [pid 16404] [client 75.130.1.27:43551]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1985, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:57:20.982693 2018] [wsgi:error] [pid 16404] [client 75.130.1.27:43551]     response = self.handle_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:57:20.982722 2018] [wsgi:error] [pid 16404] [client 75.130.1.27:43551]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1540, in handle_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:57:20.982729 2018] [wsgi:error] [pid 16404] [client 75.130.1.27:43551]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:57:20.982897 2018] [wsgi:error] [pid 16404] [client 75.130.1.27:43551]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:57:20.982906 2018] [wsgi:error] [pid 16404] [client 75.130.1.27:43551]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:57:20.982935 2018] [wsgi:error] [pid 16404] [client 75.130.1.27:43551]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1982, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:57:20.982942 2018] [wsgi:error] [pid 16404] [client 75.130.1.27:43551]     response = self.full_dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:57:20.982967 2018] [wsgi:error] [pid 16404] [client 75.130.1.27:43551]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1614, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:57:20.982989 2018] [wsgi:error] [pid 16404] [client 75.130.1.27:43551]     rv = self.handle_user_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:57:20.983017 2018] [wsgi:error] [pid 16404] [client 75.130.1.27:43551]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1517, in handle_user_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:57:20.983023 2018] [wsgi:error] [pid 16404] [client 75.130.1.27:43551]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:57:20.983048 2018] [wsgi:error] [pid 16404] [client 75.130.1.27:43551]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:57:20.983054 2018] [wsgi:error] [pid 16404] [client 75.130.1.27:43551]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:57:20.983078 2018] [wsgi:error] [pid 16404] [client 75.130.1.27:43551]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1612, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:57:20.983084 2018] [wsgi:error] [pid 16404] [client 75.130.1.27:43551]     rv = self.dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:57:20.983108 2018] [wsgi:error] [pid 16404] [client 75.130.1.27:43551]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1598, in dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:57:20.983114 2018] [wsgi:error] [pid 16404] [client 75.130.1.27:43551]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:57:20.983255 2018] [wsgi:error] [pid 16404] [client 75.130.1.27:43551]   File "/var/www/UNT-Hack/mason/StatTrack/src/__init__.py", line 133, in postSurvey, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:57:20.983263 2018] [wsgi:error] [pid 16404] [client 75.130.1.27:43551]     addPost = surveycalls.postSurvey(questions,info), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:57:20.983382 2018] [wsgi:error] [pid 16404] [client 75.130.1.27:43551]   File "/var/www/UNT-Hack/mason/StatTrack/src/surveycalls.py", line 38, in postSurvey, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:57:20.983390 2018] [wsgi:error] [pid 16404] [client 75.130.1.27:43551]     node = {, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 20:57:20.983414 2018] [wsgi:error] [pid 16404] [client 75.130.1.27:43551] NameError: name 'qCount' is not defined, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:24.927512 2018] [wsgi:error] [pid 17470] [client 75.130.1.27:44080] mod_wsgi (pid=17470): Exception occurred processing WSGI script '/var/www/UNT-Hack/mason/StatTrack/app.wsgi'., referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:24.927576 2018] [wsgi:error] [pid 17470] [client 75.130.1.27:44080] Traceback (most recent call last):, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:24.928151 2018] [wsgi:error] [pid 17470] [client 75.130.1.27:44080]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1997, in __call__, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:24.928162 2018] [wsgi:error] [pid 17470] [client 75.130.1.27:44080]     return self.wsgi_app(environ, start_response), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:24.928196 2018] [wsgi:error] [pid 17470] [client 75.130.1.27:44080]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1985, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:24.928204 2018] [wsgi:error] [pid 17470] [client 75.130.1.27:44080]     response = self.handle_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:24.928232 2018] [wsgi:error] [pid 17470] [client 75.130.1.27:44080]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1540, in handle_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:24.928239 2018] [wsgi:error] [pid 17470] [client 75.130.1.27:44080]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:24.928373 2018] [wsgi:error] [pid 17470] [client 75.130.1.27:44080]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:24.928381 2018] [wsgi:error] [pid 17470] [client 75.130.1.27:44080]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:24.928407 2018] [wsgi:error] [pid 17470] [client 75.130.1.27:44080]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1982, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:24.928414 2018] [wsgi:error] [pid 17470] [client 75.130.1.27:44080]     response = self.full_dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:24.928440 2018] [wsgi:error] [pid 17470] [client 75.130.1.27:44080]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1614, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:24.928446 2018] [wsgi:error] [pid 17470] [client 75.130.1.27:44080]     rv = self.handle_user_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:24.928470 2018] [wsgi:error] [pid 17470] [client 75.130.1.27:44080]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1517, in handle_user_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:24.928476 2018] [wsgi:error] [pid 17470] [client 75.130.1.27:44080]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:24.928499 2018] [wsgi:error] [pid 17470] [client 75.130.1.27:44080]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:24.928505 2018] [wsgi:error] [pid 17470] [client 75.130.1.27:44080]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:24.928528 2018] [wsgi:error] [pid 17470] [client 75.130.1.27:44080]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1612, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:24.928535 2018] [wsgi:error] [pid 17470] [client 75.130.1.27:44080]     rv = self.dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:24.928558 2018] [wsgi:error] [pid 17470] [client 75.130.1.27:44080]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1598, in dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:24.928564 2018] [wsgi:error] [pid 17470] [client 75.130.1.27:44080]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:24.928692 2018] [wsgi:error] [pid 17470] [client 75.130.1.27:44080]   File "/var/www/UNT-Hack/mason/StatTrack/src/__init__.py", line 108, in dashboard, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:24.928701 2018] [wsgi:error] [pid 17470] [client 75.130.1.27:44080]     surveys = surveycalls.getSurveys(info['surveys']), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:24.928819 2018] [wsgi:error] [pid 17470] [client 75.130.1.27:44080]   File "/var/www/UNT-Hack/mason/StatTrack/src/surveycalls.py", line 62, in getSurveys, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:24.928826 2018] [wsgi:error] [pid 17470] [client 75.130.1.27:44080]     closeTime = survey['start']+survey['duration'], referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:24.928853 2018] [wsgi:error] [pid 17470] [client 75.130.1.27:44080] KeyError: 'start', referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:30.039275 2018] [wsgi:error] [pid 17469] [client 75.130.1.27:44081] mod_wsgi (pid=17469): Exception occurred processing WSGI script '/var/www/UNT-Hack/mason/StatTrack/app.wsgi'., referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:30.039335 2018] [wsgi:error] [pid 17469] [client 75.130.1.27:44081] Traceback (most recent call last):, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:30.039911 2018] [wsgi:error] [pid 17469] [client 75.130.1.27:44081]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1997, in __call__, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:30.039922 2018] [wsgi:error] [pid 17469] [client 75.130.1.27:44081]     return self.wsgi_app(environ, start_response), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:30.039954 2018] [wsgi:error] [pid 17469] [client 75.130.1.27:44081]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1985, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:30.039961 2018] [wsgi:error] [pid 17469] [client 75.130.1.27:44081]     response = self.handle_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:30.039986 2018] [wsgi:error] [pid 17469] [client 75.130.1.27:44081]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1540, in handle_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:30.039993 2018] [wsgi:error] [pid 17469] [client 75.130.1.27:44081]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:30.040112 2018] [wsgi:error] [pid 17469] [client 75.130.1.27:44081]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:30.040120 2018] [wsgi:error] [pid 17469] [client 75.130.1.27:44081]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:30.040147 2018] [wsgi:error] [pid 17469] [client 75.130.1.27:44081]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1982, in wsgi_app, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:30.040153 2018] [wsgi:error] [pid 17469] [client 75.130.1.27:44081]     response = self.full_dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:30.040180 2018] [wsgi:error] [pid 17469] [client 75.130.1.27:44081]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1614, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:30.040187 2018] [wsgi:error] [pid 17469] [client 75.130.1.27:44081]     rv = self.handle_user_exception(e), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:30.040211 2018] [wsgi:error] [pid 17469] [client 75.130.1.27:44081]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1517, in handle_user_exception, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:30.040217 2018] [wsgi:error] [pid 17469] [client 75.130.1.27:44081]     reraise(exc_type, exc_value, tb), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:30.040240 2018] [wsgi:error] [pid 17469] [client 75.130.1.27:44081]   File "/usr/local/lib/python3.4/dist-packages/flask/_compat.py", line 33, in reraise, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:30.040247 2018] [wsgi:error] [pid 17469] [client 75.130.1.27:44081]     raise value, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:30.040270 2018] [wsgi:error] [pid 17469] [client 75.130.1.27:44081]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1612, in full_dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:30.040276 2018] [wsgi:error] [pid 17469] [client 75.130.1.27:44081]     rv = self.dispatch_request(), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:30.040300 2018] [wsgi:error] [pid 17469] [client 75.130.1.27:44081]   File "/usr/local/lib/python3.4/dist-packages/flask/app.py", line 1598, in dispatch_request, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:30.040306 2018] [wsgi:error] [pid 17469] [client 75.130.1.27:44081]     return self.view_functions[rule.endpoint](**req.view_args), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:30.040438 2018] [wsgi:error] [pid 17469] [client 75.130.1.27:44081]   File "/var/www/UNT-Hack/mason/StatTrack/src/__init__.py", line 108, in dashboard, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:30.040446 2018] [wsgi:error] [pid 17469] [client 75.130.1.27:44081]     surveys = surveycalls.getSurveys(info['surveys']), referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:30.040565 2018] [wsgi:error] [pid 17469] [client 75.130.1.27:44081]   File "/var/www/UNT-Hack/mason/StatTrack/src/surveycalls.py", line 62, in getSurveys, referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:30.040573 2018] [wsgi:error] [pid 17469] [client 75.130.1.27:44081]     closeTime = survey['start']+survey['duration'], referer: http://mason.cryptotrack.live/
+[Sat Apr 07 21:04:30.040600 2018] [wsgi:error] [pid 17469] [client 75.130.1.27:44081] KeyError: 'start', referer: http://mason.cryptotrack.live/
