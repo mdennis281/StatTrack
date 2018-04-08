@@ -105,16 +105,21 @@ def login():
 def dashboard():
 	info = usercalls.getUser(request.cookies.get('user'))
 	if info:
-		surveys = surveycalls.getSurveys(info['surveys'])
+		surveys = surveycalls.getSurveys(info['surveys'],True)
 
 		return render_template('dashboard.html',user=info,surveys=surveys)
 	return redirect(url_for('home'))
 
 
-@app.route('/result/<int:UID>')
-def test(UID):
+@app.route('/test')
+def test():
 	info = usercalls.getUser(request.cookies.get('user'))
-	questions = surveycalls.getSurveys([UID])
+	return render_template('test.html',user=info)
+
+@app.route('/result/<int:sid>')
+def result(sid):
+	info = usercalls.getUser(request.cookies.get('user'))
+	questions = surveycalls.getSurveys([sid])
 	return render_template('results.html',user=info,questions=questions)
 
 
@@ -123,15 +128,17 @@ def test(UID):
 def addSurvey():
 	info = usercalls.getUser(request.cookies.get('user'))
 	if info:
-		return render_template('add-survey.html')
+		return render_template('addSurvey.html')
 
 @app.route('/survey/add/do', methods=['POST'])
 def postSurvey():
 	info = usercalls.getUser(request.cookies.get('user'))
 	if info:
-		questions = request.form['questions']
+
+		questions = request.get_json()
 		addPost = surveycalls.postSurvey(questions,info)
-		return redirect(url_for(home({'isError': False, 'msg': 'The post was successfully added','title': 'IT WORKED!'})))
+		return jsonify({ 'message': str(addPost) })
+		#return redirect(url_for(home({'isError': False, 'msg': 'The post was successfully added','title': 'IT WORKED!'})))
 
 @app.route('/join')
 def join():
