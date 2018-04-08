@@ -1,1 +1,45 @@
-<h1>LOGIN.HTML NEEDS WURK</h1> 
+<div class="d-flex justify-content-around flex-wrap">
+  <div style="min-width: 45%" class="container col-md-4 col-xs-6">
+    <div class="card bg-light style-texture3" style="margin:.5em;">
+      <div class="card-header text-center">
+        <a class="btn btn-primary" onclick="switchForms('login_forms', 'signup_forms')" role="button">Login</a>
+        <a class="btn btn-primary" onclick="switchForms('signup_forms', 'login_forms')" role="button">Signup</a>
+      </div>
+      <div class="card-body text-center">
+        <div id="login_forms">
+          <form id="loginForm" style="display: inline-block;" method="post" action="/login/do">
+                    <input type="text" class="form-control mb-2" name="username" placeholder="Username">
+                    <input type="password" class="form-control"  name="password" placeholder="Password">
+                    <br>
+                    <input type="submit" class="btn btn-success" value="Login">
+          </form>
+        </div>
+        <div style="display:none" id="signup_forms">
+          <form id="signupForm" style="display: inline-block;" method="post" action="/signup/do">
+            <input type="text" class="form-control mb-2" name="username" placeholder="Username">
+            <input type="email" class="form-control mb-2" name="email" placeholder="Email">
+            <input type="password" class="form-control mb-2" name="password" placeholder="Password">
+            <input type="password" class="form-control" name="pw-confirm" placeholder="Confirm">
+            <br>
+            <input type="submit" class="btn btn-success" value="Sign-up">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+function switchForms(id, id2)
+{
+var c1 = document.getElementById(id);
+var c2 = document.getElementById(id2);
+if(c1.style.display == "none")
+{
+  c1.style.display = "block";
+  c2.style.display = "none";
+}
+else {
+  c2.style.display = "none";
+}
+}
+</script>

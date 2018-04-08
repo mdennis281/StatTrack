@@ -111,10 +111,11 @@ def dashboard():
 	return redirect(url_for('home'))
 
 
-@app.route('/test')
-def test():
+@app.route('/result/<int:UID>')
+def test(UID):
 	info = usercalls.getUser(request.cookies.get('user'))
-	return render_template('test.html',user=info)
+	questions = surveycalls.getSurveys([UID])
+	return render_template('results.html',user=info,questions=questions)
 
 
 #ADD SURVEYS

@@ -30,6 +30,8 @@ def getSurveys(surveyList):
                 'results': survey['results'],
                 'qlen': len(survey['questions'])
             })
+            if len(surveyList) == 1:
+                return total['active'][0]
         else:
             total['closed'].append({
                 'opened': time.strftime('%m/%d/%Y %H:%M', time.localtime(survey['start'])),
@@ -43,6 +45,8 @@ def getSurveys(surveyList):
                 'results': survey['results'],
                 'qlen': len(survey['questions'])
             })
+            if len(surveyList) == 1:
+                return total['active'][0]
     avgP = total['overview']['totalP']/total['overview']['totalS']
     total['overview']['avgP'] = '{0:.1f}'.format(avgP)
     return total

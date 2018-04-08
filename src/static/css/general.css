@@ -777,3 +777,11 @@ table th {
 .form-control:focus {
   box-shadow: none;
 }
+
+.toggle-hover{
+  color: #f00 !important;
+}
+
+.toggle-hover:hover{
+  color: #fff !important;
+}
