@@ -51,7 +51,6 @@
     </div>
     <div class="card-footer">
         <div class="d-flex justify-content-around">
-          <a class="btn btn-outline-warning btn-lg text-white" role="button" onclick="load_page('/result/{{questions['shareURL']}}')">Check Results</a>
           <a class="btn btn-outline-success btn-lg text-white" role="button" onclick="swap_div('welcome','q0-card')">Start Survey</a>
         </div>
     </div>
@@ -171,6 +170,7 @@
   	<script src="{{ url_for('static', filename='js/BSNotify/bootstrap-notify.js') }}"></script>
   	<script src="{{ url_for('static', filename='js/slick/slick.min.js') }}"></script>
   	<script src="{{ url_for('static', filename='js/notifications.js')}}" class="omit"></script>
+    <script src="{{url_for('static',filename='js/Chart.js')}}"></script>
   	<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/1328_RC04/embed_loader.js"></script>
   	<script type="text/javascript">
     function swap_div(oldD,newD) {

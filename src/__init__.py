@@ -124,6 +124,7 @@ def result(sid):
 
 @app.route('/s/<sid>')
 def takeSurvey(sid):
+	sid = sid.upper()
 	questions  = surveycalls.getSurveys([sid])
 	return render_template('takeSurvey.html',questions=questions)
 
@@ -144,7 +145,6 @@ def addSurvey():
 def postSurvey():
 	info = usercalls.getUser(request.cookies.get('user'))
 	if info:
-
 		questions = request.get_json()
 		addPost = surveycalls.postSurvey(questions,info)
 		return jsonify({ 'message': "Your survey was posted successfully!" })

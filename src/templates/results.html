@@ -18,7 +18,7 @@
     }*/
   var questionData = [12, 32, 3, 5];
 
-   function barchart(data,gID,chart){
+   function barchart(data,gID,myChart){
       var ctx = document.getElementById(gID);
       myChart = new Chart(ctx, {
           type: 'bar',
@@ -43,7 +43,7 @@
           }
         })
     };
-    function linechart(data,gID,chart){
+    function linechart(data,gID,myChart){
        var ctx = document.getElementById(gID);
        myChart = new Chart(ctx, {
            type: 'line',
@@ -68,7 +68,7 @@
            }
          })
      };
-     function piechart(data,gID,chart){
+     function piechart(data,gID,myChart){
         var ctx = document.getElementById(gID);
         myChart = new Chart(ctx, {
             type: 'doughnut',
@@ -137,13 +137,10 @@
 
 <!--Table-->
 <div class="d-flex justify-content-around ">
-  <div class="card bg-light style-texture3 col-11" style="min-width: 45%;">
+  <div class="card bg-light card-mf style-texture3 col-11" style="min-width: 45%;">
     <div class="card-header">
-      <div class="card-title" style="padding-top: 50px;"><span>{{ questions['title'] }}</span>
+      <h2 class="card-title" style="padding-top: 50px;"><span>{{ questions['title'] }}</span></h2>
         <hr />
-        <script>
-          var glist = [];
-        </script>
 
         <div class="card-body">
           <div class="d-flex justify-content-around flex-wrap">
@@ -207,12 +204,12 @@
 <!--                    if x['results(?)'][?] == 1  -->
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                           True
-                          <span>{{ questions['results'][qno][0] }}</span>
+                          <span>{{ questions['results'][qno][1] }}</span>
                         </li>
 <!--                    if x['results(?)'][?] == 0  -->
                       <li class="list-group-item d-flex justify-content-between align-items-center">
                           False
-                          <span>{{ questions['results'][qno][1] }}</span>
+                          <span>{{ questions['results'][qno][0] }}</span>
                       </li>
 <!--                  endif -->
                   {% endif %}
@@ -272,22 +269,16 @@
               <!-- mason inserts PARTICIPANTS/open close times card -->
             </div>  <!-- end card 2 -->
             <div>
-              <script>
-              $(document).ready(function() {
-                var Graph_{{qno}} = '';
-                barchart(questionData,"Graph-{{qno}}",Graph_{{qno}});
-              });
-
-              </script>   <!-- begin card 3: CHART -->
+                <!-- begin card 3: CHART -->
               <div class="card card-mf bg-light ">
                 <div class="card-header">
                   <h3 class="card-title">CHARTS and GRAPHS</h3> <!-- Not yet done: change span to database title -->
                   <div class="float-rights hard-right">
                     <div class="navbar-nav">
                       <div class="btn-group-vertical btn-group-sm" role="group" aria-label="Basic example" style="padding: 0px;">
-                        <button type="button" class="btn btn-dark" onclick="Graph_{{qno}}.destroy(); barchart(questionData,'Graph-{{questions['shareURL']}}',Graph_{{qno}})"><i class="fas fa-chart-bar"></i></button>
-                        <button type="button" class="btn btn-dark" onclick="Graph_{{qno}}.destroy(); linechart(questionData,'Graph-{{questions['shareURL']}}',Graph_{{qno}})"><i class="fas fa-chart-area"></i></button>
-                        <button type="button" class="btn btn-dark" onclick="Graph_{{qno}}.destroy(); piechart(questionData,'Graph-{{questions['shareURL']}}',Graph_{{qno}})"><i class="fas fa-chart-pie"></i></button>
+                        <button type="button" class="btn btn-dark" onclick="Graph{{qno}}.destroy(); barchart(questionData,'Graph-{{qno}}',Graph{{qno}})"><i class="fas fa-chart-bar"></i></button>
+                        <button type="button" class="btn btn-dark" onclick="Graph{{qno}}.destroy(); linechart(questionData,'Graph-{{qno}}',Graph{{qno}})"><i class="fas fa-chart-area"></i></button>
+                        <button type="button" class="btn btn-dark" onclick="Graph{{qno}}.destroy(); piechart(questionData,'Graph-{{qno}}',Graph{{qno}})"><i class="fas fa-chart-pie"></i></button>
                       </div>
                 </div>
               </div>
@@ -304,6 +295,13 @@
       </div>  <!-- end card 4 -->
       </div>
     </div>
+    <script>
+    $(document).ready(function() {
+      var Graph{{qno}} = '';
+      barchart(questionData,"Graph-{{qno}}",Graph{{qno}});
+    });
+
+    </script>
       {% endfor %}
     </div>
   </div>
