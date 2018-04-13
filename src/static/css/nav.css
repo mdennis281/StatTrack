@@ -14,8 +14,6 @@
   transition: opacity .2s linear;
   width: 100%;
   position: absolute;
-  padding: 15px;
-  margin-bottom: 75px !important;
   -webkit-animation-duration: .4s;
   -moz-animation-duration: .4s;
   -o-animation-duration: .4s;

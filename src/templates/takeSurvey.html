@@ -7,7 +7,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Survey Master</title>
+	<title>{{questions['title']}} | Survey Master</title>
+
+	<meta name="description" content="{{questions['desc']}}" />
 
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap4-charming.min.css') }}">
@@ -30,21 +32,21 @@
   </script>
 </head>
 {% set x=0 %}
-<body class="style-texture1" id="page-content" style="overflow-x: hidden;">
-<div class="d-flex justify-content-around mt-5">
-  <div class="card card-style1"  id="welcome" style="min-width: 60%;">
+<body class="style-texture1 " id="page-content">
+<div class="d-flex justify-content-around vertical-center no-select">
+  <div class="card card-style1 animation-fast"  id="welcome" style="min-width: 60%;">
     <div class="card-header s-2">
       <h2 class="card-title" >{{questions['title']}}</h2>
       <h3 class="title-icon-2">0/{{questions['qlen']}}</h3>
     </div>
     <div class="card-body" >
         <div class="d-flex justify-content-around">
-          <div class="card bg-dark text-left" style="max-width: 60%;">
+          <div class="card bg-dark text-left" style="max-width: 75%;">
             <div class="card-header" style="padding:0;">
               <h3 class="card-title ml-2">Description:</h3>
             </div>
             <div class="card-body bg-dark">
-              {{ questions['desc'] }}
+              <p class="ml-2 mr-2">{{ questions['desc'] }}<p>
             </div>
           </div>
         </div>
@@ -55,7 +57,7 @@
         </div>
     </div>
   </div>
-	<div class="card card-style1 div-hide"  id="finished" style="min-width: 60%;">
+	<div class="card card-style1 div-hide animation-fast"  id="finished" style="min-width: 60%;">
     <div class="card-header s-2">
       <h2 class="card-title" >{{questions['title']}}</h2>
       <h3 class="title-icon-2">Complete</h3>
@@ -70,7 +72,7 @@
   </div>
 
     {% for q in questions['questions'] %}
-      <div class="card card-style1 div-hide"  id="q{{loop.index-1}}-card" style="min-width: 60%;">
+      <div class="card card-style1 div-hide animation-fast"  id="q{{loop.index-1}}-card" style="min-width: 60%;">
         <div class="card-header s-2">
           <h2 class="card-title" >{{questions['title']}}</h2>
           <h3 class="title-icon-2">{{loop.index}}/{{questions['qlen']}}</h3>
@@ -102,7 +104,7 @@
 
           {% elif q['type'] == 'R' %}
           <div class="slidecontainer bg-dark" style="padding: 1em; border-radius: 3px;">
-            <input style="position: relative" type="range" min="{{q['min']}}" max="{{q['max']}}" value="0" class="slider" onchange="Svalues[{{loop.index-1}}] = $(this).val()" id="myRange-{{loop.index-1}}">
+            <input style="position: relative" type="range" min="{{q['min']}}" max="{{q['max']}}" value="{{q['min']}}" class="slider" onchange="Svalues[{{loop.index-1}}] = $(this).val()" id="myRange-{{loop.index-1}}">
             <div class="d-flex justify-content-between">
               <h5>{{q['min']}}</h5>
               <h5 id="show-{{loop.index-1}}">0</h5>
@@ -110,12 +112,12 @@
             </div>
           </div>
           <script>
-            var slider = document.getElementById("myRange-{{loop.index-1}}");
-            var output = document.getElementById("show-{{loop.index-1}}");
-            output.innerHTML = slider.value; // Display the default slider value
+            var slider{{loop.index-1}} = document.getElementById("myRange-{{loop.index-1}}");
+            var output{{loop.index-1}} = document.getElementById("show-{{loop.index-1}}");
+            output{{loop.index-1}}.innerHTML = slider{{loop.index-1}}.value; // Display the default slider value
             // Update the current slider value (each time you drag the slider handle)
-            slider.oninput = function() {
-                output.innerHTML = this.value;
+            slider{{loop.index-1}}.oninput = function() {
+                output{{loop.index-1}}.innerHTML = this.value;
             }
           </script>
 
@@ -137,7 +139,7 @@
               </div>
               <div class="float-right">
                 {% if loop.index == (questions['qlen']) %}
-                  <a class="btn btn-success text-white" onclick="if (Svalues[{{loop.index-1}}] == -1){n_error('No value chosen','You must answer every question on this survey!');} else {swap_div('q{{loop.index-1}}-card','finished'); saveSubmission()}" role="button">Finish</a>
+                  <a class="btn btn-success text-white" onclick="if (Svalues[{{loop.index-1}}] == -1){n_error('No value chosen','You must answer every question on this survey!');} else {swap_div('q{{loop.index-1}}-card','finished'); saveSubmission()}" role="button">Submit</a>
                 {% else %}
                   <a class="btn btn-style1 text-unt" role="button" onclick="if (Svalues[{{loop.index-1}}] == -1){n_error('No value chosen','You must answer every question on this survey!');} else {swap_div('q{{loop.index-1}}-card','q{{loop.index}}-card')}">Next</a>
                 {% endif %}
@@ -174,18 +176,19 @@
   	<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/1328_RC04/embed_loader.js"></script>
   	<script type="text/javascript">
     function swap_div(oldD,newD) {
-      $('#'+oldD).animateCss('bounceOutDown',function() {
+      $('#'+oldD).animateCss('zoomOut',function() {
         $('#'+oldD).addClass('div-hide');
-        $('#'+newD).removeClass('div-hide');
-        $('#'+newD).animateCss('bounceInDown');
       });
+      $('#'+newD).removeClass('div-hide');
+      $('#'+newD).animateCss('fadeInDown');
     }
     function swap_div_back(oldD,newD) {
-      $('#'+oldD).animateCss('bounceOutUp',function() {
-        $('#'+oldD).addClass('div-hide');
-        $('#'+newD).removeClass('div-hide');
-        $('#'+newD).animateCss('bounceInUp');
-      });
+      $('#'+oldD).animateCss('fadeOutUp',function() {
+      $('#'+oldD).addClass('div-hide');
+    });
+
+    $('#'+newD).removeClass('div-hide');
+    $('#'+newD).animateCss('zoomIn');
     }
     function saveSubmission() {
       $.ajax({
